@@ -17,7 +17,7 @@
         <header class="mdl-layout__header mdl-layout__header--transparent">
             <div class="mdl-layout__header-row">
                 <div class="mdl-layout-spacer"></div>
-                <img class="brand" src="images/D3Logo.png" alt="company logo">
+                <img class="brand" src="images/D3Logo.png" alt="brand">
                 <!-- Search Button -->
                 <div class="mdl-layout-spacer"></div>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
@@ -34,14 +34,26 @@
         <div class="mdl-layout__drawer">
             <span class="mdl-layout-title">Welcome</span>
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="">New Orders</a>
+                <a class="mdl-navigation__link" href="">View Cart</a>
                 <a class="mdl-navigation__link" href="">Past Orders</a>
                 <a class="mdl-navigation__link" href="">Specials</a>
                 <a class="mdl-navigation__link" href="">Contact</a>
             </nav>
         </div>
         <main class="mdl-layout__content">
-          
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+                    <div class="decor-card-event mdl-card mdl-shadow--2dp">
+                        <!-- <div class="mdl-card__media"> -->
+                            <img src="http://placehold.it/330x150">
+                        <!-- </div> -->
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">More Info</a>
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
     <script src="js/material.min.js"></script>
