@@ -1,7 +1,7 @@
 var gulp         = require('gulp'),
     sass         = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
-    browserSync  = require('browser-sync'),
+    browserSync  = require('browser-sync').create(),
     plumber      = require('gulp-plumber'),
     runSequence  = require('run-sequence'),
     imagemin     = require('gulp-imagemin'),
@@ -15,11 +15,10 @@ var gulp         = require('gulp'),
 
 // Starts browserSync server
 gulp.task('browserSync', function() {
-  browserSync({
-    server: {
-      baseDir: 'build'
-    },
+  browserSync.init({
+    server: "./build",
     port: 4000,
+    ui: false
   });
 });
 
