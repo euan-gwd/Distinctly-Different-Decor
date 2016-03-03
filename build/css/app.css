@@ -3,22 +3,26 @@
   max-height: 100%;
   height: 90%; }
 
-.decor-layout-transparent {
+#menu-lower-left {
+  margin-left: -70px; }
+
+.decor-layout {
   background: url("../images/seamless_paper_texture.png"); }
 
-.decor-layout-transparent .mdl-layout__header,
-.decor-layout-transparent .mdl-layout__drawer-button {
+.decor-layout .mdl-layout__header,
+.decor-layout .mdl-layout__drawer-button {
   /* This background is dark, so we set text to white. Use 87% black instead if
      your background is light. */
-  color: black; }
-
-.mdl-grid {
-  padding-top: 3vh; }
+  color: black;
+  background-color: lightgrey; }
 
 .decor-card-event {
   background: AntiqueWhite;
   max-width: 100%;
   max-height: 100%; }
+
+.mdl-card {
+  width: auto; }
 
 .mdl-card__actions {
   display: -webkit-flex;
