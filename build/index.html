@@ -17,17 +17,23 @@
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
                 <button id="menu-lower-left" class="mdl-button mdl-js-button mdl-button--icon">
-                    <i class="material-icons">more_vert</i>
+                    <i id="tt1" class="material-icons">more_vert</i>
+                    <div class="mdl-tooltip mdl-tooltip--large" for="tt1">
+                        Menu
+                    </div>
                 </button>
                 <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="menu-lower-left">
-                    <li class="mdl-menu__item">Some Action</li>
-                    <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Another Action</li>
+                    <li class="mdl-menu__item">Current Orders</li>
+                    <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Past Orders</li>
                     <li disabled class="mdl-menu__item">Disabled Action</li>
-                    <li class="mdl-menu__item">Yet Another Action</li>
+                    <li class="mdl-menu__item">Contact</li>
                 </ul>
                 <div class="mdl-layout-spacer"></div>
                 <button class="mdl-button mdl-js-button mdl-button--icon">
-                    <i class="material-icons">shopping_cart</i>
+                    <i id="tt2" class="material-icons">shopping_cart</i>
+                    <div class="mdl-tooltip mdl-tooltip--large" for="tt2">
+                        View Cart
+                    </div>
                 </button>
             </div>
         </header>
@@ -37,8 +43,8 @@
                     <div class="decor-card-event mdl-card mdl-shadow--2dp">
                         <img src="http://placehold.it/330x150">
                         <div class="mdl-card__actions mdl-card--border">
-                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"><i class="material-icons">info_outline</i></a>
-                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"><i class="material-icons">add_shopping_cart</i></a>
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"><i id="tt3" class="material-icons">info_outline</i></a>
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"><i id="tt4" class="material-icons">add_shopping_cart</i></a>
                         </div>
                     </div>
                 </div>
@@ -46,7 +52,7 @@
         </main>
         <footer class="mdl-mini-footer">
             <div class="mdl-mini-footer__left-section">
-                <div class="mdl-logo">Distinctly Different Decorations</div>
+                <div class="mdl-logo"><img class="brand" src="images/D3Logo.png" alt="brand logo"> Distinctly Different Decorations</div>
                 <ul class="mdl-mini-footer__link-list">
                     <li><a href="#">Privacy & Terms</a></li>
                     <li><a href="#">Contact</a></li>
