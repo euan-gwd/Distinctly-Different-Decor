@@ -1,4 +1,4 @@
-$primary-text-color: indigo;
+$primary-text-color: #673ab7;
 $primary-bg-color: #FAEBD7;
 .brand {
     max-width: 100%;
@@ -58,7 +58,10 @@ $primary-bg-color: #FAEBD7;
     color: #fff;
 }
 
-.material-icons.indigo600 {
-    color: indigo;
+.material-icons.orange600 {
+    color: #FB8C00;
 }
 
+.material-icons.indigo600 {
+    color: $primary-text-color;
+}

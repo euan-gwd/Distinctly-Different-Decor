@@ -14,7 +14,7 @@
 .decor-layout .mdl-layout__drawer-button {
   /* This background is dark, so we set text to white. Use 87% black instead if
      your background is light. */
-  color: indigo;
+  color: #673ab7;
   background-color: #FAEBD7; }
 
 .decor-card-event {
@@ -37,10 +37,10 @@
 
 .mdl-mini-footer {
   background-color: #FAEBD7;
-  color: indigo; }
+  color: #673ab7; }
 
 .mdl-logo {
-  color: indigo; }
+  color: #673ab7; }
 
 .mdl-mini-footer {
   padding: 8px 0 0 16px; }
@@ -48,5 +48,8 @@
 .material-icons.white600 {
   color: #fff; }
 
+.material-icons.orange600 {
+  color: #FB8C00; }
+
 .material-icons.indigo600 {
-  color: indigo; }
+  color: #673ab7; }
