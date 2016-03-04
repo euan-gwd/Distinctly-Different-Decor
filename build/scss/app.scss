@@ -16,9 +16,6 @@ $primary-bg-color: #FAEBD7;
 
 .decor-layout .mdl-layout__header,
 .decor-layout .mdl-layout__drawer-button {
-    /* This background is dark, so we set text to white. Use 87% black instead if
-     your background is light. */
-    // color: black;
     color: $primary-text-color;
     background-color: $primary-bg-color;
 }
@@ -50,13 +47,12 @@ $primary-bg-color: #FAEBD7;
 }
 
 .mdl-mini-footer {
-    padding: 8px 0 0 16px;
-    // padding: 0;
+    padding: 8px 8px 0;
 }
 
-.mdl-mini-footer__link-list {
-    padding: 0;
-}
+// .mdl-mini-footer__link-list {
+//     padding: 0;
+// }
 
 .material-icons.white600 {
     color: #fff;
