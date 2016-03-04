@@ -1,7 +1,7 @@
 .brand {
   max-width: 100%;
   max-height: 100%;
-  height: auto;
+  height: 7vh;
   margin-left: -70px; }
 
 #menu-lower-left {
@@ -15,7 +15,7 @@
   /* This background is dark, so we set text to white. Use 87% black instead if
      your background is light. */
   color: indigo;
-  background-color: lightgrey; }
+  background-color: #FAEBD7; }
 
 .decor-card-event {
   background: AntiqueWhite;
@@ -36,5 +36,17 @@
   border-color: rgba(255, 255, 255, 0.2); }
 
 .mdl-mini-footer {
-  background-color: lightgrey;
+  background-color: #FAEBD7;
+  color: indigo; }
+
+.mdl-logo {
+  color: indigo; }
+
+.mdl-mini-footer {
+  padding: 8px 0 0 16px; }
+
+.material-icons.white600 {
+  color: #fff; }
+
+.material-icons.indigo600 {
   color: indigo; }

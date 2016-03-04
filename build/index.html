@@ -16,7 +16,7 @@
     <div class="decor-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
-                <img class="brand" src="images/D3Logo.png" alt="brand logo">
+                <img class="brand" src="images/D3Logo-indigo.png" alt="brand logo">
                 <div class="mdl-layout-spacer"></div>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
                   mdl-textfield--floating-label mdl-textfield--align-right">
@@ -24,14 +24,14 @@
                         <i class="material-icons">search</i>
                     </label>
                     <div class="mdl-textfield__expandable-holder">
-                        <input class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp">
+                        <input class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp" placeholder="search">
                     </div>
                 </div>
             </div>
             <div class="mdl-layout__header-row">
                 <button id="menu-lower-left" class="mdl-button mdl-js-button mdl-button--icon">
                     <i id="tt1" class="material-icons">more_vert</i>
-                    <div class="mdl-tooltip mdl-tooltip--large" for="tt1">
+                    <div class="mdl-tooltip" for="tt1">
                         Menu
                     </div>
                 </button>
@@ -42,9 +42,9 @@
                     <li disabled class="mdl-menu__item">Disabled Action</li>
                     <li class="mdl-menu__item">Contact</li>
                 </ul>
-                <button class="mdl-button mdl-js-button mdl-button--icon">
-                    <i id="tt2" class="material-icons">shopping_cart</i>
-                    <div class="mdl-tooltip mdl-tooltip--large" for="tt2">
+                <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-js-ripple-effect">
+                    <i id="tt2" class="material-icons indigo600">shopping_cart</i>
+                    <div class="mdl-tooltip" for="tt2">
                         View Cart
                     </div>
                 </button>
@@ -56,22 +56,22 @@
                     <div class="decor-card-event mdl-card mdl-shadow--2dp">
                         <img src="http://placehold.it/330x150">
                         <div class="mdl-card__actions mdl-card--border">
-                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"><i id="tt3" class="material-icons">info_outline</i></a>
-                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"><i id="tt4" class="material-icons">add_shopping_cart</i></a>
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--raised"><i id="tt3" class="material-icons">info_outline</i></a>
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--raised"><i id="tt4" class="material-icons">add_shopping_cart</i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
         <footer class="mdl-mini-footer">
-            <div class="mdl-mini-footer__left-section">
-                <div class="mdl-logo">Distinctly Different Decorations</div>
-                <ul class="mdl-mini-footer__link-list">
-                    <li><a href="#">Privacy & Terms</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-        </footer>
+            <div class="mdl-logo">Distinctly Different Decorations</div>
+            <div class="mdl-layout-spacer"></div>
+            <ul class="mdl-mini-footer__link-list">
+                <li><a href="#">Help</a></li>
+                <li><a href="#">Privacy & Terms</a></li>
+            </ul>
+    </div>
+    </footer>
     </div>
     <script src="js/material.min.js"></script>
 </body>

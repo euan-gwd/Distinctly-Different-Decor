@@ -1,8 +1,10 @@
+$primary-text-color: indigo;
+$primary-bg-color: #FAEBD7;
 .brand {
     max-width: 100%;
     max-height: 100%;
-    height: auto;
-    margin-left: -70px; 
+    height: 7vh;
+    margin-left: -70px;
 }
 
 #menu-lower-left {
@@ -17,8 +19,9 @@
 .decor-layout .mdl-layout__drawer-button {
     /* This background is dark, so we set text to white. Use 87% black instead if
      your background is light. */
-    color: indigo;
-    background-color: lightgrey;
+    // color: black;
+    color: $primary-text-color;
+    background-color: $primary-bg-color;
 }
 
 .decor-card-event {
@@ -39,6 +42,23 @@
 }
 
 .mdl-mini-footer {
-    background-color: lightgrey;
+    background-color: $primary-bg-color;
+    color: $primary-text-color;
+}
+
+.mdl-logo {
+    color: $primary-text-color;
+}
+
+.mdl-mini-footer {
+    padding: 8px 0 0 16px;
+}
+
+.material-icons.white600 {
+    color: #fff;
+}
+
+.material-icons.indigo600 {
     color: indigo;
 }
+
