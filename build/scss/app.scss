@@ -1,4 +1,5 @@
-$primary-text-color: #673ab7;
+$primary-color: #673ab7;
+$secondary-color: #FB8C00;
 $primary-bg-color: #FAEBD7;
 .brand {
     max-width: 100%;
@@ -16,7 +17,7 @@ $primary-bg-color: #FAEBD7;
 
 .decor-layout .mdl-layout__header,
 .decor-layout .mdl-layout__drawer-button {
-    color: $primary-text-color;
+    color: $primary-color;
     background-color: $primary-bg-color;
 }
 
@@ -39,20 +40,20 @@ $primary-bg-color: #FAEBD7;
 
 .mdl-mini-footer {
     background-color: $primary-bg-color;
-    color: $primary-text-color;
+    color: $primary-color;
 }
 
 .mdl-logo {
-    color: $primary-text-color;
+    color: $primary-color;
 }
 
 .mdl-mini-footer {
     padding: 8px 8px 0;
 }
 
-// .mdl-mini-footer__link-list {
-//     padding: 0;
-// }
+.mdl-card__title-text{
+    color: $secondary-color;
+}
 
 .material-icons.white600 {
     color: #fff;
@@ -63,5 +64,5 @@ $primary-bg-color: #FAEBD7;
 }
 
 .material-icons.indigo600 {
-    color: $primary-text-color;
+    color: $primary-color;
 }

@@ -6,7 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
     <title>| Distinctly Different Decor |</title>
-    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
+    <!-- <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css"> -->
     <link rel="stylesheet" href="css/material.min.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -17,13 +17,18 @@
     <div class="decor-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
+                <div class="mdl-layout-spacer"></div>
                 <div>
-                    <img class="brand" src="images/D3Logo-indigo.png" alt="brand logo"></div>
+                    <img class="brand" src="images/D3Logo-indigo.png" alt="brand logo">
+                </div>
                 <div class="mdl-layout-spacer"></div>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
                   mdl-textfield--floating-label mdl-textfield--align-right">
                     <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
-                        <i class="material-icons">search</i>
+                        <i id="ttsearch" class="material-icons">search</i>
+                        <div class="mdl-tooltip mdl-tooltip--left" for="ttsearch">
+                            Search
+                        </div>
                     </label>
                     <div class="mdl-textfield__expandable-holder">
                         <input class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp" placeholder="search">
@@ -33,7 +38,7 @@
             <div class="mdl-layout__header-row">
                 <button id="menu-lower-left" class="mdl-button mdl-js-button mdl-button--icon">
                     <i id="ttmenu" class="material-icons">more_vert</i>
-                    <div class="mdl-tooltip" for="ttmenu">
+                    <div class="mdl-tooltip mdl-tooltip--right" for="ttmenu">
                         Menu
                     </div>
                 </button>
@@ -48,9 +53,10 @@
                 <div class="mdl-badge" data-badge="5"> Items in Cart
                     <!-- <i class="material-icons">shopping_basket</i> --></div>
                 <div class="mdl-layout-spacer"></div>
-                <button id="ttcart" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
-                    <i class="material-icons indigo600">shopping_cart</i>
-                    <div class="mdl-tooltip" for="ttcart">
+                <button id="ttcart" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored 
+mdl-button--primary ">
+                    <i class="material-icons">shopping_cart</i>
+                    <div class="mdl-tooltip mdl-tooltip--left" for="ttcart">
                         Checkout
                     </div>
                 </button>
@@ -61,9 +67,18 @@
                 <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
                     <div class="decor-card-event mdl-card mdl-shadow--2dp">
                         <img src="http://placehold.it/330x150">
+                        <div class="mdl-card__supporting-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
+                        </div>
                         <div class="mdl-card__actions mdl-card--border">
-                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"><i class="material-icons">info_outline</i></a>
-                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--raised"><i class="material-icons">add_shopping_cart</i></a>
+                            <!--              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"><i class="material-icons">info_outline</i></a> -->
+                            <p class="mdl-card__title-text">R 250</p>
+                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--raised"><i class="material-icons">add_shopping_cart</i></button>
+                        </div>
+                        <div class="mdl-card__menu">
+                            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                <i class="material-icons indigo600">info_outline</i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -76,9 +91,14 @@
                 </div>
             </div>
             <div class="mdl-mini-footer__right-section mdl-layout--large-screen-only">
-                <button class="mdl-mini-footer__social-btn"></button>
-                <button class="mdl-mini-footer__social-btn"></button>
-                <button class="mdl-mini-footer__social-btn"></button>
+                Share
+                <button id="demo-menu-top-right" class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">share</i>
+                </button>
+                <ul class="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for="demo-menu-top-right">
+                    <li class="mdl-menu__item">Facebook</li>
+                    <li class="mdl-menu__item">Twitter</li>
+                </ul>
             </div>
         </footer>
     </div>
@@ -86,7 +106,8 @@
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-aria/angular-aria.js"></script>
     <script src="/bower_components/angular-animate/angular-animate.js"></script>
-    <script src="/bower_components/angular-material/angular-material.js"></script>
+    <script src="/bower_components/angular-route/angular-route.js"></script>
+    <!-- <script src="/bower_components/angular-material/angular-material.js"></script> -->
     <script src="js/app.js"></script>
 </body>
 
