@@ -4,15 +4,16 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
     <title>| Distinctly Different Decor |</title>
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
     <link rel="stylesheet" href="css/material.min.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
 </head>
 
-<body>
+<body ng-app="DDDApp">
     <div class="decor-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
@@ -44,7 +45,8 @@
                     <li class="mdl-menu__item">Contact</li>
                     <li class="mdl-menu__item">Privacy and Terms</li>
                 </ul>
-                <div class="mdl-badge" data-badge="5"> Items in Cart<!-- <i class="material-icons">shopping_basket</i> --></div>
+                <div class="mdl-badge" data-badge="5"> Items in Cart
+                    <!-- <i class="material-icons">shopping_basket</i> --></div>
                 <div class="mdl-layout-spacer"></div>
                 <button id="ttcart" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab">
                     <i class="material-icons indigo600">shopping_cart</i>
@@ -80,7 +82,12 @@
             </div>
         </footer>
     </div>
-    <script src="js/material.min.js"></script>
+    <script src="js/mdl/material.min.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-aria/angular-aria.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-material/angular-material.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>

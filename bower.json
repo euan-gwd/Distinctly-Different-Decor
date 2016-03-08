@@ -1,0 +1,21 @@
+{
+  "name": "dddwebstore",
+  "description": "web store for DDD with gulp development server and Angular Material",
+  "main": "index.html",
+  "authors": [
+    "Euan Greenwood"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "^1.0.6"
+  }
+}

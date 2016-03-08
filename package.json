@@ -1,11 +1,10 @@
 {
-  "name": "webapptemplate",
+  "name": "dddwebstore",
   "version": "1.0.0",
-  "description": "web app template with gulp development server",
+  "description": "web store for DDD with gulp development server and Angular Material",
   "main": "index.html",
   "author": "Euan Greenwood",
   "license": "MIT",
-  "dependencies": {},
   "devDependencies": {
     "browser-sync": "^2.11.1",
     "gulp": "^3.9.0",
