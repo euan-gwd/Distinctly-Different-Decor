@@ -64,12 +64,8 @@ mdl-button--primary">
                 <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--2-col-phone" ng-repeat="item in list">
                     <div class="decor-card-event mdl-card mdl-shadow--2dp">
                         <img src="http://placehold.it/330x150">
-                        <div class="mdl-card__title">
-                            <!-- <h5 class="mdl-card__title-text">{{item.name}}</h5> -->
-                            {{item.name}}
-                        </div>
                         <div class="mdl-card__supporting-text">
-                            {{item.desc}}
+                            {{item.name}}
                         </div>
                         <div class="mdl-card__actions mdl-card--border">
                             <p class="mdl-card__title-text">{{item.price | currency:"R"}}</p>
