@@ -5,7 +5,8 @@
         $scope.list = [
             { name: 'one', desc: 'this is the 1st box in the store', price: '1' },
             { name: 'two', desc: 'this is the 2nd box in the store', price: '2' },
-            { name: 'three', desc: 'this is the 3rd box in the store', price: '3' }
+            { name: 'three', desc: 'this is the 3rd box in the store', price: '3' },
+            { name: 'four', desc: 'this is the 4th box in the store', price: '4' }
         ];
     }]);
 }());

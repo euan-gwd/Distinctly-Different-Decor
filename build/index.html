@@ -17,7 +17,7 @@
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
                 <div>
-                    <img class="brand" src="images/D3Logo-indigo.png" alt="brand logo">
+                    <img class="brand" src="images/D3Logo.svg" alt="brand logo">
                 </div>
                 <div class="mdl-layout-spacer"></div>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
@@ -61,7 +61,7 @@ mdl-button--primary">
         <!-- end of menu -->
         <main class="mdl-layout__content" ng-controller="MainCtrl">
             <div class="mdl-grid">
-                <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone" ng-repeat="item in list">
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--2-col-phone" ng-repeat="item in list">
                     <div class="decor-card-event mdl-card mdl-shadow--2dp">
                         <img src="http://placehold.it/330x150">
                         <div class="mdl-card__title">
@@ -72,7 +72,7 @@ mdl-button--primary">
                             {{item.desc}}
                         </div>
                         <div class="mdl-card__actions mdl-card--border">
-                            <p class="mdl-card__title-text">{{item.price | currency:"R "}}</p>
+                            <p class="mdl-card__title-text">{{item.price | currency:"R"}}</p>
                             <div class="mdl-layout-spacer"></div>
                             <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--raised"><i class="material-icons">add_shopping_cart</i></button>
                         </div>
@@ -93,10 +93,10 @@ mdl-button--primary">
             </div>
             <div class="mdl-mini-footer__right-section">
                 Contact
-                <button id="demo-menu-top-right" class="mdl-button mdl-js-button mdl-button--icon">
+                <button id="decor-menu-top-right" class="mdl-button mdl-js-button mdl-button--icon">
                     <i class="material-icons">share</i>
                 </button>
-                <ul class="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for="demo-menu-top-right">
+                <ul class="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for="decor-menu-top-right">
                     <li class="mdl-menu__item">Facebook</li>
                     <li class="mdl-menu__item">Twitter</li>
                     <li class="mdl-menu__item">Email</li>
