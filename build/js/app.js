@@ -7,9 +7,9 @@
         	store.products = storeInventory;
 		
 		// Updates the counter badge on the shopping cart when add to cart button is clicked 
-        store.counter = 0;
+        store.cartCount = 0;
         store.countAdd = function(inc) {
-            store.counter += inc;
+            store.cartCount += inc;
         };
     
     });
