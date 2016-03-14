@@ -2,6 +2,7 @@
     var app = angular.module('DDDApp', ['ui.router']);
 
     app.controller('MainCtrl', ['$scope', function($scope) {
+        count = 0;
         $scope.list = [
             { name: 'one', desc: 'this is the 1st box in the store', price: '1' },
             { name: 'two', desc: 'this is the 2nd box in the store', price: '2' },
