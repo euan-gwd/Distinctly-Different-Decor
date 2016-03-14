@@ -3,12 +3,13 @@
     var app = angular.module('DDDApp', ['ui.router']);
 
     app.controller('StoreController', function() {
-        this.products = storeInventory;
+        var store = this;
+        	store.products = storeInventory;
 		
-		// Updates the counter badge on the shopping cart  
-        this.counter = 0;
-        this.countAdd = function(inc) {
-            this.counter += inc;
+		// Updates the counter badge on the shopping cart when add to cart button is clicked 
+        store.counter = 0;
+        store.countAdd = function(inc) {
+            store.counter += inc;
         };
     
     });
