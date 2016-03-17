@@ -5,7 +5,7 @@
     app.controller('StoreController', function() {
         var store = this;
         store.products = storeInventory;
-
+        store.basket = [];
 
         // Updates the counter badge on the shopping cart when add to cart button is clicked 
         store.cartCount = 0;
@@ -13,16 +13,21 @@
             store.cartCount += inc;
         };
 
-        store.basket = [];
         // Add item to basket
-        store.addItem = function(data) {
-            store.basket.push({
-                'id': store.products.id,
-                'product': store.products.name,
-                'cost': store.products.price
+        store.addItem = function(product) {
+            var found = false;
+            store.basket.forEach(function(item) {
+                if (item.id === product.id) {
+                    item.quantity++;
+                    found = true;
+                }
             });
+            if (!found) {
+                store.basket.push(angular.extend({ quantity: 1 }, product));
+            }
             console.log(store.basket);
         };
+
         // Drop an item from the basket
         store.dropItem = function(index) {
             store.basket.splice(index, 1);
@@ -35,6 +40,16 @@
                 total = parseInt(total) + parseFloat(item.cost, 2);
             });
             return total;
+        };
+
+        store.shopcart = [];
+        store.addToCart = function() {
+            for (var cartInc = 0; cartInc < store.products.length; cartInc++) {
+                var selectedItem = store.products[cartInc];
+                if (selectedItem.Checked) {
+                    shopcart.push(selectedItem);
+                }
+            }
         };
 
     });

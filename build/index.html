@@ -62,17 +62,16 @@ mdl-button--primary">
         <!-- end of menu -->
         <main class="mdl-layout__content">
             <div class="mdl-grid">
-                <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--2-col-phone" ng-repeat="product in store.products | filter:productSearch">
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--2-col-phone" ng-repeat="product in store.products | filter:productSearch track by $index">
                     <div class="decor-card-event mdl-card mdl-shadow--2dp">
                         <img ng-src="{{product.image}}">
-                        <div class="mdl-card__supporting-text"ng-model="product.name">
+                        <div class="mdl-card__supporting-text">
                             {{product.name}}
                         </div>
                         <div class="mdl-card__actions mdl-card--border">
-                            <p class="mdl-card__title-text" ng-model="product.price">{{product.price | currency:"R"}}</p>
+                            <p class="mdl-card__title-text">{{product.price | currency:"R"}}</p>
                             <div class="mdl-layout-spacer"></div>
-                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="store.countAdd(1); store.addItem()"><i class="material-icons">add_shopping_cart</i></button>
-                            <ngcart-addtocart id="{{ item.id }}" name="{{ item.name }}" price="{{ item.price }}" quantity="1" quantity-max="30" data="item"></ngcart-addtocart>
+                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="store.countAdd(1); store.addItem(product)"><i class="material-icons">add_shopping_cart</i></button>
                         </div>
                         <div class="mdl-card__menu">
                             <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
