@@ -5,7 +5,7 @@
     app.controller('StoreController', function() {
         var store = this;
         store.products = storeInventory;
-        store.basket = [];
+
 
         // Updates the counter badge on the shopping cart when add to cart button is clicked 
         store.cartCount = 0;
@@ -14,6 +14,7 @@
         };
 
         // Add item to basket
+        store.basket = [];
         store.addItem = function(product) {
             var found = false;
             store.basket.forEach(function(item) {
@@ -26,30 +27,6 @@
                 store.basket.push(angular.extend({ quantity: 1 }, product));
             }
             console.log(store.basket);
-        };
-
-        // Drop an item from the basket
-        store.dropItem = function(index) {
-            store.basket.splice(index, 1);
-        };
-
-        // Get the running total of the basket
-        store.getOrderTotal = function() {
-            var total = 0;
-            angular.forEach(store.basket, function(item) {
-                total = parseInt(total) + parseFloat(item.cost, 2);
-            });
-            return total;
-        };
-
-        store.shopcart = [];
-        store.addToCart = function() {
-            for (var cartInc = 0; cartInc < store.products.length; cartInc++) {
-                var selectedItem = store.products[cartInc];
-                if (selectedItem.Checked) {
-                    shopcart.push(selectedItem);
-                }
-            }
         };
 
     });
