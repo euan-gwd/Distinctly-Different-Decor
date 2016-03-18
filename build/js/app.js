@@ -23,15 +23,14 @@
         };
 
         store.removeItem = function(product) {
-            var found = false;
+            var found = true;
 
             store.basket.forEach(function(item) {
                 if (item.id === product.id) {
                     item.quantity--;
-                    found = true;
                     if (item.quantity === 0) {
-                        found = false;
-                    } 
+                        // disable button
+                    }
                 }
             });
             if (!found) {
