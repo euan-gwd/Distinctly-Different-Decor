@@ -24,19 +24,19 @@
 
         store.removeItem = function(product) {
             var found = false;
+
             store.basket.forEach(function(item) {
                 if (item.id === product.id) {
                     item.quantity--;
                     found = true;
                     if (item.quantity === 0) {
                         found = false;
-                    }
+                    } 
                 }
             });
             if (!found) {
                 store.basket.splice(angular.extend({ quantity: 1 }, product));
             }
-            console.log(store.basket.length);
         };
 
         store.getCartPrice = function() {

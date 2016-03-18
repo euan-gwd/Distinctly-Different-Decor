@@ -63,7 +63,7 @@ mdl-button--primary">
         <!-- end of menu -->
         <main class="mdl-layout__content">
             <div class="mdl-grid">
-                <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--2-col-phone" ng-repeat="product in store.products | filter:productSearch track by $index">
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone" ng-repeat="product in store.products | filter:productSearch track by $index">
                     <div class="decor-card-event mdl-card mdl-shadow--2dp">
                         <img ng-src="{{product.image}}">
                         <div class="mdl-card__supporting-text">
@@ -72,11 +72,12 @@ mdl-button--primary">
                         <div class="mdl-card__actions mdl-card--border">
                             <p class="mdl-card__title-text">{{product.price | currency:"R"}}</p>
                             <div class="mdl-layout-spacer"></div>
-                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="store.addItem(product); productSelected.toggle = true"><i class="material-icons">add_shopping_cart</i></button>
+                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="store.removeItem(product)"><i class="material-icons removeCart-color">remove_shopping_cart</i></button>
+                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="store.addItem(product)"><i class="material-icons addCart-color">add_shopping_cart</i></button>
                         </div>
-                        <div class="mdl-card__menu" ng-if="productSelected.toggle">
-                            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" ng-click="store.removeItem(product); productSelected.toggle = false">
-                                <i class="material-icons selected-color">remove_shopping_cart</i>
+                        <div class="mdl-card__menu" ng-if="selectedProduct.toggle">
+                            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" ng-click="store.removeItem(product); selectedProduct.toggle = false">
+                                <i class="material-icons selected-color">done</i>
                             </button>
                         </div>
                     </div>

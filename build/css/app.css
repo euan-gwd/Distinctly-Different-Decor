@@ -54,8 +54,14 @@
 .material-icons.brand-color {
   color: #673ab7; }
 
+.material-icons.addCart-color {
+  color: #673ab7; }
+
+.material-icons.removeCart-color {
+  color: #BDBDBD; }
+
 .material-icons.selected-color {
-  color: #E53935; }
+  color: #43A047; }
 
 .cartTotal {
   padding: 0 3vw 0 2vw;
