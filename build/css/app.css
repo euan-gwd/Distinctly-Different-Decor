@@ -48,8 +48,12 @@
 .material-icons.white600 {
   color: #fff; }
 
-.material-icons.orange600 {
+.material-icons.brand-color-alt {
   color: #FB8C00; }
 
 .material-icons.brand-color {
   color: #673ab7; }
+
+.cartTotal {
+  padding: 0 3vw 0 2vw;
+  color: #FB8C00; }

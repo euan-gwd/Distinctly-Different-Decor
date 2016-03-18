@@ -48,11 +48,7 @@
                     <li class="mdl-menu__item">Help</li>
                     <li class="mdl-menu__item">Privacy and Terms</li>
                 </ul>
-                <!--                 <div>
-                    <h5>{{store.basket.length}} items in Cart Total {{store.getCartPrice() | currency:"R"}}</h5>
-                    <span ng-repeat="product in store.basket"></span>
-                </div>
-                <div class="mdl-layout-spacer"></div> -->
+                <h6 class="cartTotal">Total in Cart {{store.getCartPrice() | currency:"R"}}</h6>
                 <!-- Shopping cart -->
                 <button id="ttcart" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored 
 mdl-button--primary">
@@ -90,10 +86,9 @@ mdl-button--primary">
         <footer class="mdl-mini-footer">
             <div class="mdl-mini-footer__left-section">
                 <!-- <div class="mdl-logo"> -->
-                    <small>Copyright 2016 All rights reserved</small>
+                <small>Copyright 2016 All rights reserved</small>
                 <!-- </div> -->
             </div>
-            <div>Total {{store.getCartPrice() | currency:"R"}}</div>
             <div class="mdl-mini-footer__right-section">
                 Contact
                 <button id="decor-menu-top-right" class="mdl-button mdl-js-button mdl-button--icon">
