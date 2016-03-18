@@ -72,11 +72,11 @@ mdl-button--primary">
                         <div class="mdl-card__actions mdl-card--border">
                             <p class="mdl-card__title-text">{{product.price | currency:"R"}}</p>
                             <div class="mdl-layout-spacer"></div>
-                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="store.addItem(product)"><i class="material-icons">add_shopping_cart</i></button>
+                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="store.addItem(product); productSelected.toggle = true"><i class="material-icons">add_shopping_cart</i></button>
                         </div>
-                        <div class="mdl-card__menu">
+                        <div class="mdl-card__menu" ng-if="productSelected.toggle">
                             <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                                <i class="material-icons brand-color">info_outline</i>
+                                <i class="material-icons brand-color">done</i>
                             </button>
                         </div>
                     </div>
