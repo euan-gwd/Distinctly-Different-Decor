@@ -75,8 +75,8 @@ mdl-button--primary">
                             <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="store.addItem(product); productSelected.toggle = true"><i class="material-icons">add_shopping_cart</i></button>
                         </div>
                         <div class="mdl-card__menu" ng-if="productSelected.toggle">
-                            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                                <i class="material-icons brand-color">done</i>
+                            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" ng-click="store.removeItem(product); productSelected.toggle = false">
+                                <i class="material-icons selected-color">remove_shopping_cart</i>
                             </button>
                         </div>
                     </div>

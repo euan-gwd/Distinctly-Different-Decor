@@ -1,6 +1,9 @@
 $primary-color: #673ab7;
 $secondary-color: #FB8C00;
 $primary-bg-color: #FAEBD7;
+$gmd-green: #43A047;
+$gmd-red: #E53935;
+
 .brand {
     max-width: 100%;
     max-height: 100%;
@@ -65,6 +68,10 @@ $primary-bg-color: #FAEBD7;
 
 .material-icons.brand-color {
     color: $primary-color;
+}
+
+.material-icons.selected-color {
+    color: $gmd-red;
 }
 
 .cartTotal{
