@@ -48,6 +48,11 @@
                     <li class="mdl-menu__item">Help</li>
                     <li class="mdl-menu__item">Privacy and Terms</li>
                 </ul>
+                <!--                 <div>
+                    <h5>{{store.basket.length}} items in Cart Total {{store.getCartPrice() | currency:"R"}}</h5>
+                    <span ng-repeat="product in store.basket"></span>
+                </div>
+                <div class="mdl-layout-spacer"></div> -->
                 <!-- Shopping cart -->
                 <button id="ttcart" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored 
 mdl-button--primary">
@@ -56,7 +61,7 @@ mdl-button--primary">
                         Checkout
                     </div>
                 </button>
-                <div class="mdl-badge mdl-badge--overlap" data-badge="{{store.cartCount}}" ng-hide="store.cartCount === 0"></div>
+                <div class="mdl-badge mdl-badge--overlap" data-badge="{{store.basket.length}}" ng-hide="store.basket.length === 0"></div>
             </div>
         </header>
         <!-- end of menu -->
@@ -71,7 +76,7 @@ mdl-button--primary">
                         <div class="mdl-card__actions mdl-card--border">
                             <p class="mdl-card__title-text">{{product.price | currency:"R"}}</p>
                             <div class="mdl-layout-spacer"></div>
-                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="store.countAdd(1); store.addItem(product)"><i class="material-icons">add_shopping_cart</i></button>
+                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="store.addItem(product)"><i class="material-icons">add_shopping_cart</i></button>
                         </div>
                         <div class="mdl-card__menu">
                             <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
@@ -84,10 +89,11 @@ mdl-button--primary">
         </main>
         <footer class="mdl-mini-footer">
             <div class="mdl-mini-footer__left-section">
-                <div class="mdl-logo">
-                    Copyright 2016 All rights reserved
-                </div>
+                <!-- <div class="mdl-logo"> -->
+                    <small>Copyright 2016 All rights reserved</small>
+                <!-- </div> -->
             </div>
+            <div>Total {{store.getCartPrice() | currency:"R"}}</div>
             <div class="mdl-mini-footer__right-section">
                 Contact
                 <button id="decor-menu-top-right" class="mdl-button mdl-js-button mdl-button--icon">

@@ -6,13 +6,6 @@
         var store = this;
         store.products = storeInventory;
 
-
-        // Updates the counter badge on the shopping cart when add to cart button is clicked 
-        store.cartCount = 0;
-        store.countAdd = function(inc) {
-            store.cartCount += inc;
-        };
-
         // Add item to basket
         store.basket = [];
         store.addItem = function(product) {
@@ -27,6 +20,14 @@
                 store.basket.push(angular.extend({ quantity: 1 }, product));
             }
             console.log(store.basket);
+        };
+
+        store.getCartPrice = function() {
+            var total = 0;
+            store.basket.forEach(function(product) {
+                total += product.price * product.quantity;
+            });
+            return total;
         };
 
     });
