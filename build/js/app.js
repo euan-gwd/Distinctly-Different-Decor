@@ -5,11 +5,8 @@
     app.controller('StoreController', function() {
         var store = this;
         store.products = storeInventory;
-
-        // Add item to basket
         store.basket = [];
-        store.basket.count = 0;
-
+        // Add item to basket
         store.addItem = function(product) {
             var found = false;
             store.basket.forEach(function(item) {
@@ -22,15 +19,7 @@
                 store.basket.push(angular.extend({ quantity: 1 }, product));
             }
         };
-
-        // store.basket.counter = function(itemCount) {
-        //     store.basket.count += itemCount;
-        // };
-
-        // store.basket.limit = function(itemCountLimit) {
-        //     return (store.basket.count === itemCountLimit) ? true : false;
-        // };
-
+        // Remove item from basket
         store.removeItem = function(product) {
             var found = false;
 
@@ -48,7 +37,7 @@
                 store.basket.splice(angular.extend({ quantity: 1 }, product));
             }
         };
-
+        // Calculate totals in basket
         store.getCartPrice = function() {
             var total = 0;
 
@@ -58,35 +47,6 @@
             return total;
         };
 
-    });
-
-
-    app.controller('ChecOutController', function($scope) {
-
-        $scope.basket = [];
-
-        // Add item to basket
-        $scope.pickItem = function(data) {
-            $scope.basket.push({
-                'id': data.id,
-                'product': data.product_name,
-                'cost': data.product_cost
-            });
-        };
-
-        // Drop an item from the basket
-        $scope.dropItem = function(index) {
-            $scope.basket.splice(index, 1);
-        };
-
-        // Get the running total of the basket
-        $scope.getOrderTotal = function() {
-            var total = 0;
-            angular.forEach($scope.basket, function(item) {
-                total = parseInt(total) + parseFloat(item.cost, 2);
-            });
-            return total;
-        };
     });
 
     var storeInventory = [{
