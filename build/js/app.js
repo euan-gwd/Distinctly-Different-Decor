@@ -21,7 +21,6 @@
             if (!found) {
                 store.basket.push(angular.extend({ quantity: 1 }, product));
             }
-            console.log(store.basket);
         };
 
         // store.basket.counter = function(itemCount) {
@@ -39,8 +38,11 @@
                 if (item.id === product.id) {
                     item.quantity--;
                     found = true;
+                    if (item.quantity === 0) {
+                        return;
+                    }
                 }
-                console.log(item.quantity);
+
             });
             if (!found) {
                 store.basket.splice(angular.extend({ quantity: 1 }, product));
@@ -49,12 +51,42 @@
 
         store.getCartPrice = function() {
             var total = 0;
+
             store.basket.forEach(function(product) {
                 total += product.price * product.quantity;
             });
             return total;
         };
 
+    });
+
+
+    app.controller('ChecOutController', function($scope) {
+
+        $scope.basket = [];
+
+        // Add item to basket
+        $scope.pickItem = function(data) {
+            $scope.basket.push({
+                'id': data.id,
+                'product': data.product_name,
+                'cost': data.product_cost
+            });
+        };
+
+        // Drop an item from the basket
+        $scope.dropItem = function(index) {
+            $scope.basket.splice(index, 1);
+        };
+
+        // Get the running total of the basket
+        $scope.getOrderTotal = function() {
+            var total = 0;
+            angular.forEach($scope.basket, function(item) {
+                total = parseInt(total) + parseFloat(item.cost, 2);
+            });
+            return total;
+        };
     });
 
     var storeInventory = [{

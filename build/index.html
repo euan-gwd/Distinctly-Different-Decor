@@ -57,7 +57,7 @@ mdl-button--primary">
                         Checkout
                     </div>
                 </button>
-                <div class="mdl-badge mdl-badge--overlap" data-badge="{{store.basket.length}}" ng-if="store.basket.length"></div>
+                <div class="mdl-badge mdl-badge--overlap" data-badge="{{store.basket.length}}" ng-show="store.basket.length > 0"></div>
             </div>
         </header>
         <!-- end of menu -->
@@ -72,7 +72,6 @@ mdl-button--primary">
                         <div class="mdl-card__actions mdl-card--border">
                             <p class="mdl-card__title-text">{{product.price | currency:"R"}}</p>
                             <div class="mdl-layout-spacer"></div>
-                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="store.removeItem(product)"><i class="material-icons removeCart-color">remove_shopping_cart</i></button>
                             <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="store.addItem(product)"><i class="material-icons addCart-color">add_shopping_cart</i></button>
                         </div>
                     </div>
@@ -80,10 +79,14 @@ mdl-button--primary">
 
                 <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone" ng-repeat="product in store.basket" ng-if="store.basket.length">
                     <div class="decor-card-event mdl-card mdl-shadow--2dp">
-                        <img ng-src="{{product.image}}">
+<!--                         <img ng-src="{{product.image}}"> -->
                         <div class="mdl-badge" data-badge="x{{product.quantity}}" ng-show="product.quantity > 1"></div>
                         <div class="mdl-card__supporting-text">
                             <p>{{product.title}}</p>
+                        </div>
+                         <div class="mdl-card__actions mdl-card--border">
+                            <div class="mdl-layout-spacer"></div>
+                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="store.removeItem(product)" ng-show="product.quantity > 0"><i class="material-icons removeCart-color">remove_shopping_cart</i></button>
                         </div>
                     </div>
                 </div>
