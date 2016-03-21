@@ -1,77 +1,50 @@
 (function() {
     "use strict";
-    var app = angular.module('DDDApp', ['ui.router']);
+    var app = angular.module('DDDApp', []);
 
-    app.controller('StoreController', function() {
-        var store = this;
-        store.products = storeInventory;
-        store.basket = [];
-        // Add item to basket
-        store.addItem = function(product) {
+    app.controller('StoreController', function($scope, $http) {
+        $scope.cart = [];
+
+        // Load products from server
+        $http.get('products.json').success(function(response) {
+            $scope.products = response.products;
+        });
+
+        // Add products to basket
+        $scope.addToCart = function(product) {
             var found = false;
-            store.basket.forEach(function(item) {
+            $scope.cart.forEach(function(item) {
                 if (item.id === product.id) {
                     item.quantity++;
                     found = true;
                 }
             });
             if (!found) {
-                store.basket.push(angular.extend({ quantity: 1 }, product));
+                $scope.cart.push(angular.extend({ quantity: 1 }, product));
             }
         };
-        // Remove item from basket
-        store.removeItem = function(product) {
-            var found = false;
 
-            store.basket.forEach(function(item) {
+        //Remove product from basket
+        $scope.removeFromCart = function(product, index) {
+            $scope.cart.forEach(function(item) {
                 if (item.id === product.id) {
                     item.quantity--;
-                    found = true;
                     if (item.quantity === 0) {
-                        return;
+                        $scope.cart.splice(index, 1);
                     }
                 }
-
             });
-            if (!found) {
-                store.basket.splice(angular.extend({ quantity: 1 }, product));
-            }
-        };
-        // Calculate totals in basket
-        store.getCartPrice = function() {
-            var total = 0;
 
-            store.basket.forEach(function(product) {
+        };
+
+        // Calculate totals in basket
+        $scope.getCartPrice = function() {
+            var total = 0;
+            $scope.cart.forEach(function(product) {
                 total += product.price * product.quantity;
             });
             return total;
         };
 
     });
-
-    var storeInventory = [{
-        "id": 1,
-        "title": 'Product One',
-        "desc": 'this is the 1st box in the store',
-        "image": 'http://placehold.it/330x150',
-        "price": 1
-    }, {
-        "id": 2,
-        "title": 'Product Two',
-        "desc": 'this is the 2nd box in the store',
-        "image": 'http://placehold.it/330x150',
-        "price": 2
-    }, {
-        "id": 3,
-        "title": 'Product Three',
-        "desc": 'this is the 3rd box in the store',
-        "image": 'http://placehold.it/330x150',
-        "price": 3
-    }, {
-        "id": 4,
-        "title": 'Product Four',
-        "desc": 'this is the 4th box in the store',
-        "image": 'http://placehold.it/330x150',
-        "price": 4
-    }];
 }());

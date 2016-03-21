@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
 </head>
 
-<body ng-controller="StoreController as store">
+<body ng-controller="StoreController">
     <div class="decor-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
@@ -48,7 +48,7 @@
                     <li class="mdl-menu__item">Help</li>
                     <li class="mdl-menu__item">Privacy and Terms</li>
                 </ul>
-                <h6 class="cartTotal">Total in Cart {{store.getCartPrice() | currency:"R"}}</h6>
+                <h6 class="cartTotal">Total in Cart {{getCartPrice() | currency:"R"}}</h6>
                 <!-- Shopping cart -->
                 <button id="ttcart" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored 
 mdl-button--primary">
@@ -57,13 +57,13 @@ mdl-button--primary">
                         Checkout
                     </div>
                 </button>
-                <div class="mdl-badge mdl-badge--overlap" data-badge="{{store.basket.length}}" ng-show="store.basket.length > 0"></div>
+                <div class="mdl-badge mdl-badge--overlap" data-badge="{{cart.length}}" ng-show="cart.length > 0"></div>
             </div>
         </header>
         <!-- end of menu -->
         <main class="mdl-layout__content">
             <div class="mdl-grid">
-                <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone" ng-repeat="product in store.products | filter:productSearch track by $index">
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone" ng-repeat="product in products | filter:productSearch">
                     <div class="decor-card-event mdl-card mdl-shadow--2dp">
                         <img ng-src="{{product.image}}">
                         <div class="mdl-card__supporting-text">
@@ -72,13 +72,13 @@ mdl-button--primary">
                         <div class="mdl-card__actions mdl-card--border">
                             <p class="mdl-card__title-text">{{product.price | currency:"R"}}</p>
                             <div class="mdl-layout-spacer"></div>
-                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="store.addItem(product)"><i class="material-icons addCart-color">add_shopping_cart</i></button>
+                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="addToCart(product)"><i class="material-icons addCart-color">add_shopping_cart</i></button>
                         </div>
                     </div>
                 </div>
 
-                <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone" ng-repeat="product in store.basket" ng-if="store.basket.length">
-                    <div class="decor-card-event mdl-card mdl-shadow--2dp">
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone" ng-repeat="product in cart" ng-if="cart.length">
+                    <div class="decor-card-event mdl-card">
                         <img ng-src="{{product.image}}">
                         <div class="mdl-badge" data-badge="x{{product.quantity}}" ng-show="product.quantity > 1"></div>
                         <div class="mdl-card__supporting-text">
@@ -86,13 +86,14 @@ mdl-button--primary">
                         </div>
                          <div class="mdl-card__actions mdl-card--border">
                             <div class="mdl-layout-spacer"></div>
-                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="store.removeItem(product)" ng-show="product.quantity > 0"><i class="material-icons removeCart-color">remove_shopping_cart</i></button>
+                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="removeFromCart(product, $index)" ng-show="product.quantity > 0"><i class="material-icons removeCart-color">remove_shopping_cart</i></button>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
 </div>
+    <script src="js/jquery/jquery-2.2.2.min.js"></script>
     <script src="js/mdl/material.min.js"></script>
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-aria/angular-aria.js"></script>
