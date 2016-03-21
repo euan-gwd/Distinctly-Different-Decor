@@ -8,6 +8,8 @@
 
         // Add item to basket
         store.basket = [];
+        store.basket.count = 0;
+
         store.addItem = function(product) {
             var found = false;
             store.basket.forEach(function(item) {
@@ -22,16 +24,23 @@
             console.log(store.basket);
         };
 
+        // store.basket.counter = function(itemCount) {
+        //     store.basket.count += itemCount;
+        // };
+
+        // store.basket.limit = function(itemCountLimit) {
+        //     return (store.basket.count === itemCountLimit) ? true : false;
+        // };
+
         store.removeItem = function(product) {
-            var found = true;
+            var found = false;
 
             store.basket.forEach(function(item) {
                 if (item.id === product.id) {
                     item.quantity--;
-                    if (item.quantity === 0) {
-                        // disable button
-                    }
+                    found = true;
                 }
+                console.log(item.quantity);
             });
             if (!found) {
                 store.basket.splice(angular.extend({ quantity: 1 }, product));
@@ -49,32 +58,28 @@
     });
 
     var storeInventory = [{
-        id: 'prod1',
-        name: 'one',
-        desc: 'this is the 1st box in the store',
-        image: 'http://placehold.it/330x150',
-        price: '1',
-        soldOut: false
+        "id": 1,
+        "title": 'Product One',
+        "desc": 'this is the 1st box in the store',
+        "image": 'http://placehold.it/330x150',
+        "price": 1
     }, {
-        id: 'prod2',
-        name: 'two',
-        desc: 'this is the 2nd box in the store',
-        price: '2',
-        image: 'http://placehold.it/330x150',
-        soldOut: false
+        "id": 2,
+        "title": 'Product Two',
+        "desc": 'this is the 2nd box in the store',
+        "image": 'http://placehold.it/330x150',
+        "price": 2
     }, {
-        id: 'prod3',
-        name: 'three',
-        desc: 'this is the 3rd box in the store',
-        price: '3',
-        image: 'http://placehold.it/330x150',
-        soldOut: false
+        "id": 3,
+        "title": 'Product Three',
+        "desc": 'this is the 3rd box in the store',
+        "image": 'http://placehold.it/330x150',
+        "price": 3
     }, {
-        id: 'prod4',
-        name: 'four',
-        desc: 'this is the 4th box in the store',
-        price: '4',
-        image: 'http://placehold.it/330x150',
-        soldOut: false
+        "id": 4,
+        "title": 'Product Four',
+        "desc": 'this is the 4th box in the store',
+        "image": 'http://placehold.it/330x150',
+        "price": 4
     }];
 }());

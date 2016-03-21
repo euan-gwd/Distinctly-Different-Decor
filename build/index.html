@@ -57,7 +57,7 @@ mdl-button--primary">
                         Checkout
                     </div>
                 </button>
-                <div class="mdl-badge mdl-badge--overlap" data-badge="{{store.basket.length}}" ng-hide="store.basket.length === 0"></div>
+                <div class="mdl-badge mdl-badge--overlap" data-badge="{{store.basket.length}}" ng-if="store.basket.length"></div>
             </div>
         </header>
         <!-- end of menu -->
@@ -67,43 +67,29 @@ mdl-button--primary">
                     <div class="decor-card-event mdl-card mdl-shadow--2dp">
                         <img ng-src="{{product.image}}">
                         <div class="mdl-card__supporting-text">
-                            {{product.name}}
+                            <p>{{product.title}}</p>
                         </div>
                         <div class="mdl-card__actions mdl-card--border">
                             <p class="mdl-card__title-text">{{product.price | currency:"R"}}</p>
                             <div class="mdl-layout-spacer"></div>
-                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="store.removeItem(product); selectedProduct.toggle = false"><i class="material-icons removeCart-color">remove_shopping_cart</i></button>
-                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="store.addItem(product); selectedProduct.toggle = true"><i class="material-icons addCart-color">add_shopping_cart</i></button>
+                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="store.removeItem(product)"><i class="material-icons removeCart-color">remove_shopping_cart</i></button>
+                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="store.addItem(product)"><i class="material-icons addCart-color">add_shopping_cart</i></button>
                         </div>
-                        <div class="mdl-card__menu" ng-show="selectedProduct.toggle">
-                                <i class="material-icons selected-color">done</i>
-                        </div>
-                        <div class="mdl-card__menu" ng-hide="!selectedProduct.toggle">
-                                <i class="material-icons selected-color">done</i>
+                    </div>
+                </div>
+
+                <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone" ng-repeat="product in store.basket" ng-if="store.basket.length">
+                    <div class="decor-card-event mdl-card mdl-shadow--2dp">
+                        <img ng-src="{{product.image}}">
+                        <div class="mdl-badge" data-badge="x{{product.quantity}}" ng-show="product.quantity > 1"></div>
+                        <div class="mdl-card__supporting-text">
+                            <p>{{product.title}}</p>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
-        <footer class="mdl-mini-footer">
-            <div class="mdl-mini-footer__left-section">
-                <!-- <div class="mdl-logo"> -->
-                <small>Copyright 2016 All rights reserved</small>
-                <!-- </div> -->
-            </div>
-            <div class="mdl-mini-footer__right-section">
-                Contact
-                <button id="decor-menu-top-right" class="mdl-button mdl-js-button mdl-button--icon">
-                    <i class="material-icons">share</i>
-                </button>
-                <ul class="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for="decor-menu-top-right">
-                    <li class="mdl-menu__item">Facebook</li>
-                    <li class="mdl-menu__item">Twitter</li>
-                    <li class="mdl-menu__item">Email</li>
-                </ul>
-            </div>
-        </footer>
-    </div>
+</div>
     <script src="js/mdl/material.min.js"></script>
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-aria/angular-aria.js"></script>
