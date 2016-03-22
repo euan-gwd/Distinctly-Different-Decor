@@ -57,7 +57,7 @@ mdl-button--primary">
                         Checkout
                     </div>
                 </button>
-                <div class="mdl-badge mdl-badge--overlap" data-badge="{{getCartTotals()}}" ng-show="cart.length > 0"></div>
+                <div class="mdl-badge mdl-badge--overlap" data-badge="{{getCartTotals()}}" ng-if="cart.products.length"></div>
             </div>
         </header>
         <!-- end of menu -->
@@ -79,16 +79,17 @@ mdl-button--primary">
             </div>
             <!-- Product listing -->
             <div class="mdl-grid">
-                <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-phone" ng-repeat="product in cart" ng-if="cart.length">
+                <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-phone" ng-repeat="product in cart.products" ng-if="cart.products.length">
+                    {{getCartTotals()}}
                     <div class="decor-card-event mdl-card">
                         <img ng-src="{{product.image}}">
-                        <div class="mdl-badge" data-badge="x{{product.quantity}}" ng-show="product.quantity > 1"></div>
+                        <div class="mdl-badge" data-badge="x{{product.quantity}}" ng-if="product.quantity > 0"></div>
                         <div class="mdl-card__supporting-text">
                             <p>{{product.title}}</p>
                         </div>
                         <div class="mdl-card__actions mdl-card--border">
                             <div class="mdl-layout-spacer"></div>
-                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="removeFromCart(product, $index)" ng-show="product.quantity > 0"><i class="material-icons removeCart-color">remove_shopping_cart</i></button>
+                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="removeFromCart(product,$index)" ng-show="product.quantity > 0"><i class="material-icons removeCart-color">remove_shopping_cart</i></button>
                         </div>
                     </div>
                 </div>
