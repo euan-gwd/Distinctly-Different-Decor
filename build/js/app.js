@@ -54,11 +54,8 @@
 
         // Calculate total number of items in Cart
         $scope.getCartTotals = function() {
-            var cartCount,
-                totalInCart = 0;
+            var totalInCart = 0;
 
-            cartCount = $scope.cart.products.length;
-            console.log($scope.cart.products);
             $scope.cart.products.forEach(function(product) {
                 totalInCart = parseInt(totalInCart) + product.quantity;
             });
