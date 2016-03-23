@@ -4,7 +4,6 @@ $primary-bg-color: #FAEBD7;
 $gmd-green: #43A047;
 $gmd-red: #E53935;
 $gmd-grey: #BDBDBD;
-
 .brand {
     max-width: 100%;
     max-height: 100%;
@@ -70,9 +69,11 @@ $gmd-grey: #BDBDBD;
 .material-icons.brand-color {
     color: $primary-color;
 }
+
 .material-icons.addCart-color {
     color: $primary-color;
 }
+
 .material-icons.removeCart-color {
     color: $gmd-grey;
 }
@@ -81,7 +82,7 @@ $gmd-grey: #BDBDBD;
     color: $gmd-green;
 }
 
-.cartTotal{
+.cartTotal {
     padding: 0 3vw 0 2vw;
     color: $secondary-color;
 }

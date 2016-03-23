@@ -33,7 +33,7 @@
                 if (item.id === product.id) {
                     item.quantity--;
                     found = true;
-                    if (item.quantity == 0) {
+                    if (item.quantity === 0) {
                         $scope.cart.products.splice(index, 1);
                     }
                 }

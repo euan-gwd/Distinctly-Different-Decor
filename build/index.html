@@ -76,28 +76,29 @@ mdl-button--primary">
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Product listing -->
-            <div class="mdl-grid">
-                <div class="mdl-cell mdl-cell--2-col mdl-cell--2-col-tablet mdl-cell--2-col-phone" ng-repeat="product in cart.products" ng-if="cart.products.length">
-                    {{getCartTotals()}}
-                    <div class="decor-card-event mdl-card">
-                        <img ng-src="{{product.image}}">
-                        <div class="mdl-badge" data-badge="x{{product.quantity}}" ng-if="product.quantity > 0"></div>
-                        <div class="mdl-card__supporting-text">
-                            <p>{{product.title}}</p>
-                        </div>
-                        <div class="mdl-card__actions mdl-card--border">
-                            <div class="mdl-layout-spacer"></div>
-                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="removeFromCart(product,$index)" ng-show="product.quantity > 0"><i class="material-icons removeCart-color">remove_shopping_cart</i></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Shopping Cart -->
+            </div>   <!-- end Product listing -->
+            <div class="mdl-grid"> <!-- Start shopping cart  -->
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-tablet mdl-cell--6-col-phone">
+                    <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" ng-if="cart.products.length">
+                        <thead>
+                            <tr>
+                                <th class="mdl-data-table__cell--non-numeric">Product</th>
+                                <th>Name</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="product in cart.products">
+                                <td class="mdl-data-table__cell--non-numeric"><img ng-src="{{product.image}}"></td>
+                                <td><div class="mdl-badge" data-badge="x{{product.quantity}}" ng-if="product.quantity > 0">{{product.title}}</div></td>
+                                <td><button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="removeFromCart(product,$index)" ng-show="product.quantity > 0"><i class="material-icons removeCart-color">remove_shopping_cart</i></button></td>
+                            </tr>
+                        </tbody>  
+                    </table>  <!-- End table -->
+                </div> <!-- end shopping cart cell -->
+            </div>   <!-- end shopping cart grid -->
         </main>
     </div>
-    <script src="js/jquery/jquery-2.2.2.min.js"></script>
     <script src="js/mdl/material.min.js"></script>
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-aria/angular-aria.js"></script>
