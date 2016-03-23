@@ -71,15 +71,11 @@ $gmd-grey: #BDBDBD;
 }
 
 .material-icons.addCart-color {
-    color: $primary-color;
+    color: $gmd-green;
 }
 
 .material-icons.removeCart-color {
-    color: $gmd-grey;
-}
-
-.material-icons.selected-color {
-    color: $gmd-green;
+    color: $gmd-red;
 }
 
 .cartTotal {
