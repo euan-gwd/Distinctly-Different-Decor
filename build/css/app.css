@@ -66,3 +66,9 @@ img {
 .cartTotal {
   padding: 0 3vw 0 2vw;
   color: #FB8C00; }
+
+.cart {
+  background-color: #FAEBD7; }
+
+.cartHeader {
+  background-color: #BDBDBD; }

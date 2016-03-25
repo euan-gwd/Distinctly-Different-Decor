@@ -24,7 +24,22 @@
         };
     });
 
-    app.controller('StoreController', function($scope, $state, dataService) {
+    app.factory('dataShare', function($rootScope, $timeout) {
+        var service = {};
+        service.data = false;
+        service.sendData = function(data) {
+            this.data = data;
+            $timeout(function() {
+                $rootScope.$broadcast('data_shared');
+            }, 100);
+        };
+        service.getData = function() {
+            return this.data;
+        };
+        return service;
+    });
+
+    app.controller('StoreController', function($scope, $state, dataService, dataShare) {
         $scope.cart = {
             products: []
         };
@@ -87,13 +102,22 @@
         $scope.cartCheckOut = function() {
             var checkout = $scope.cart;
             window.sessionStorage.checkout = angular.toJson(checkout);
+            dataShare.sendData($scope.cart);
             $state.go('checkout');
         };
     });
 
-    app.controller('CartController', function($scope, $state) {
-        var cartItems = angular.fromJson(window.sessionStorage.checkout || '[]');
-        $scope.cart = cartItems;
+    app.controller('CartController', function($scope, $state, dataShare) {
+        // var cartItems = angular.fromJson(window.sessionStorage.checkout || '[]');
+        // $scope.cart = cartItems;
+
+        $scope.cart = {
+            products: []
+        };
+        $scope.$on('data_shared', function() {
+            var currentCart = dataShare.getData();
+            $scope.cart = currentCart;
+        });
 
         // Add products to basket
         $scope.addToCart = function(product) {
