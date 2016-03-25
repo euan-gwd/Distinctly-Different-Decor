@@ -1,6 +1,21 @@
 (function() {
     "use strict";
-    var app = angular.module('DDDApp', []);
+    var app = angular.module('DDDApp', ['ui.router']);
+
+    app.config(function($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state("home", {
+                url: "",
+                templateUrl: "js/views/home.html",
+                controller: "StoreController"
+            })
+            .state("checkout", {
+                url: "/checkout",
+                templateUrl: "js/views/checkout.html",
+                controller: "StoreController"
+            });
+        $urlRouterProvider.otherwise('');
+    });
 
     app.controller('StoreController', function($scope, $http) {
         $scope.cart = {
@@ -61,5 +76,12 @@
             });
             return totalInCart;
         };
+        // Cart Checkout
+
+        $scope.cartCheckOut = function() {
+          var checkout = $scope.cart.products;
+          console.log(checkout);  
+        };
     });
+
 }());
