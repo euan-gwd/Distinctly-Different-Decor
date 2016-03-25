@@ -1,4 +1,4 @@
-{"products": [
+ [
 	{
 		"id": 1,
 		"title": "One",
@@ -35,5 +35,4 @@
 		"image": "images/ImagePH-06.svg",
 		"price": 6
 	}
-
-]}
+]
