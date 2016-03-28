@@ -1,6 +1,6 @@
 (function() {
     "use strict";
-    var app = angular.module('DDDApp', ['ui.router']);
+    var app = angular.module('DDDApp', ['ui.router','DDDApp.controllers']);
 
     app.config(function($stateProvider, $urlRouterProvider) {
         $stateProvider
@@ -24,151 +24,128 @@
         };
     });
 
-    app.factory('dataShare', function($rootScope, $timeout) {
-        var service = {};
-        service.data = false;
-        service.sendData = function(data) {
-            this.data = data;
-            $timeout(function() {
-                $rootScope.$broadcast('data_shared');
-            }, 100);
-        };
-        service.getData = function() {
-            return this.data;
-        };
-        return service;
-    });
+    // app.controller('StoreController', function($scope, $state, dataService) {
+    //     $scope.cart = {
+    //         products: []
+    //     };
+    //     // Load products from server
+    //     dataService.getProducts(function(response) {
+    //         $scope.products = response.data;
+    //     });
 
-    app.controller('StoreController', function($scope, $state, dataService, dataShare) {
-        $scope.cart = {
-            products: []
-        };
-        // Load products from server
-        dataService.getProducts(function(response) {
-            $scope.products = response.data;
-        });
+    //     // Add products to basket
+    //     $scope.addToCart = function(product) {
+    //         var found = false;
+    //         $scope.cart.products.forEach(function(item) {
+    //             if (item.id === product.id) {
+    //                 item.quantity++;
+    //                 found = true;
+    //             }
+    //         });
+    //         if (!found) {
+    //             $scope.cart.products.push(angular.extend({ quantity: 1 }, product));
+    //         }
+    //     };
 
-        // Add products to basket
-        $scope.addToCart = function(product) {
-            var found = false;
-            $scope.cart.products.forEach(function(item) {
-                if (item.id === product.id) {
-                    item.quantity++;
-                    found = true;
-                }
-            });
-            if (!found) {
-                $scope.cart.products.push(angular.extend({ quantity: 1 }, product));
-            }
-        };
+    //     //Remove product from basket
+    //     $scope.removeFromCart = function(product, index) {
+    //         var found = false;
+    //         $scope.cart.products.forEach(function(item) {
+    //             if (item.id === product.id) {
+    //                 item.quantity--;
+    //                 found = true;
+    //                 if (item.quantity === 0) {
+    //                     $scope.cart.products.splice(index, 1);
+    //                 }
+    //             }
+    //         });
+    //         if (!found) {
+    //             $scope.cart.products.splice(angular.extend({ quantity: -1 }, product));
+    //         }
+    //     };
 
-        //Remove product from basket
-        $scope.removeFromCart = function(product, index) {
-            var found = false;
-            $scope.cart.products.forEach(function(item) {
-                if (item.id === product.id) {
-                    item.quantity--;
-                    found = true;
-                    if (item.quantity === 0) {
-                        $scope.cart.products.splice(index, 1);
-                    }
-                }
-            });
-            if (!found) {
-                $scope.cart.products.splice(angular.extend({ quantity: -1 }, product));
-            }
-        };
+    //     // Calculate total price for products in Cart
+    //     $scope.getCartPrice = function() {
+    //         var total = 0;
+    //         $scope.cart.products.forEach(function(product) {
+    //             total += product.price * product.quantity;
+    //         });
+    //         return total;
+    //     };
 
-        // Calculate total price for products in Cart
-        $scope.getCartPrice = function() {
-            var total = 0;
-            $scope.cart.products.forEach(function(product) {
-                total += product.price * product.quantity;
-            });
-            return total;
-        };
+    //     // Calculate total number of items in Cart
+    //     $scope.getCartTotals = function() {
+    //         var totalInCart = 0;
 
-        // Calculate total number of items in Cart
-        $scope.getCartTotals = function() {
-            var totalInCart = 0;
+    //         $scope.cart.products.forEach(function(product) {
+    //             totalInCart = parseInt(totalInCart) + product.quantity;
+    //         });
+    //         return totalInCart;
+    //     };
 
-            $scope.cart.products.forEach(function(product) {
-                totalInCart = parseInt(totalInCart) + product.quantity;
-            });
-            return totalInCart;
-        };
+    //     // Cart Checkout
+    //     $scope.cartCheckOut = function() {
+    //         var checkout = $scope.cart;
+    //         window.sessionStorage.checkout = angular.toJson(checkout);
+    //         $state.go('checkout');
+    //     };
+    // });
 
-        // Cart Checkout
-        $scope.cartCheckOut = function() {
-            var checkout = $scope.cart;
-            window.sessionStorage.checkout = angular.toJson(checkout);
-            dataShare.sendData($scope.cart);
-            $state.go('checkout');
-        };
-    });
+    // app.controller('CartController', function($scope, $state) {
+    //     var cartItems = angular.fromJson(window.sessionStorage.checkout || '[]');
+    //     $scope.cart = cartItems;
 
-    app.controller('CartController', function($scope, $state, dataShare) {
-        // var cartItems = angular.fromJson(window.sessionStorage.checkout || '[]');
-        // $scope.cart = cartItems;
 
-        $scope.cart = {
-            products: []
-        };
-        $scope.$on('data_shared', function() {
-            var currentCart = dataShare.getData();
-            $scope.cart = currentCart;
-        });
+    //     // Add products to basket
+    //     $scope.addToCart = function(product) {
+    //         var found = false;
+    //         $scope.cart.products.forEach(function(item) {
+    //             if (item.id === product.id) {
+    //                 item.quantity++;
+    //                 found = true;
+    //             }
+    //         });
+    //         if (!found) {
+    //             $scope.cart.products.push(angular.extend({ quantity: 1 }, product));
+    //         }
+    //     };
 
-        // Add products to basket
-        $scope.addToCart = function(product) {
-            var found = false;
-            $scope.cart.products.forEach(function(item) {
-                if (item.id === product.id) {
-                    item.quantity++;
-                    found = true;
-                }
-            });
-            if (!found) {
-                $scope.cart.products.push(angular.extend({ quantity: 1 }, product));
-            }
-        };
+    //     //Remove product from basket
+    //     $scope.removeFromCart = function(product, index) {
+    //         var found = false;
+    //         $scope.cart.products.forEach(function(item) {
+    //             if (item.id === product.id) {
+    //                 item.quantity--;
+    //                 found = true;
+    //                 if (item.quantity === 0) {
+    //                     $scope.cart.products.splice(index, 1);
+    //                 }
+    //             }
+    //         });
+    //         if (!found) {
+    //             $scope.cart.products.splice(angular.extend({ quantity: -1 }, product));
+    //         }
+    //     };
 
-        //Remove product from basket
-        $scope.removeFromCart = function(product, index) {
-            var found = false;
-            $scope.cart.products.forEach(function(item) {
-                if (item.id === product.id) {
-                    item.quantity--;
-                    found = true;
-                    if (item.quantity === 0) {
-                        $scope.cart.products.splice(index, 1);
-                    }
-                }
-            });
-            if (!found) {
-                $scope.cart.products.splice(angular.extend({ quantity: -1 }, product));
-            }
-        };
+    //     // Calculate total price for products in Cart
+    //     $scope.getCartPrice = function() {
+    //         var total = 0;
+    //         $scope.cart.products.forEach(function(product) {
+    //             total += product.price * product.quantity;
+    //         });
+    //         return total;
+    //     };
 
-        // Calculate total price for products in Cart
-        $scope.getCartPrice = function() {
-            var total = 0;
-            $scope.cart.products.forEach(function(product) {
-                total += product.price * product.quantity;
-            });
-            return total;
-        };
+    //     // Calculate total number of items in Cart
+    //     $scope.getCartTotals = function() {
+    //         var totalInCart = 0;
 
-        // Calculate total number of items in Cart
-        $scope.getCartTotals = function() {
-            var totalInCart = 0;
+    //         $scope.cart.products.forEach(function(product) {
+    //             totalInCart = parseInt(totalInCart) + product.quantity;
+    //         });
+    //         return totalInCart;
+    //     };
 
-            $scope.cart.products.forEach(function(product) {
-                totalInCart = parseInt(totalInCart) + product.quantity;
-            });
-            return totalInCart;
-        };
-
-    });
+    // });
 
 }());
