@@ -4,7 +4,9 @@ $primary-bg-color: #FAEBD7;
 $gmd-green: #43A047;
 $gmd-red: #E53935;
 $gmd-grey: #d3d3d3;
-$gmd-white: #f8f8ff;
+$gmd-white: #ffffff;
+$gmd-offWhite: #f8f8ff;
+
 .brand {
     max-width: 100%;
     max-height: 100%;
@@ -74,6 +76,11 @@ img {
     color: $gmd-red;
 }
 
+.cart-summary {
+    background-color: #fff;
+    padding-bottom: .25vh;
+}
+
 .cartTotal {
     padding: 0 3vw 0 2vw;
     color: $secondary-color;
@@ -93,13 +100,14 @@ img {
 }
 
 td {
-    text-align: right;
+    text-align: center;
 }
 
 .cartRow {
-    background-color: $gmd-white;
+    background-color: $gmd-offWhite;
 }
 
 .cartRow:hover {
     background-color: #fdf5e6;
 }
+

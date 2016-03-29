@@ -56,6 +56,10 @@ img {
 .material-icons.removeCart-color {
   color: #E53935; }
 
+.cart-summary {
+  background-color: #fff;
+  padding-bottom: .25vh; }
+
 .cartTotal {
   padding: 0 3vw 0 2vw;
   color: #FB8C00; }
@@ -71,7 +75,7 @@ img {
   color: #FB8C00; }
 
 td {
-  text-align: right; }
+  text-align: center; }
 
 .cartRow {
   background-color: #f8f8ff; }
