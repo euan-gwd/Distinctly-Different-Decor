@@ -3,9 +3,8 @@ $secondary-color: #FB8C00;
 $primary-bg-color: #FAEBD7;
 $gmd-green: #43A047;
 $gmd-red: #E53935;
-$gmd-grey: #BDBDBD;
-$gmd-white: AntiqueWhite;
-
+$gmd-grey: #d3d3d3;
+$gmd-white: #f8f8ff;
 .brand {
     max-width: 100%;
     max-height: 100%;
@@ -31,7 +30,7 @@ img {
 }
 
 .decor-card-event {
-    background: $gmd-white;
+    background: $primary-bg-color;
     max-width: 100%;
     max-height: 100%;
 }
@@ -47,17 +46,8 @@ img {
     border-color: rgba(255, 255, 255, 0.2);
 }
 
-.mdl-mini-footer {
-    background-color: $primary-bg-color;
-    color: $primary-color;
-}
-
 .mdl-logo {
     color: $primary-color;
-}
-
-.mdl-mini-footer {
-    padding: 8px 8px 0;
 }
 
 .mdl-card__title-text {
@@ -89,10 +79,27 @@ img {
     color: $secondary-color;
 }
 
-.cart {
+.cartHeader {
     background-color: $primary-bg-color;
 }
 
-.cartHeader {
-    background-color: $gmd-grey;
+.cartImage {
+    max-width: 25%;
+}
+
+.cartGrandTotal {
+    text-align: right;
+    color: $secondary-color;
+}
+
+td {
+    text-align: right;
+}
+
+.cartRow {
+    background-color: $gmd-white;
+}
+
+.cartRow:hover {
+    background-color: #fdf5e6;
 }
