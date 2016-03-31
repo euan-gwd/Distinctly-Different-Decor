@@ -1,0 +1,61 @@
+<div class="decor-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <div>
+                <img class="brand" src="images/D3Logo.svg" alt="brand logo">
+            </div>
+            <div class="mdl-layout-spacer"></div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                  mdl-textfield--floating-label mdl-textfield--align-right">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
+                    <i id="ttsearch" class="material-icons">search</i>
+                    <div class="mdl-tooltip mdl-tooltip--left" for="ttsearch">
+                        Search
+                    </div>
+                </label>
+                <div class="mdl-textfield__expandable-holder">
+                    <input class="mdl-textfield__input" type="text" ng-model="productSearch" id="fixed-header-drawer-exp" placeholder="filter items by search">
+                </div>
+            </div>
+        </div>
+        <div class="mdl-layout__header-row">
+            <button id="menu-lower-left" class="mdl-button mdl-js-button">
+                <i id="ttmenu" class="material-icons brand-color">more_vert</i>
+                <div class="mdl-tooltip mdl-tooltip--right" for="ttmenu">
+                    Menu
+                </div>
+            </button>
+            <div class="mdl-layout-spacer"></div>
+            <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="menu-lower-left">
+                <li class="mdl-menu__item">About</li>
+                <li class="mdl-menu__item">Contact</li>
+                <li class="mdl-menu__item">Privacy and Terms</li>
+            </ul>
+            <h6 class="cartTotal">Total in Cart {{getCartPrice() | currency:"R"}}</h6>
+            <button id="ttcart" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-button--primary" ng-click="cartCheckOut()">
+                <i class="material-icons">shopping_cart</i>
+                <div class="mdl-tooltip mdl-tooltip" for="ttcart">
+                    Checkout
+                </div>
+            </button>
+            <div class="mdl-badge mdl-badge--overlap" data-badge="{{getCartTotals()}}" ng-if="cart.products.length"></div>
+        </div>
+    </header>
+    <main class="mdl-layout__content">
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone" ng-repeat="product in products | filter:productSearch">
+                <div class="decor-card-event mdl-card mdl-shadow--2dp">
+                    <img ng-src="{{product.image}}">
+                    <div class="mdl-card__supporting-text">
+                        <p>{{product.title}}</p>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <p class="mdl-card__title-text">{{product.price | currency:"R"}}</p>
+                        <div class="mdl-layout-spacer"></div>
+                        <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="addToCart(product)"><i class="material-icons brand-color">add_shopping_cart</i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
