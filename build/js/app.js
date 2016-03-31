@@ -24,4 +24,11 @@
         };
     });
 
+    app.service('emailService', function($http) {
+        var currentCart = [];
+        this.getProducts = function(callback) {
+            $http.get('products.json').then(callback);
+        };
+    });
+
 }());
