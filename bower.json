@@ -14,9 +14,5 @@
     "bower_components",
     "test",
     "tests"
-  ],
-  "dependencies": {
-    "angular-material": "^1.0.6",
-    "ngCart": "ngcart#^1.0.0"
-  }
+  ]
 }

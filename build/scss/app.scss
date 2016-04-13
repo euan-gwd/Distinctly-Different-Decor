@@ -1,15 +1,15 @@
 $primary-color: #673ab7;
-$secondary-color: #FB8C00;
-$primary-bg-color: #FAEBD7;
-$gmd-green: #43A047;
-$gmd-red: #E53935;
+$secondary-color: #fb8c00;
+$primary-bg-color: #faebd7;
+$gmd-green: #43a047;
+$gmd-red: #e53935;
 $gmd-grey: #d3d3d3;
-$gmd-white: #ffffff;
-$gmd-offWhite: #f8f8ff;
+$gmd-white: #fff;
+$gmd-offwhite: #f8f8ff;
 .brand {
-    max-width: 100%;
-    max-height: 100%;
     height: 5vh;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 img {
@@ -26,14 +26,14 @@ img {
 
 .decor-layout .mdl-layout__header,
 .decor-layout .mdl-layout__drawer-button {
-    color: $primary-color;
     background-color: $primary-bg-color;
+    color: $primary-color;
 }
 
 .decor-card-event {
     background: $primary-bg-color;
-    max-width: 100%;
     max-height: 100%;
+    max-width: 100%;
 }
 
 .mdl-card {
@@ -41,10 +41,10 @@ img {
 }
 
 .mdl-card__actions {
-    display: flex;
+    border-color: rgba(255, 255, 255, .2);
     box-sizing: border-box;
+    display: flex;
     justify-content: space-between;
-    border-color: rgba(255, 255, 255, 0.2);
 }
 
 .mdl-logo {
@@ -87,8 +87,8 @@ table {
 }
 
 .cartTotal {
-    padding: 0 3vw 0 2vw;
     color: $secondary-color;
+    padding: 0 3vw 0 2vw;
 }
 
 .cartHeader {
@@ -101,8 +101,8 @@ table {
 }
 
 .cartGrandTotal {
-    text-align: center;
     color: $secondary-color;
+    text-align: center;
 }
 
 td,
@@ -113,9 +113,19 @@ h5,
 }
 
 .cartRow {
-    background-color: $gmd-offWhite;
+    background-color: $gmd-offwhite;
 }
 
 .cartRow:hover {
     background-color: #fdf5e6;
+}
+
+.mdl-textfield__input:focus {
+    border-bottom: 2px solid $primary-color;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+}
+
+input:focus {
+    outline: 0;
 }
