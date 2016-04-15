@@ -1,15 +1,10 @@
 var gulp = require('gulp'),
-  sass = require('gulp-sass'),
-  prefix = require('gulp-autoprefixer'),
-  browserSync = require('browser-sync'),
-  reload = browserSync.reload,
-  plumber = require('gulp-plumber'),
-  runSequence = require('run-sequence'),
-  imagemin = require('gulp-imagemin'),
-  cssnano = require('gulp-cssnano'),
-  cache = require('gulp-cache'),
-  uglify = require('gulp-uglify'),
-  nodemon = require('gulp-nodemon');
+	  sass = require('gulp-sass'),
+	  prefix = require('gulp-autoprefixer'),
+	  browserSync = require('browser-sync'),
+	  reload = browserSync.reload,
+	  plumber = require('gulp-plumber'),
+	  nodemon = require('gulp-nodemon');
 
 // -----------------
 // Development Tasks 
