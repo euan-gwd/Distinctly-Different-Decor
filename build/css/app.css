@@ -103,14 +103,13 @@ h5,
   margin: auto; }
   .css-form input {
     outline: 0; }
-    .css-form input :focus {
-      border-bottom: 2px solid #673ab7; }
-  .css-form .mdl-textfield__input.ng-dirty:focus {
-    border-bottom: 2px solid #673ab7;
+  .css-form textarea {
     outline: 0; }
   .css-form .mdl-textfield__input.ng-pristine.ng-untouched {
     border-bottom: 1px solid #d3d3d3; }
   .css-form .mdl-textfield__input.ng-touched:focus {
+    border-bottom: 2px solid #673ab7; }
+  .css-form .mdl-textfield__input.ng-pristine:focus {
     border-bottom: 2px solid #673ab7; }
   .css-form .mdl-textfield__input.ng-invalid {
     border-bottom: 2px solid #e53935;

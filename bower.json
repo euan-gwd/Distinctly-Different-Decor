@@ -13,6 +13,14 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
-  ]
+    "tests",
+    "build/bower_components/"
+  ],
+  "dependencies": {
+    "angular-animate": "^1.4.8",
+    "angular-aria": "^1.4.8",
+    "angular-route": "^1.5.0",
+    "angular": "^1.5.4",
+    "angular-ui-router": "^0.2.18"
+  }
 }

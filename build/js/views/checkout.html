@@ -60,28 +60,22 @@
                         </tbody>
                     </table>
                     <div class="mdl-card__supporting-text">
-                        <form name="custForm" novalidate class="css-form">
+                        <form name="customerForm" novalidate class="css-form">
                             <h5>Your Details:</h5>
-                            <div class="mdl-textfield mdl-js-textfield">
-                                <input class="mdl-textfield__input" type="text" id="Name" placeholder="Name..." ng-model="cust.name" pattern="[A-Z,a-z, ]*" required="">
-                                <span class="mdl-textfield__error" ng-show="custForm.Name.$error.required">Letters and spaces only</span>
+                            <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-invalid': customerForm.Email.$touched && customerForm.Email.$invalid }">
+                                <input class="mdl-textfield__input" type="text" id="Name" placeholder="Name..." ng-model="customer.name" pattern="[A-Z,a-z, ]*" ng-minlength="3" required>
                             </div>
-                            <div class="mdl-textfield mdl-js-textfield">
-                                <input class="mdl-textfield__input" type="number" id="Phone" placeholder="Phone..." ng-model="cust.tel" ng-minlength="10" ng-maxlength="10" required="">
-                                <span ng-show="custForm.Phone.$error.required">Numbers only</span>
-                                <span ng-show="custForm.Phone.$error.ngMinLength">Invalid phone</span>
+                            <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-valid': customerForm.Name.$touched && customerForm.Name.$valid }">
+                                <input class="mdl-textfield__input" type="number" id="Phone" placeholder="Phone..." ng-model="customer.tel" ng-minlength="10" ng-maxlength="10" required="">
                             </div>
-                            <div class="mdl-textfield mdl-js-textfield">
-                                <input class="mdl-textfield__input" type="email" id="Email" placeholder="Email..." ng-model="cust.Email" required="">
-                                <span ng-show="custForm.Email.$error.required">Email Required</span>
-                                <span ng-show="custForm.Email.$invalid">This is not a valid email.</span>
+                            <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-invalid': customerForm.Email.$touched && customerForm.Email.$invalid }">
+                                <input class="mdl-textfield__input" type="email" id="Email" placeholder="Email..." ng-model="customer.Email" required="">
                             </div>
-                            <div class="mdl-textfield mdl-js-textfield">
-                                <textarea class="mdl-textfield__input" type="text" rows="3" id="DelAddr" placeholder="Delivery Address..." ng-model="cust.DelAdd" required=""></textarea>
-                                <span ng-show="custForm.DelAddr.$error.required">Delivery Address is Required</span>
+                            <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-invalid': customerForm.DelAddr.$touched && customerForm.DelAddr.$invalid }">
+                                <textarea class="mdl-textfield__input" type="text" rows="3" id="DelAddr" placeholder="Delivery Address..." ng-model="customer.DelAdd" ng-minlength="3" required=""></textarea>
                             </div>
                             <p>
-                                <button id="ttCheckOut" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-button--primary" ng-click="show">
+                                <button id="ttCheckOut" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-button--primary">
                                     Confirm Order
                                     <div class="mdl-tooltip mdl-tooltip" for="ttCheckOut">
                                         Confirm Order
@@ -90,7 +84,7 @@
                             </p>
                         </form>
                     </div>
-                    {{cust}}
+                    {{customer}}
                 </div>
             </div>
         </div>

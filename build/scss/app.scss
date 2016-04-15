@@ -136,14 +136,9 @@ h5,
 
   input {
     outline: 0;
-
-    :focus {
-      border-bottom: 2px solid $primary-color;
-    }
   }
 
-  .mdl-textfield__input.ng-dirty:focus {
-    border-bottom: 2px solid $primary-color;
+  textarea {
     outline: 0;
   }
 
@@ -152,6 +147,10 @@ h5,
   }
 
   .mdl-textfield__input.ng-touched:focus {
+    border-bottom: 2px solid $primary-color;
+  }
+
+  .mdl-textfield__input.ng-pristine:focus {
     border-bottom: 2px solid $primary-color;
   }
 
