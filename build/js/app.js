@@ -1,21 +1,34 @@
 (function() {
-    var app = angular.module('DDDApp', ['ui.router']);
+    "use strict";
+    var app = angular.module('DDDApp', ['ui.router','DDDApp.controllers']);
 
-    app.controller('MainCtrl', ['$scope', function($scope) {
-        $scope.list = [
-            { name: 'one', desc: 'this is the 1st box in the store', price: '1' },
-            { name: 'two', desc: 'this is the 2nd box in the store', price: '2' },
-            { name: 'three', desc: 'this is the 3rd box in the store', price: '3' },
-            { name: 'four', desc: 'this is the 4th box in the store', price: '4' }
-        ];
+    app.config(function($stateProvider, $urlRouterProvider) {
+        $stateProvider
+            .state("home", {
+                url: "",
+                templateUrl: "js/views/home.html",
+                controller: "StoreController"
+            })
+            .state("checkout", {
+                url: "/checkout",
+                templateUrl: "js/views/checkout.html",
+                controller: "CartController"
+            });
+        $urlRouterProvider.otherwise('');
+    });
 
-        $scope.counter = 0;
-        $scope.countadd = function(inc) {
-        	$scope.counter += inc;
+    app.service('dataService', function($http) {
+        var currentCart = [];
+        this.getProducts = function(callback) {
+            $http.get('products.json').then(callback);
         };
-        $scope.countremove = function(inc) {
-        	$scope.counter -= inc;
-        };
+    });
 
-    }]);
+    app.service('emailService', function($http) {
+        var currentCart = [];
+        this.getProducts = function(callback) {
+            $http.get('products.json').then(callback);
+        };
+    });
+
 }());

@@ -1,55 +1,101 @@
 .brand {
-  max-width: 100%;
+  height: 5vh;
   max-height: 100%;
-  height: 8vh; }
+  max-width: 100%; }
+
+img {
+  max-width: 100%; }
 
 .mdl-layout__header-row {
-  padding: .25vh 3vw 0 2vw; }
+  padding: .25vh 3vw .25vh 2vw; }
 
 .decor-layout {
   background: url("../images/seamless_paper_texture.png"); }
 
 .decor-layout .mdl-layout__header,
 .decor-layout .mdl-layout__drawer-button {
-  color: #673ab7;
-  background-color: #FAEBD7; }
+  background-color: #faebd7;
+  color: #673ab7; }
 
 .decor-card-event {
-  background: AntiqueWhite;
-  max-width: 100%;
-  max-height: 100%; }
+  background: #faebd7;
+  max-height: 100%;
+  max-width: 100%; }
 
 .mdl-card {
   width: auto; }
 
 .mdl-card__actions {
+  border-color: rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  box-sizing: border-box;
   -webkit-justify-content: space-between;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  border-color: rgba(255, 255, 255, 0.2); }
-
-.mdl-mini-footer {
-  background-color: #FAEBD7;
-  color: #673ab7; }
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
 
 .mdl-logo {
-  color: #673ab7; }
-
-.mdl-mini-footer {
-  padding: 8px 8px 0; }
+  color: #673ab7;
+  max-width: 10vw; }
 
 .mdl-card__title-text {
-  color: #FB8C00; }
+  color: #fb8c00; }
 
 .material-icons.white600 {
   color: #fff; }
 
-.material-icons.orange600 {
-  color: #FB8C00; }
+.material-icons.brand-color-alt {
+  color: #fb8c00; }
 
-.material-icons.indigo600 {
+.material-icons.brand-color {
   color: #673ab7; }
+
+.material-icons.addCart-color {
+  color: #43a047; }
+
+.material-icons.removeCart-color {
+  color: #e53935; }
+
+.cart-summary {
+  background-color: #fff;
+  padding: .25vh 0;
+  text-align: center; }
+
+table {
+  border-collapse: collapse; }
+
+.cartTotal {
+  color: #fb8c00;
+  padding: 0 3vw 0 2vw; }
+
+.cartHeader {
+  background-color: #faebd7; }
+
+.cartImage {
+  max-width: 100%;
+  vertical-align: middle; }
+
+.cartGrandTotal {
+  color: #fb8c00;
+  text-align: center; }
+
+td,
+th,
+h5,
+.center {
+  text-align: center; }
+
+.cartRow {
+  background-color: #f8f8ff; }
+
+.cartRow:hover {
+  background-color: #fdf5e6; }
+
+.mdl-textfield__input:focus {
+  border-bottom: 2px solid #673ab7;
+  transition-duration: .2s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+
+input:focus {
+  outline: 0; }
