@@ -5,6 +5,7 @@
   "main": "index.html",
   "author": "Euan Greenwood",
   "license": "MIT",
+  "private": true,
   "sasslintConfig": ".sass-lint.yml",
   "devDependencies": {
     "browser-sync": "^2.12.2",
@@ -21,6 +22,9 @@
   },
   "dependencies": {
     "express": "^4.13.4",
-    "nodemailer": "^2.3.2"
+    "nodemailer": "^2.3.2",
+    "nodemailer-direct-transport": "^3.0.7",
+    "path": "^0.12.7",
+    "sendgrid": "^2.0.0"
   }
 }
