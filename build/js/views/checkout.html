@@ -24,64 +24,67 @@
         <div class="mdl-grid">
             <div class="mdl-cell mdl-cell--1-offset-desktop mdl-cell--9-col-desktop mdl-cell--1-offset-tablet mdl-cell--6-col-tablet mdl-cell--12-col-phone">
                 <div class="cart-summary mdl-shadow--2dp">
-                    <table class="mdl-cell mdl-cell--2-offset-desktop mdl-cell--8-col-desktop mdl-cell--10-col-tablet mdl-cell--12-col-phone" ng-if="cart.products.length">
-                        <caption>
-                            <h5>Shopping Cart</h5>
-                        </caption>
-                        <thead class="cartHeader">
-                            <tr>
-                                <th>Item</th>
-                                <th>Product</th>
-                                <th>Price</th>
-                                <th>Add More</th>
-                                <th>Remove</th>
-                            </tr>
-                        </thead>
-                        <tfoot>
-                            <tr>
-                                <td colspan="5">
-                                    <h6 class="cartGrandTotal">Grand Total for ({{getCartTotals()}}) items = {{getCartPrice() | currency:"R"}}</h6></td>
-                            </tr>
-                        </tfoot>
-                        <tbody>
-                            <tr ng-repeat="product in cart.products" class="cartRow">
-                                <td class="cartImage"><img ng-src="{{product.image}}"></td>
-                                <td>
-                                    <div class="mdl-badge mdl-badge--overlap" data-badge="x{{product.quantity}}" ng-if="product.quantity > 0">{{product.title}}</div>
-                                </td>
-                                <td>{{product.price | currency:"R"}}</td>
-                                <td>
-                                    <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--icon" ng-click="addToCart(product)"><i class="material-icons addCart-color">add_shopping_cart</i></button>
-                                </td>
-                                <td>
-                                    <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--icon" ng-click="removeFromCart(product,$index)" ng-show="product.quantity > 0"><i class="material-icons removeCart-color">remove_shopping_cart</i></button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="mdl-cell mdl-cell--3-offset-desktop mdl-cell--6-col-desktop mdl-cell--1-offset-tablet mdl-cell--6-col-tablet mdl-cell--9-col-phone">
-                        <h5>Your Details:</h5>
-                        <div class="mdl-textfield mdl-js-textfield">
-                            <input class="mdl-textfield__input" type="text" id="custName" ng-model="custName" placeholder="Name...">
-                        </div>
-                        <div class="mdl-textfield mdl-js-textfield">
-                            <input class="mdl-textfield__input" type="tel" id="custTel" pattern="-?[0-9]*(\.[0-9]+)?" ng-model="custTel" placeholder="Tell...">
-                        </div>
-                        <div class="mdl-textfield mdl-js-textfield">
-                            <input class="mdl-textfield__input" type="email" id="custEmail" ng-model="custEmail" placeholder="Email...">
-                        </div>
-                        <div class="mdl-textfield mdl-js-textfield">
-                            <input class="mdl-textfield__input" type="text" rows="3" id="custDelAdd" ng-model="custDelAdd" placeholder="Delivery Address...">
-                        </div>
-                    </div>
-                    <div class="mdl-cell mdl-cell--4-offset-desktop mdl-cell--6-col-desktop mdl-cell--1-offset-tablet mdl-cell--6-col-tablet mdl-cell--12-col-phone">
-                        <button id="ttCheckOut" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-button--primary" ng-click="show">
-                            Confirm Order
-                            <div class="mdl-tooltip mdl-tooltip" for="ttCheckOut">
-                                Confirm Order
+                    <form novalidate class="css-form">
+                        <table class="mdl-cell mdl-cell--2-offset-desktop mdl-cell--8-col-desktop mdl-cell--10-col-tablet mdl-cell--12-col-phone" ng-if="cart.products.length">
+                            <caption>
+                                <h5>Shopping Cart</h5>
+                            </caption>
+                            <thead class="cartHeader">
+                                <tr>
+                                    <th>Item</th>
+                                    <th>Product</th>
+                                    <th>Price</th>
+                                    <th>Add More</th>
+                                    <th>Remove</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="5">
+                                        <h6 class="cartGrandTotal">Grand Total for ({{getCartTotals()}}) items = {{getCartPrice() | currency:"R"}}</h6></td>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <tr ng-repeat="product in cart.products" class="cartRow">
+                                    <td class="cartImage"><img ng-src="{{product.image}}"></td>
+                                    <td>
+                                        <div class="mdl-badge mdl-badge--overlap" data-badge="x{{product.quantity}}" ng-if="product.quantity > 0">{{product.title}}</div>
+                                    </td>
+                                    <td>{{product.price | currency:"R"}}</td>
+                                    <td>
+                                        <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--icon" ng-click="addToCart(product)"><i class="material-icons addCart-color">add_shopping_cart</i></button>
+                                    </td>
+                                    <td>
+                                        <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--icon" ng-click="removeFromCart(product,$index)" ng-show="product.quantity > 0"><i class="material-icons removeCart-color">remove_shopping_cart</i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="mdl-cell mdl-cell--3-offset-desktop mdl-cell--6-col-desktop mdl-cell--1-offset-tablet mdl-cell--6-col-tablet mdl-cell--9-col-phone">
+                            <h5>Your Details:</h5>
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" id="custName" ng-model="cust.Name" placeholder="Name..." required>
                             </div>
-                        </button>
-                    </div>
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="tel" id="custTel" pattern="-?[0-9]*(\.[0-9]+)?" ng-model="cust.Tel" placeholder="Phone..." required>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="email" id="custEmail" ng-model="cust.Email" placeholder="Email..." required>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <input class="mdl-textfield__input" type="text" rows="3" id="custDelAdd" ng-model="cust.DelAdd" placeholder="Delivery Address..." required>
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--4-offset-desktop mdl-cell--6-col-desktop mdl-cell--1-offset-tablet mdl-cell--6-col-tablet mdl-cell--12-col-phone">
+                            <button id="ttCheckOut" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-button--primary" ng-click="show">
+                                Confirm Order
+                                <div class="mdl-tooltip mdl-tooltip" for="ttCheckOut">
+                                    Confirm Order
+                                </div>
+                            </button>
+                        </div>
+                    </form>
+                    {{cust}}
                 </div>
             </div>
         </div>

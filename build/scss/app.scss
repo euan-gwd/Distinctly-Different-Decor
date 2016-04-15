@@ -7,125 +7,152 @@ $gmd-grey: #d3d3d3;
 $gmd-white: #fff;
 $gmd-offwhite: #f8f8ff;
 .brand {
-    height: 5vh;
-    max-height: 100%;
-    max-width: 100%;
+  height: 5vh;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .mdl-layout__header-row {
-    padding: .25vh 3vw .25vh 2vw;
+  padding: .25vh 3vw .25vh 2vw;
 }
 
 .decor-layout {
-    background: url('../images/seamless_paper_texture.png');
+  background: url('../images/seamless_paper_texture.png');
 }
 
 .decor-layout .mdl-layout__header,
 .decor-layout .mdl-layout__drawer-button {
-    background-color: $primary-bg-color;
-    color: $primary-color;
+  background-color: $primary-bg-color;
+  color: $primary-color;
 }
 
 .decor-card-event {
-    background: $primary-bg-color;
-    max-height: 100%;
-    max-width: 100%;
+  background: $primary-bg-color;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .mdl-card {
-    width: auto;
+  width: auto;
 }
 
 .mdl-card__actions {
-    border-color: rgba(255, 255, 255, .2);
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
+  border-color: rgba(255, 255, 255, .2);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
 }
 
 .mdl-logo {
-    color: $primary-color;
-    max-width: 10vw;
+  color: $primary-color;
+  max-width: 10vw;
 }
 
 .mdl-card__title-text {
-    color: $secondary-color;
+  color: $secondary-color;
 }
 
 .material-icons.white600 {
-    color: #fff;
+  color: #fff;
 }
 
 .material-icons.brand-color-alt {
-    color: $secondary-color;
+  color: $secondary-color;
 }
 
 .material-icons.brand-color {
-    color: $primary-color;
+  color: $primary-color;
 }
 
 .material-icons.addCart-color {
-    color: $gmd-green;
+  color: $gmd-green;
 }
 
 .material-icons.removeCart-color {
-    color: $gmd-red;
+  color: $gmd-red;
 }
 
 .cart-summary {
-    background-color: #fff;
-    padding: .25vh 0;
-    text-align: center;
+  background-color: #fff;
+  padding: .25vh 0;
+  text-align: center;
 }
 
 table {
-    border-collapse: collapse;
+  border-collapse: collapse;
 }
 
 .cartTotal {
-    color: $secondary-color;
-    padding: 0 3vw 0 2vw;
+  color: $secondary-color;
+  padding: 0 3vw 0 2vw;
 }
 
 .cartHeader {
-    background-color: $primary-bg-color;
+  background-color: $primary-bg-color;
 }
 
 .cartImage {
-    max-width: 100%;
-    vertical-align: middle;
+  max-width: 100%;
+  vertical-align: middle;
 }
 
 .cartGrandTotal {
-    color: $secondary-color;
-    text-align: center;
+  color: $secondary-color;
+  text-align: center;
 }
 
 td,
 th,
 h5,
 .center {
-    text-align: center;
+  text-align: center;
 }
 
 .cartRow {
-    background-color: $gmd-offwhite;
-}
+  background-color: $gmd-offwhite;
 
-.cartRow:hover {
+  :hover {
     background-color: #fdf5e6;
+    }
+
 }
 
-.mdl-textfield__input:focus {
+.css-form {
+  input {
+    outline: 0;
+
+    :focus {
+      border-bottom: 2px solid $primary-color;
+    }
+  }
+
+  .mdl-textfield__input.ng-dirty:focus {
     border-bottom: 2px solid $primary-color;
+    outline: 0;
+  }
+
+  .mdl-textfield__input.ng-pristine.ng-untouched {
+    border-bottom: 1px solid $gmd-grey;
+  }
+
+  .mdl-textfield__input.ng-touched:focus {
+    border-bottom: 2px solid $primary-color;
+  }
+
+  .mdl-textfield__input.ng-invalid {
+    border-bottom: 2px solid $gmd-red;
     transition-duration: .2s;
     transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-}
+  }
 
-input:focus {
-    outline: 0;
+  .mdl-textfield__input.ng-valid {
+    border-bottom: 2px solid $gmd-green;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  }
+
 }

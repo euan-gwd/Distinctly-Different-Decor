@@ -88,14 +88,30 @@ h5,
 
 .cartRow {
   background-color: #f8f8ff; }
+  .cartRow :hover {
+    background-color: #fdf5e6; }
 
-.cartRow:hover {
-  background-color: #fdf5e6; }
+.css-form input {
+  outline: 0; }
+  .css-form input :focus {
+    border-bottom: 2px solid #673ab7; }
 
-.mdl-textfield__input:focus {
+.css-form .mdl-textfield__input.ng-dirty:focus {
   border-bottom: 2px solid #673ab7;
+  outline: 0; }
+
+.css-form .mdl-textfield__input.ng-pristine.ng-untouched {
+  border-bottom: 1px solid #d3d3d3; }
+
+.css-form .mdl-textfield__input.ng-touched:focus {
+  border-bottom: 2px solid #673ab7; }
+
+.css-form .mdl-textfield__input.ng-invalid {
+  border-bottom: 2px solid #e53935;
   transition-duration: .2s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
 
-input:focus {
-  outline: 0; }
+.css-form .mdl-textfield__input.ng-valid {
+  border-bottom: 2px solid #43a047;
+  transition-duration: .2s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
