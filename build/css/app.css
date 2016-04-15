@@ -25,6 +25,13 @@ img {
 .mdl-card {
   width: auto; }
 
+.contact-max-width {
+  max-width: 900px;
+  margin: auto; }
+
+.cart-contact .mdl-textfield {
+  width: 100%; }
+
 .mdl-card__actions {
   border-color: rgba(255, 255, 255, 0.2);
   box-sizing: border-box;
@@ -91,27 +98,25 @@ h5,
   .cartRow :hover {
     background-color: #fdf5e6; }
 
-.css-form input {
-  outline: 0; }
-  .css-form input :focus {
+.css-form {
+  max-width: 550px;
+  margin: auto; }
+  .css-form input {
+    outline: 0; }
+    .css-form input :focus {
+      border-bottom: 2px solid #673ab7; }
+  .css-form .mdl-textfield__input.ng-dirty:focus {
+    border-bottom: 2px solid #673ab7;
+    outline: 0; }
+  .css-form .mdl-textfield__input.ng-pristine.ng-untouched {
+    border-bottom: 1px solid #d3d3d3; }
+  .css-form .mdl-textfield__input.ng-touched:focus {
     border-bottom: 2px solid #673ab7; }
-
-.css-form .mdl-textfield__input.ng-dirty:focus {
-  border-bottom: 2px solid #673ab7;
-  outline: 0; }
-
-.css-form .mdl-textfield__input.ng-pristine.ng-untouched {
-  border-bottom: 1px solid #d3d3d3; }
-
-.css-form .mdl-textfield__input.ng-touched:focus {
-  border-bottom: 2px solid #673ab7; }
-
-.css-form .mdl-textfield__input.ng-invalid {
-  border-bottom: 2px solid #e53935;
-  transition-duration: .2s;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
-
-.css-form .mdl-textfield__input.ng-valid {
-  border-bottom: 2px solid #43a047;
-  transition-duration: .2s;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+  .css-form .mdl-textfield__input.ng-invalid {
+    border-bottom: 2px solid #e53935;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+  .css-form .mdl-textfield__input.ng-valid {
+    border-bottom: 2px solid #43a047;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }

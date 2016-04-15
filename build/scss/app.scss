@@ -40,6 +40,15 @@ img {
   width: auto;
 }
 
+.contact-max-width {
+  max-width: 900px;
+  margin: auto;
+}
+
+.cart-contact .mdl-textfield {
+  width: 100%;
+}
+
 .mdl-card__actions {
   border-color: rgba(255, 255, 255, .2);
   box-sizing: border-box;
@@ -122,6 +131,9 @@ h5,
 }
 
 .css-form {
+  max-width: 550px;
+  margin: auto;
+
   input {
     outline: 0;
 
