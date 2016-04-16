@@ -109,10 +109,9 @@
     };
 
     // Sends order via email
-    $scope.sendOrder = function() {
-      $scope.customer = [];
-
-      var checkoutCart = $scope.cart;
+    $scope.submitOrder = function() {
+      
+      var checkoutCart = cartItems;
 
       var data = ({
         customerName: this.customerName,

@@ -23,7 +23,13 @@
     res.sendFile('index.html');
   });
 
-  router.route('/send').get(function(req, res) {
+  router.route('/checkout/sendOrder').post(function(req, res) {
+    
+    res.json(req.body);
+    var data = req.body;
+
+    console.log(data);
+
     var email = {
       to: 'info@amwic.co.za',
       from: 'DDDWebAppTest@ddd.co.za',
@@ -31,12 +37,12 @@
       html: '<h1>Hello, This is my first email through SendGrid</h1>'
     };
 
-    mailer.sendMail(email, function(err, res) {
-      if (err) {
-        console.log(err);
-      }
-      console.log(res);
-    });
+    // mailer.sendMail(email, function(err, res) {
+    //   if (err) {
+    //     console.log(err);
+    //   }
+    //   console.log(res);
+    // });
   });
 
   module.exports = router;

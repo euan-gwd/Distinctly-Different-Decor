@@ -60,7 +60,7 @@
                         </tbody>
                     </table>
                     <div class="mdl-card__supporting-text">
-                        <form name="customerForm" novalidate class="css-form" ng-submit="sendOrder()">
+                        <form name="customerForm" novalidate class="css-form" ng-submit="submitOrder()">
                             <h5>Your Details:</h5>
                             <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-invalid': customerForm.Email.$touched && customerForm.Email.$invalid }">
                                 <input class="mdl-textfield__input" type="text" id="Name" placeholder="Name..." ng-model="customerName" pattern="[A-Z,a-z, ]*" ng-minlength="3" required>
