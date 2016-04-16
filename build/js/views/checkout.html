@@ -60,31 +60,28 @@
                         </tbody>
                     </table>
                     <div class="mdl-card__supporting-text">
-                        <form name="customerForm" novalidate class="css-form">
+                        <form name="customerForm" novalidate class="css-form" ng-submit="sendOrder()">
                             <h5>Your Details:</h5>
                             <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-invalid': customerForm.Email.$touched && customerForm.Email.$invalid }">
-                                <input class="mdl-textfield__input" type="text" id="Name" placeholder="Name..." ng-model="customer.name" pattern="[A-Z,a-z, ]*" ng-minlength="3" required>
+                                <input class="mdl-textfield__input" type="text" id="Name" placeholder="Name..." ng-model="customerName" pattern="[A-Z,a-z, ]*" ng-minlength="3" required>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-valid': customerForm.Name.$touched && customerForm.Name.$valid }">
-                                <input class="mdl-textfield__input" type="number" id="Phone" placeholder="Phone..." ng-model="customer.tel" ng-minlength="10" ng-maxlength="10" required="">
+                                <input class="mdl-textfield__input" type="tel" id="Phone" placeholder="Phone..." ng-model="customerPhone" ng-minlength="10" ng-maxlength="10" required="">
                             </div>
                             <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-invalid': customerForm.Email.$touched && customerForm.Email.$invalid }">
-                                <input class="mdl-textfield__input" type="email" id="Email" placeholder="Email..." ng-model="customer.Email" required="">
+                                <input class="mdl-textfield__input" type="email" id="Email" placeholder="Email..." ng-model="customerEmail" required="">
                             </div>
                             <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-invalid': customerForm.DelAddr.$touched && customerForm.DelAddr.$invalid }">
-                                <textarea class="mdl-textfield__input" type="text" rows="3" id="DelAddr" placeholder="Delivery Address..." ng-model="customer.DelAdd" ng-minlength="3" required=""></textarea>
+                                <textarea class="mdl-textfield__input" type="text" rows="3" id="DelAddr" placeholder="Delivery Address..." ng-model="customerDelAdd" ng-minlength="3" required=""></textarea>
                             </div>
-                            <p>
-                                <button id="ttCheckOut" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-button--primary">
+                            <div>
+                                <input type="submit" id="submit" value="Submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-button--primary">
+                                <div class="mdl-tooltip mdl-tooltip" for="ttCheckOut">
                                     Confirm Order
-                                    <div class="mdl-tooltip mdl-tooltip" for="ttCheckOut">
-                                        Confirm Order
-                                    </div>
-                                </button>
-                            </p>
+                                </div>
+                            </div>
                         </form>
                     </div>
-                    {{customer}}
                 </div>
             </div>
         </div>

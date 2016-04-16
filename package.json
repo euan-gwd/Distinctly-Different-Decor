@@ -8,7 +8,7 @@
   "private": true,
   "sasslintConfig": ".sass-lint.yml",
   "devDependencies": {
-    "browser-sync": "^2.12.2",
+    "browser-sync": "^2.12.3",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-nodemon": "^2.0.6",
@@ -16,6 +16,7 @@
     "gulp-sass": "^2.1.1"
   },
   "dependencies": {
+    "body-parser": "^1.15.0",
     "dotenv": "^2.0.0",
     "express": "^4.13.4",
     "nodemailer": "^2.3.2",

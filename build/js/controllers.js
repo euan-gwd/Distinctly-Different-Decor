@@ -7,8 +7,8 @@
       products: []
     };
     // Load products from server
-    dataService.getProducts(function(response) {
-      $scope.products = response.data;
+    dataService.getProducts(function(res) {
+      $scope.products = res.data;
     });
 
     // Add products to basket
@@ -50,9 +50,10 @@
       window.sessionStorage.checkout = angular.toJson(checkout);
       $state.go('checkout');
     };
-  });
+  }); // End Store Controller
 
-  app.controller('CartController', function($scope, $state) {
+
+  app.controller('CartController', function($scope, $http, $state) {
     var cartItems = angular.fromJson(window.sessionStorage.checkout || '[]');
     $scope.cart = cartItems;
 
@@ -109,7 +110,21 @@
 
     // Sends order via email
     $scope.sendOrder = function() {
-        var newOrder;
+      $scope.customer = [];
+
+      var checkoutCart = $scope.cart;
+
+      var data = ({
+        customerName: this.customerName,
+        customerPhone: this.customerPhone,
+        customerEmail: this.customerEmail,
+        customerDelAdd: this.customerDelAdd,
+        customerCart: this.checkoutCart
+      });
+
+      $http.post('/checkout/sendOrder', data).then(function(res){
+                console.log(res);
+            });
 
     };
   });
