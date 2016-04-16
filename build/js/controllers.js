@@ -110,20 +110,15 @@
 
     // Sends order via email
     $scope.submitOrder = function() {
-      
-      var checkoutCart = cartItems;
 
       var data = ({
         customerName: this.customerName,
         customerPhone: this.customerPhone,
         customerEmail: this.customerEmail,
-        customerDelAdd: this.customerDelAdd,
-        customerCart: this.checkoutCart
+        customerDelAddr: this.customerDelAddr
       });
 
-      $http.post('/checkout/sendOrder', data).then(function(res){
-                console.log(res);
-            });
+      $http.post('/checkout/sendOrder', data);
 
     };
   });

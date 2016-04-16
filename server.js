@@ -10,14 +10,6 @@
 
   app.use(express.static('./build'));
 
-  // app.route('/').get(function(req, res) {
-  //   res.sendFile('index.html');
-  // });
-
-  // app.post('/checkout/sendOrder', function(req, res) {
-  //   console.log(req.body);
-  //   res.json(req.body);
-  // });
   var main = require('./routes/main');
   app.use('/', main);
 

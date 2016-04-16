@@ -3,12 +3,10 @@
 
   var express = require('express');
   var router = express.Router();
-
   var dotenv = require('dotenv');
   dotenv.load();
   var sendgrid_username = process.env.SENDGRID_USERNAME;
   var sendgrid_password = process.env.SENDGRID_PASSWORD;
-
   var nodemailer = require('nodemailer');
   var sgTransport = require('nodemailer-sendgrid-transport');
   var options = {
@@ -19,24 +17,24 @@
   };
   var mailer = nodemailer.createTransport(sgTransport(options));
 
+  // Main Client Route 
   router.route('/').get(function(req, res) {
     res.sendFile('index.html');
   });
 
+  // Send Mail Api Route
   router.route('/checkout/sendOrder').post(function(req, res) {
-    
-    res.json(req.body);
     var data = req.body;
-
-    console.log(data);
 
     var email = {
       to: 'info@amwic.co.za',
       from: 'DDDWebAppTest@ddd.co.za',
-      subject: 'Test Send from new Web App',
-      html: '<h1>Hello, This is my first email through SendGrid</h1>'
+      subject: 'Test Order from ' + data.customerName,
+      html: ''
     };
 
+    console.log(email);
+    res.json(data);
     // mailer.sendMail(email, function(err, res) {
     //   if (err) {
     //     console.log(err);
