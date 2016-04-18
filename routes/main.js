@@ -21,15 +21,13 @@
 
     // Email message content and settings
     function Message() {
-      var orderDetails = '<ul>';
+      var orderDetails = '<div>';
       for (var i = 0; i < data.customerOrder.length; i += 1) {
-        orderDetails += '<li>';
         orderDetails += '<p> item: ' + data.customerOrder[i].title + '</p>';
         orderDetails += '<p> qty: ' + data.customerOrder[i].quantity + '</p>';
         orderDetails += '<p> price: ' + data.customerOrder[i].price + '</p>';
-        orderDetails += '</li>';
       }
-      orderDetails += '</ul>';
+      orderDetails += '</div>';
       return orderDetails;
     }
 
