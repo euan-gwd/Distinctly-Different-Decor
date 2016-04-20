@@ -17,25 +17,22 @@
     <div class="decor-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
+                <div class="mdl-layout__header-row">
+                </div>
+                <div class="mdl-layout-spacer"></div>
                 <div>
                     <img class="brand" src="images/D3Logo.svg" alt="brand logo">
                 </div>
-                <div class="mdl-layout-spacer"></div>
-                <div class="mdl-layout__header-row">
-                    <button id="menu-lower-right" class="mdl-button mdl-js-button">
-                        <i id="ttmenu" class="material-icons brand-color">more_vert</i>
-                        <div class="mdl-tooltip mdl-tooltip--right" for="ttmenu">
-                            Menu
-                        </div>
-                    </button>
-                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-lower-right">
-                        <li class="mdl-menu__item">About</li>
-                        <li class="mdl-menu__item">Contact</li>
-                        <li class="mdl-menu__item">Privacy and Terms</li>
-                    </ul>
-                </div>
             </div>
         </header>
+        <div class="mdl-layout__drawer">
+            <div class="mdl-layout__title">Distinctly Different Decor</div>
+            <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
+                <a class="mdl-navigation__link" href="">About</a>
+                <a class="mdl-navigation__link" href="">Contact</a>
+                <a class="mdl-navigation__link" href="">Privacy and Terms</a>
+            </nav>
+        </div>
         <main ui-view></main>
     </div>
     <script src="js/mdl/material.min.js"></script>

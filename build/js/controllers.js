@@ -130,10 +130,4 @@
     };
   }); // End Cart Controller
 
-  app.controller('ThankYouController', function($scope, $state) {
-    $scope.$on('$locationChangeStart', function(event, newUrl, oldUrl) {
-      event.preventDefault();
-    });
-  }); // End ThankYou Controller
-
 }());

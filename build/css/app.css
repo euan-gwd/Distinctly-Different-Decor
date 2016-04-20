@@ -9,6 +9,11 @@ img {
 .mdl-layout__header-row {
   padding: .25vh 3vw .25vh 2vw; }
 
+.mdl-layout__title {
+  font-size: 16px;
+  text-align: left;
+  font-weight: 300; }
+
 .decor-layout {
   background: url("../images/seamless_paper_texture.png"); }
 
