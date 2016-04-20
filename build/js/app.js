@@ -2,7 +2,7 @@
   "use strict";
   var app = angular.module('DDDApp', ['ui.router', 'DDDApp.controllers', 'DDDApp.services']);
 
-  app.config(function($stateProvider, $urlRouterProvider) {
+  app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
       .state("home", {
         url: "/",
@@ -19,6 +19,7 @@
         templateUrl: "js/views/thankyou.html"
       });
     $urlRouterProvider.otherwise('/');
+    $locationProvider.html5Mode(true);
   });
 
 }());

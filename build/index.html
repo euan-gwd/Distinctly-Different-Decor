@@ -6,6 +6,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
     <title>| Distinctly Different Decor |</title>
+    <base href="/">
     <link rel="stylesheet" href="css/material.min.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -13,7 +14,30 @@
 </head>
 
 <body>
-    <main ui-view></main>
+    <div class="decor-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <div>
+                    <img class="brand" src="images/D3Logo.svg" alt="brand logo">
+                </div>
+                <div class="mdl-layout-spacer"></div>
+                <div class="mdl-layout__header-row">
+                    <button id="menu-lower-right" class="mdl-button mdl-js-button">
+                        <i id="ttmenu" class="material-icons brand-color">more_vert</i>
+                        <div class="mdl-tooltip mdl-tooltip--right" for="ttmenu">
+                            Menu
+                        </div>
+                    </button>
+                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-lower-right">
+                        <li class="mdl-menu__item">About</li>
+                        <li class="mdl-menu__item">Contact</li>
+                        <li class="mdl-menu__item">Privacy and Terms</li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <main ui-view></main>
+    </div>
     <script src="js/mdl/material.min.js"></script>
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-aria/angular-aria.js"></script>
