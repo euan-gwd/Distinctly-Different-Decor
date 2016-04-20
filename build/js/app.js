@@ -5,7 +5,7 @@
   app.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state("home", {
-        url: "",
+        url: "/",
         templateUrl: "js/views/home.html",
         controller: "StoreController"
       })
@@ -13,8 +13,12 @@
         url: "/checkout",
         templateUrl: "js/views/checkout.html",
         controller: "CartController"
+      })
+      .state("thankyou", {
+        url: "/thankyou",
+        templateUrl: "js/views/thankyou.html"
       });
-    $urlRouterProvider.otherwise('');
+    $urlRouterProvider.otherwise('/');
   });
 
 }());

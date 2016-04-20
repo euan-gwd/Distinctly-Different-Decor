@@ -1,0 +1,42 @@
+<div class="decor-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <div>
+                <img class="brand" src="images/D3Logo.svg" alt="brand logo">
+            </div>
+            <div class="mdl-layout-spacer"></div>
+            <button id="menu-lower-right" class="mdl-button mdl-js-button">
+                <i id="ttmenu" class="material-icons brand-color">more_vert</i>
+                <div class="mdl-tooltip mdl-tooltip--right" for="ttmenu">
+                    Menu
+                </div>
+            </button>
+            <div>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="menu-lower-right">
+                    <li class="mdl-menu__item">About</li>
+                    <li class="mdl-menu__item">Contact</li>
+                    <li class="mdl-menu__item">Privacy and Terms</li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main class="mdl-layout__content">
+        <div class="mdl-grid card-max-width cart-contact">
+            <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--1-offset-tablet mdl-cell--6-col-tablet mdl-cell--12-col-phone">
+                <div class="cart-summary mdl-shadow--2dp">
+                    <div class="mdl-card__supporting-text">
+                        <i class="material-icons">done_all</i>
+                        <p>Thank you for your interest, We shall be on contact soon...</p>
+                        <div>
+                            <button id="ttReturnHome" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" ui-sref="home"><i class="material-icons.brand-color">home</i></button>
+                            <div class="mdl-tooltip mdl-tooltip" for="ttReturnHome">
+                                Return Home
+                            </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

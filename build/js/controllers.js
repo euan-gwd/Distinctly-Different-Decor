@@ -117,12 +117,23 @@
         customerPhone: this.customerPhone,
         customerEmail: this.customerEmail,
         customerDelAddr: this.customerDelAddr,
-        customerOrder : checkoutCart
+        customerOrder: checkoutCart
       });
 
-      $http.post('/checkout/sendOrder', data);
-
+      $http.post('/checkout/sendOrder', data).success(function(data, status) {
+        $scope.jsondata = data;
+        console.log("status:" + status);
+        $state.go('thankyou');
+      }).error(function(data, status) {
+        console.error('Error occurred:', data, status);
+      });
     };
-  });
+  }); // End Cart Controller
+
+  app.controller('ThankYouController', function($scope, $state) {
+    $scope.$on('$locationChangeStart', function(event, newUrl, oldUrl) {
+      event.preventDefault();
+    });
+  }); // End ThankYou Controller
 
 }());

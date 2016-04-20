@@ -66,7 +66,7 @@
                                 <input class="mdl-textfield__input" type="text" id="Name" placeholder="Name..." ng-model="customerName" pattern="[A-Z,a-z, ]*" ng-minlength="3" required>
                             </div>
                             <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-valid': customerForm.Name.$touched && customerForm.Name.$valid }">
-                                <input class="mdl-textfield__input" type="tel" id="Phone" placeholder="Phone..." ng-model="customerPhone" ng-minlength="10" ng-maxlength="12" required="">
+                                <input class="mdl-textfield__input" type="tel" id="Phone" placeholder="Phone..." ng-model="customerPhone" ng-minlength="10" ng-maxlength="12">
                             </div>
                             <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-invalid': customerForm.Email.$touched && customerForm.Email.$invalid }">
                                 <input class="mdl-textfield__input" type="email" id="Email" placeholder="Email..." ng-model="customerEmail" required="">
@@ -75,8 +75,8 @@
                                 <textarea class="mdl-textfield__input" type="text" rows="3" id="DelAddr" placeholder="Delivery Address..." ng-model="customerDelAddr" ng-minlength="3" required=""></textarea>
                             </div>
                             <div>
-                                <input type="submit" id="submit" value="Submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-button--primary">
-                                <div class="mdl-tooltip mdl-tooltip" for="ttCheckOut">
+                                <input type="submit" id="ttsubmit" value="Submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-button--primary">
+                                <div class="mdl-tooltip mdl-tooltip" for="ttsubmit">
                                     Confirm Order
                                 </div>
                             </div>

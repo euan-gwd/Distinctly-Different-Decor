@@ -44,10 +44,7 @@
       }
       console.log(json);
     });
-
     res.json(data);
-
   });
-
   module.exports = router;
 }());
