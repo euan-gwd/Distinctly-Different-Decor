@@ -6,6 +6,11 @@ $gmd-red: #e53935;
 $gmd-grey: #d3d3d3;
 $gmd-white: #fff;
 $gmd-offwhite: #f8f8ff;
+
+html{
+  background: url('../images/seamless_paper_texture.png');
+}
+
 .brand {
   height: 5vh;
   max-height: 100%;
@@ -16,8 +21,8 @@ img {
   max-width: 100%;
 }
 
-.mdl-layout__content {
-  margin-top: 5vh;
+.mdl-layout_content{
+  margin-top: 9vh;
 }
 
 .mdl-layout__header-row {
@@ -34,8 +39,8 @@ img {
   background: url('../images/seamless_paper_texture.png');
 }
 
-.decor-layout .mdl-layout__header,
-.decor-layout .mdl-layout__drawer-button {
+.mdl-layout__header,
+.mdl-layout__drawer-button {
   background-color: $primary-bg-color;
   color: $primary-color;
 }
@@ -44,6 +49,10 @@ img {
   background: $primary-bg-color;
   max-height: 100%;
   max-width: 100%;
+}
+
+.mdl-grid {
+  min-width: 95vw;
 }
 
 .mdl-cell {
@@ -96,7 +105,13 @@ img {
 }
 
 .cart-summary {
-  background-color: #fff;
+  background-color: $gmd-white;
+  padding: .25vh 0;
+  text-align: center;
+}
+
+.search-bar {
+  background-color: $primary-bg-color;
   padding: .25vh 0;
   text-align: center;
 }
@@ -133,37 +148,55 @@ h5,
 
 .cartRow {
   background-color: $gmd-offwhite;
+
   :hover {
     background-color: #fdf5e6;
   }
+
+}
+
+input {
+  outline: 0;
+}
+
+textarea {
+  outline: 0;
 }
 
 .css-form {
   max-width: 550px;
   margin: auto;
-  input {
-    outline: 0;
-  }
-  textarea {
-    outline: 0;
-  }
+
+  // input {
+  //   outline: 0;
+  // }
+
+  // textarea {
+  //   outline: 0;
+  // }
+
   .mdl-textfield__input.ng-pristine.ng-untouched {
     border-bottom: 1px solid $gmd-grey;
   }
+
   .mdl-textfield__input.ng-touched:focus {
     border-bottom: 2px solid $primary-color;
   }
+
   .mdl-textfield__input.ng-pristine:focus {
     border-bottom: 2px solid $primary-color;
   }
+
   .mdl-textfield__input.ng-invalid {
     border-bottom: 2px solid $gmd-red;
     transition-duration: .2s;
     transition-timing-function: cubic-bezier(.4, 0, .2, 1);
   }
+
   .mdl-textfield__input.ng-valid {
     border-bottom: 2px solid $gmd-green;
     transition-duration: .2s;
     transition-timing-function: cubic-bezier(.4, 0, .2, 1);
   }
+
 }

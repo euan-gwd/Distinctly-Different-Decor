@@ -1,3 +1,6 @@
+html {
+  background: url("../images/seamless_paper_texture.png"); }
+
 .brand {
   height: 5vh;
   max-height: 100%;
@@ -6,8 +9,8 @@
 img {
   max-width: 100%; }
 
-.mdl-layout__content {
-  margin-top: 5vh; }
+.mdl-layout_content {
+  margin-top: 9vh; }
 
 .mdl-layout__header-row {
   padding: .25vh 3vw .25vh 2vw; }
@@ -20,8 +23,8 @@ img {
 .decor-layout {
   background: url("../images/seamless_paper_texture.png"); }
 
-.decor-layout .mdl-layout__header,
-.decor-layout .mdl-layout__drawer-button {
+.mdl-layout__header,
+.mdl-layout__drawer-button {
   background-color: #faebd7;
   color: #673ab7; }
 
@@ -29,6 +32,9 @@ img {
   background: #faebd7;
   max-height: 100%;
   max-width: 100%; }
+
+.mdl-grid {
+  min-width: 95vw; }
 
 .mdl-cell {
   min-width: 20vw; }
@@ -77,6 +83,11 @@ img {
   padding: .25vh 0;
   text-align: center; }
 
+.search-bar {
+  background-color: #faebd7;
+  padding: .25vh 0;
+  text-align: center; }
+
 table {
   border-collapse: collapse; }
 
@@ -106,13 +117,15 @@ h5,
   .cartRow :hover {
     background-color: #fdf5e6; }
 
+input {
+  outline: 0; }
+
+textarea {
+  outline: 0; }
+
 .css-form {
   max-width: 550px;
   margin: auto; }
-  .css-form input {
-    outline: 0; }
-  .css-form textarea {
-    outline: 0; }
   .css-form .mdl-textfield__input.ng-pristine.ng-untouched {
     border-bottom: 1px solid #d3d3d3; }
   .css-form .mdl-textfield__input.ng-touched:focus {
