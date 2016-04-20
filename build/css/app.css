@@ -6,6 +6,9 @@
 img {
   max-width: 100%; }
 
+.mdl-layout__content {
+  margin-top: 5vh; }
+
 .mdl-layout__header-row {
   padding: .25vh 3vw .25vh 2vw; }
 
@@ -27,8 +30,8 @@ img {
   max-height: 100%;
   max-width: 100%; }
 
-.mdl-card {
-  width: auto; }
+.mdl-cell {
+  min-width: 20vw; }
 
 .contact-max-width {
   max-width: 900px;

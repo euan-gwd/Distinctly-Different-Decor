@@ -1,29 +1,34 @@
-<header class="mdl-layout__header mdl-layout--fixed-header">
-    <div class="mdl-layout__header-row">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-            <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-search">
-                <i id="ttsearch" class="material-icons">search</i>
-                <div class="mdl-tooltip mdl-tooltip--bottom" for="ttsearch">
-                    Search
+<header class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <div class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <div class="mdl-layout-spacer"></div>
+            <h6 class="cartTotal">Total in Cart {{getCartPrice() | currency:"R"}}</h6>
+            <button id="ttcart" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-button--primary" ng-click="cartCheckOut()">
+                <i class="material-icons">shopping_cart</i>
+                <div class="mdl-tooltip mdl-tooltip" for="ttcart">
+                    Checkout
                 </div>
-            </label>
-            <div class="mdl-textfield__expandable-holder">
-                <input class="mdl-textfield__input" type="text" ng-model="productSearch" id="fixed-header-search" placeholder="filter items by search">
-            </div>
+            </button>
+            <div class="mdl-badge mdl-badge--overlap" data-badge="{{getCartTotals()}}" ng-if="cart.products.length"></div>
         </div>
-        <div class="mdl-layout-spacer"></div>
-        <h6 class="cartTotal">Total in Cart {{getCartPrice() | currency:"R"}}</h6>
-        <button id="ttcart" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-button--primary" ng-click="cartCheckOut()">
-            <i class="material-icons">shopping_cart</i>
-            <div class="mdl-tooltip mdl-tooltip" for="ttcart">
-                Checkout
-            </div>
-        </button>
-        <div class="mdl-badge mdl-badge--overlap" data-badge="{{getCartTotals()}}" ng-if="cart.products.length"></div>
     </div>
 </header>
 <main class="mdl-layout__content">
     <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col mdl-cell--top">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-search">
+                    <i id="ttsearch" class="material-icons">search</i>
+                    <div class="mdl-tooltip mdl-tooltip--bottom" for="ttsearch">
+                        Search
+                    </div>
+                </label>
+                <div class="mdl-textfield__expandable-holder">
+                    <input class="mdl-textfield__input" type="text" ng-model="productSearch" id="fixed-header-search" placeholder="filter items by search">
+                    <label class="mdl-textfield__label" for="fixed-header-search">Expandable Input</label>
+                </div>
+            </div>
+        </div>
         <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone" ng-repeat="product in products | filter:productSearch">
             <div class="decor-card-event mdl-card mdl-shadow--2dp">
                 <img ng-src="{{product.image}}">
