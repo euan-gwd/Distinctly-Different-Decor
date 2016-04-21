@@ -110,7 +110,6 @@ ul {
   color: #e53935; }
 
 .cart-item-summary {
-  border-style: solid;
   margin: 0 auto;
   max-width: 100%;
   text-align: center;
@@ -124,6 +123,7 @@ ul {
 
 .cart-list {
   max-width: 100%;
+  padding-top: 0;
   width: 100%; }
 
 .mdl-list__item {
@@ -141,7 +141,8 @@ ul {
   padding: 0 3vw 0 2vw; }
 
 .cart-header {
-  background-color: #faebd7; }
+  background-color: #faebd7;
+  padding-bottom: 0; }
 
 .cart-image {
   max-width: 100%;
@@ -152,7 +153,11 @@ ul {
 
 .cart-grand-total {
   color: #fb8c00;
+  padding-bottom: 1rem;
   text-align: center; }
+
+.cart-border {
+  border-top: 1px solid rgba(0, 0, 0, 0.1); }
 
 .css-form {
   margin: auto;
