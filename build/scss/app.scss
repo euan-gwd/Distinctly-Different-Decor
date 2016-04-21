@@ -145,7 +145,7 @@ ul {
 
 .cart-summary {
   background-color: $gmd-white;
-  padding-top: .25vh;
+  padding-top: 2.5vh;
   text-align: center;
   width: 100%;
 }
@@ -169,13 +169,7 @@ ul {
 }
 
 .cart-header {
-  align-items: center;
   background-color: $primary-bg-color;
-  box-sizing: border-box;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
-  list-style-type: none;
 }
 
 .cart-image {
