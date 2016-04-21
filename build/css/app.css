@@ -4,18 +4,13 @@ html {
 img {
   max-width: 100%; }
 
-td,
-th,
-h5,
-.center {
-  text-align: center; }
-
 input,
 textarea {
   outline: 0; }
 
-table {
-  border-collapse: collapse; }
+h5,
+.center {
+  text-align: center; }
 
 .content-grid {
   max-width: 1200px;
@@ -28,11 +23,11 @@ table {
 
 .mdl-button--fab.mdl-button--colored {
   background-color: #673ab7;
-  color: #ffffff; }
+  color: #fff; }
 
 .mdl-badge[data-badge]:after {
   background-color: #fb8c00;
-  color: #ffffff; }
+  color: #fff; }
 
 .mdl-layout__header-row {
   padding: .25vh 3vw .25vh 2vw; }
@@ -51,24 +46,24 @@ table {
   color: #673ab7; }
 
 .contact-max-width {
-  max-width: 900px;
-  margin: auto; }
+  margin: auto;
+  max-width: 900px; }
 
 .cart-contact.mdl-textfield {
   width: 100%; }
 
 .search-bar {
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+  background: #faebd7;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-direction: row nowrap;
       -ms-flex-direction: row nowrap;
           flex-direction: row nowrap;
-  -webkit-align-content: center;
-      -ms-flex-line-pack: center;
-          align-content: center;
-  max-width: 100%;
-  background: #faebd7; }
+  max-width: 100%; }
 
 .decor-card-event {
   background: #faebd7;
@@ -110,34 +105,56 @@ table {
 .material-icons.removeCart-color {
   color: #e53935; }
 
+.cart-list {
+  max-width: 100%;
+  width: 95%; }
+
 .cart-summary {
-  background-color: #ffffff;
-  padding: .25vh 0;
-  text-align: center; }
+  background-color: #fff;
+  text-align: center;
+  width: 320px; }
 
 .cartTotal {
   color: #fb8c00;
   padding: 0 3vw 0 2vw; }
 
-.cartHeader {
-  background-color: #faebd7; }
+.cart-header {
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #faebd7;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  list-style-type: none;
+  margin: 0; }
 
-.cartImage {
+.cart-image {
   max-width: 100%;
   vertical-align: middle; }
 
-.cartGrandTotal {
+.cart-list-button {
+  display: inline; }
+
+.cart-grand-total {
   color: #fb8c00;
   text-align: center; }
 
 .cartRow {
   background-color: #f8f8ff; }
   .cartRow :hover {
-    background-color: #fdf5e6; }
+    background-color: #fdf5e6;
+    color: #000; }
 
 .css-form {
-  max-width: 550px;
-  margin: auto; }
+  margin: auto;
+  max-width: 550px; }
   .css-form .mdl-textfield__input.ng-pristine.ng-untouched {
     border-bottom: 1px solid #d3d3d3; }
   .css-form .mdl-textfield__input.ng-touched:focus {

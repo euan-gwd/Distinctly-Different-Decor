@@ -1,41 +1,72 @@
 <main class="content-grid mdl-grid">
-    <div class="mdl-cell-12-col">
+    <div class="mdl-cell mdl-cell-12-col">
         <div class="cart-summary mdl-shadow--2dp">
-            <table ng-if="cart.products.length">
-                <caption>
+            <div>
+                <!-- <div class="cart-item-wrapper mdl-shadow--2dp" ng-if="cart.products.length">
+                    <header>
+                        <h5>Shopping Cart</h5>
+                    </header>
+                    <ul class="cart-header">
+                        <li>Item</li>
+                        <li>Product</li>
+                        <li>Price</li>
+                        <li>Add More</li>
+                        <li>Remove</li>
+                    </ul>
+                    <div class="cart-body">
+                        <ul ng-repeat="product in cart.products">
+                            <li class="cartImage"><img ng-src="{{product.image}}"></li>
+                            <li>
+                                <div class="mdl-badge mdl-badge--overlap" data-badge="x{{product.quantity}}" ng-if="product.quantity > 0">{{product.title}}</div>
+                            </li>
+                            <li>{{product.price | currency:"R"}}</li>
+                            <li>
+                                <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--icon" ng-click="addToCart(product)"><i class="material-icons addCart-color">add_shopping_cart</i></button>
+                            </li>
+                            <li>
+                                <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--icon" ng-click="removeFromCart(product,$index)" ng-show="product.quantity > 0"><i class="material-icons removeCart-color">remove_shopping_cart</i></button>
+                            </li>
+                        </ul>
+                    </div>
+                    <footer class="cart-footer">
+                        <tr>
+                            <td colspan="5">
+                                <h6 class="cartGrandTotal">Grand Total for ({{getCartTotals()}}) items = {{getCartPrice() | currency:"R"}}</h6></td>
+                        </tr>
+                    </footer>
+                </div> -->
+                <div>
                     <h5>Shopping Cart</h5>
-                </caption>
-                <thead class="cartHeader">
-                    <tr>
-                        <th>Item</th>
-                        <th>Product</th>
-                        <th>Price</th>
-                        <th>Add More</th>
-                        <th>Remove</th>
-                    </tr>
-                </thead>
-                <tfoot>
-                    <tr>
-                        <td colspan="5">
-                            <h6 class="cartGrandTotal">Grand Total for ({{getCartTotals()}}) items = {{getCartPrice() | currency:"R"}}</h6></td>
-                    </tr>
-                </tfoot>
-                <tbody>
-                    <tr ng-repeat="product in cart.products" class="cartRow">
-                        <td class="cartImage"><img ng-src="{{product.image}}"></td>
-                        <td>
-                            <div class="mdl-badge mdl-badge--overlap" data-badge="x{{product.quantity}}" ng-if="product.quantity > 0">{{product.title}}</div>
-                        </td>
-                        <td>{{product.price | currency:"R"}}</td>
-                        <td>
-                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--icon" ng-click="addToCart(product)"><i class="material-icons addCart-color">add_shopping_cart</i></button>
-                        </td>
-                        <td>
-                            <button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--icon" ng-click="removeFromCart(product,$index)" ng-show="product.quantity > 0"><i class="material-icons removeCart-color">remove_shopping_cart</i></button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                </div>
+                <div>
+                    <ul class="cart-header">
+                        <li>Item</li>
+                        <li>Product</li>
+                        <li>Add</li>
+                        <li>Remove</li>
+                    </ul>
+                </div>
+                <div class="cart-list mdl-list">
+                    <div class="mdl-list__item mdl-list__item--two-line" ng-repeat="product in cart.products">
+                        <div class="mdl-list__item-primary-content">
+                            <img class="mdl-list__item-avatar cart-image" ng-src="{{product.image}}">
+                            <span><div class="mdl-badge mdl-badge--overlap" data-badge="x{{product.quantity}}" ng-if="product.quantity > 0">{{product.title}}</div></span>
+                            <span class="mdl-list__item-sub-title">{{product.price | currency:"R"}}</span>
+                        </div>
+                        <span class="mdl-list__item-secondary-content">
+                      <span class="mdl-list__item-secondary-info">Add</span>
+                        <span class="mdl-list__item-secondary-action"><button class="cart-list-button mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--icon" ng-click="addToCart(product)"><i class="material-icons addCart-color">add_shopping_cart</i></button></span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                      <span class="mdl-list__item-secondary-info">Remove</span>
+                        <span class="mdl-list__item-secondary-action"><button class="cart-list-button mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--icon" ng-click="removeFromCart(product,$index)" ng-show="product.quantity > 0"><i class="material-icons removeCart-color">remove_shopping_cart</i></button></span>
+                        </span>
+                    </div>
+                </div>
+                <div>
+                    <h6 class="cart-grand-total">Grand Total for ({{getCartTotals()}}) items = {{getCartPrice() | currency:"R"}}</h6></td>
+                </div>
+            </div>
             <div class="mdl-card__supporting-text">
                 <form name="customerForm" novalidate class="css-form" ng-submit="submitOrder()">
                     <h5>Your Details:</h5>
