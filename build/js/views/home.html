@@ -2,7 +2,7 @@
     <div class="mdl-layout__header">
         <div class="mdl-layout__header-row">
             <div class="mdl-layout-spacer"></div>
-            <h6 class="cartTotal">Total in Cart {{getCartPrice() | currency:"R"}}</h6>
+            <h6 class="cart-subtotal">Total in Cart {{getCartPrice() | currency:"R"}}</h6>
             <button id="ttcart" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" ng-click="cartCheckOut()">
                 <i class="material-icons">shopping_cart</i>
                 <div class="mdl-tooltip mdl-tooltip" for="ttcart">

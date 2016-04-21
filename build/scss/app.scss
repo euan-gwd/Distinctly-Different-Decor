@@ -21,11 +21,15 @@ textarea {
   outline: 0;
 }
 
-h5,
-.center {
-  text-align: center;   
+h5 {
+  text-align: center;  
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
 
 .content-grid {
   max-width: 1200px;
@@ -95,7 +99,7 @@ h5,
   border-color: rgba(255, 255, 255, .2);
   box-sizing: border-box;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .mdl-card__media {
@@ -131,18 +135,35 @@ h5,
   color: $gmd-red;
 }
 
-.cart-list {
+.cart-item-summary {
+  border-style: solid;
+  margin: 0 auto;
   max-width: 100%;
-  width: 95%;
+  text-align: center;
+  width: 90%;
 }
 
 .cart-summary {
   background-color: $gmd-white;
+  padding-top: .25vh;
   text-align: center;
-  width: 320px;
+  width: 100%;
 }
 
-.cartTotal {
+.cart-list {
+  max-width: 100%;
+  width: 100%;
+}
+
+.mdl-list__item {
+  display: flex;
+}
+
+.mdl-list__item-secondary-content {
+  flex-grow: 1;
+}
+
+.cart-subtotal {
   color: $secondary-color;
   padding: 0 3vw 0 2vw;
 }
@@ -150,11 +171,11 @@ h5,
 .cart-header {
   align-items: center;
   background-color: $primary-bg-color;
+  box-sizing: border-box;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
   list-style-type: none;
-  margin: 0;
 }
 
 .cart-image {
@@ -169,17 +190,6 @@ h5,
 .cart-grand-total {
   color: $secondary-color;
   text-align: center;
-}
-
-.cartRow {
-  background-color: $gmd-offwhite;
-    
-
-  :hover {
-    background-color: #fdf5e6;
-    color: $gmd-black;
-  }
-
 }
 
 .css-form {
