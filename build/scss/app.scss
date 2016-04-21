@@ -4,199 +4,202 @@ $primary-bg-color: #faebd7;
 $gmd-green: #43a047;
 $gmd-red: #e53935;
 $gmd-grey: #d3d3d3;
-$gmd-white: #fff;
+$gmd-white: #ffffff;
 $gmd-offwhite: #f8f8ff;
+$gmd-black: #000000;
 
-html{
-  background: url('../images/seamless_paper_texture.png');
-}
-
-.brand {
-  height: 5vh;
-  max-height: 100%;
-  max-width: 100%;
+html {
+    background: url('../images/seamless_paper_texture.png');
 }
 
 img {
-  max-width: 100%;
-}
-
-.mdl-layout_content{
-  margin-top: 9vh;
-}
-
-.mdl-layout__header-row {
-  padding: .25vh 3vw .25vh 2vw;
-}
-
-.mdl-layout__title {
-  font-size: 16px;
-  text-align: left;
-  font-weight: 300;
-}
-
-.decor-layout {
-  background: url('../images/seamless_paper_texture.png');
-}
-
-.mdl-layout__header,
-.mdl-layout__drawer-button {
-  background-color: $primary-bg-color;
-  color: $primary-color;
-}
-
-.decor-card-event {
-  background: $primary-bg-color;
-  max-height: 100%;
-  max-width: 100%;
-}
-
-.mdl-grid {
-  min-width: 95vw;
-}
-
-.mdl-cell {
-  min-width: 20vw;
-}
-
-.contact-max-width {
-  max-width: 900px;
-  margin: auto;
-}
-
-.cart-contact .mdl-textfield {
-  width: 100%;
-}
-
-.mdl-card__actions {
-  border-color: rgba(255, 255, 255, .2);
-  box-sizing: border-box;
-  display: flex;
-  justify-content: space-between;
-}
-
-.mdl-logo {
-  color: $primary-color;
-  max-width: 10vw;
-}
-
-.mdl-card__title-text {
-  color: $secondary-color;
-}
-
-.material-icons.white600 {
-  color: #fff;
-}
-
-.material-icons.brand-color-alt {
-  color: $secondary-color;
-}
-
-.material-icons.brand-color {
-  color: $primary-color;
-}
-
-.material-icons.addCart-color {
-  color: $gmd-green;
-}
-
-.material-icons.removeCart-color {
-  color: $gmd-red;
-}
-
-.cart-summary {
-  background-color: $gmd-white;
-  padding: .25vh 0;
-  text-align: center;
-}
-
-.search-bar {
-  background-color: $primary-bg-color;
-  padding: .25vh 0;
-  text-align: center;
-}
-
-table {
-  border-collapse: collapse;
-}
-
-.cartTotal {
-  color: $secondary-color;
-  padding: 0 3vw 0 2vw;
-}
-
-.cartHeader {
-  background-color: $primary-bg-color;
-}
-
-.cartImage {
-  max-width: 100%;
-  vertical-align: middle;
-}
-
-.cartGrandTotal {
-  color: $secondary-color;
-  text-align: center;
+    max-width: 100%;
 }
 
 td,
 th,
 h5,
 .center {
-  text-align: center;
+    text-align: center;
+}
+
+input,
+textarea {
+    outline: 0;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.content-grid {
+    max-width: 1200px;
+    min-width: 95vw;
+}
+
+.brand {
+    height: 5vh;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.mdl-button--fab.mdl-button--colored {
+    background-color: $primary-color;
+    color: $gmd-white;   
+}
+
+.mdl-badge[data-badge]:after {
+    background-color: $secondary-color;
+    color: $gmd-white;
+}
+
+.mdl-layout__header-row {
+    padding: .25vh 3vw .25vh 2vw;
+}
+
+.mdl-layout__title {
+    font-size: 16px;
+    text-align: left;
+    font-weight: 300;
+}
+
+.decor-layout {
+    background: url('../images/seamless_paper_texture.png');
+}
+
+.mdl-layout__header,
+.mdl-layout__drawer-button {
+    background-color: $primary-bg-color;
+    color: $primary-color;
+}
+
+.contact-max-width {
+    max-width: 900px;
+    margin: auto;
+}
+
+.cart-contact.mdl-textfield {
+    width: 100%;
+}
+
+.search-bar {
+    display: flex;
+    flex-direction: row nowrap; 
+    align-content: center;
+    max-width: 100%;  
+    background: $primary-bg-color;
+}
+
+.decor-card-event {
+    background: $primary-bg-color;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.mdl-card__actions {
+    border-color: rgba(255, 255, 255, .2);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mdl-card__media {
+    margin: 0;
+}
+
+.mdl-logo {
+    color: $primary-color;
+    max-width: 10vw;
+}
+
+.mdl-card__title-text {
+    color: $secondary-color;
+}
+
+.material-icons.white600 {
+    color: #fff;
+}
+
+.material-icons.brand-color-alt {
+    color: $secondary-color;
+}
+
+.material-icons.brand-color {
+    color: $primary-color;
+}
+
+.material-icons.addCart-color {
+    color: $gmd-green;
+}
+
+.material-icons.removeCart-color {
+    color: $gmd-red;
+}
+
+.cart-summary {
+    background-color: $gmd-white;
+    padding: .25vh 0;
+    text-align: center;
+}
+
+.cartTotal {
+    color: $secondary-color;
+    padding: 0 3vw 0 2vw;
+}
+
+.cartHeader {
+    background-color: $primary-bg-color;
+}
+
+.cartImage {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+.cartGrandTotal {
+    color: $secondary-color;
+    text-align: center;
 }
 
 .cartRow {
-  background-color: $gmd-offwhite;
+    background-color: $gmd-offwhite;
 
   :hover {
     background-color: #fdf5e6;
-  }
+    }
 
-}
-
-input {
-  outline: 0;
-}
-
-textarea {
-  outline: 0;
 }
 
 .css-form {
-  max-width: 550px;
-  margin: auto;
+    max-width: 550px;
+    margin: auto;
 
-  // input {
-  //   outline: 0;
-  // }
+    .mdl-textfield__input.ng-pristine.ng-untouched {
+        border-bottom: 1px solid $gmd-grey;
+    }
 
-  // textarea {
-  //   outline: 0;
-  // }
+    .mdl-textfield__input.ng-touched:focus {
+        border-bottom: 2px solid $primary-color;
+    }
 
-  .mdl-textfield__input.ng-pristine.ng-untouched {
-    border-bottom: 1px solid $gmd-grey;
-  }
+    .mdl-textfield__input.ng-pristine:focus {
+        border-bottom: 2px solid $primary-color;
+    }
 
-  .mdl-textfield__input.ng-touched:focus {
-    border-bottom: 2px solid $primary-color;
-  }
+    .mdl-textfield__input.ng-invalid {
+        border-bottom: 2px solid $gmd-red;
+        transition-duration: .2s;
+        transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    }
 
-  .mdl-textfield__input.ng-pristine:focus {
-    border-bottom: 2px solid $primary-color;
-  }
+    .mdl-textfield__input.ng-valid {
+        border-bottom: 2px solid $gmd-green;
+        transition-duration: .2s;
+        transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    }
 
-  .mdl-textfield__input.ng-invalid {
-    border-bottom: 2px solid $gmd-red;
-    transition-duration: .2s;
-    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-  }
+}
 
-  .mdl-textfield__input.ng-valid {
-    border-bottom: 2px solid $gmd-green;
-    transition-duration: .2s;
-    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-  }
-
+.mdl-mini-footer {
+  background: none;
 }

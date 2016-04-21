@@ -1,16 +1,38 @@
 html {
   background: url("../images/seamless_paper_texture.png"); }
 
+img {
+  max-width: 100%; }
+
+td,
+th,
+h5,
+.center {
+  text-align: center; }
+
+input,
+textarea {
+  outline: 0; }
+
+table {
+  border-collapse: collapse; }
+
+.content-grid {
+  max-width: 1200px;
+  min-width: 95vw; }
+
 .brand {
   height: 5vh;
   max-height: 100%;
   max-width: 100%; }
 
-img {
-  max-width: 100%; }
+.mdl-button--fab.mdl-button--colored {
+  background-color: #673ab7;
+  color: #ffffff; }
 
-.mdl-layout_content {
-  margin-top: 9vh; }
+.mdl-badge[data-badge]:after {
+  background-color: #fb8c00;
+  color: #ffffff; }
 
 .mdl-layout__header-row {
   padding: .25vh 3vw .25vh 2vw; }
@@ -28,23 +50,30 @@ img {
   background-color: #faebd7;
   color: #673ab7; }
 
-.decor-card-event {
-  background: #faebd7;
-  max-height: 100%;
-  max-width: 100%; }
-
-.mdl-grid {
-  min-width: 95vw; }
-
-.mdl-cell {
-  min-width: 20vw; }
-
 .contact-max-width {
   max-width: 900px;
   margin: auto; }
 
-.cart-contact .mdl-textfield {
+.cart-contact.mdl-textfield {
   width: 100%; }
+
+.search-bar {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row nowrap;
+      -ms-flex-direction: row nowrap;
+          flex-direction: row nowrap;
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+  max-width: 100%;
+  background: #faebd7; }
+
+.decor-card-event {
+  background: #faebd7;
+  max-height: 100%;
+  max-width: 100%; }
 
 .mdl-card__actions {
   border-color: rgba(255, 255, 255, 0.2);
@@ -55,6 +84,9 @@ img {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between; }
+
+.mdl-card__media {
+  margin: 0; }
 
 .mdl-logo {
   color: #673ab7;
@@ -79,17 +111,9 @@ img {
   color: #e53935; }
 
 .cart-summary {
-  background-color: #fff;
+  background-color: #ffffff;
   padding: .25vh 0;
   text-align: center; }
-
-.search-bar {
-  background-color: #faebd7;
-  padding: .25vh 0;
-  text-align: center; }
-
-table {
-  border-collapse: collapse; }
 
 .cartTotal {
   color: #fb8c00;
@@ -106,22 +130,10 @@ table {
   color: #fb8c00;
   text-align: center; }
 
-td,
-th,
-h5,
-.center {
-  text-align: center; }
-
 .cartRow {
   background-color: #f8f8ff; }
   .cartRow :hover {
     background-color: #fdf5e6; }
-
-input {
-  outline: 0; }
-
-textarea {
-  outline: 0; }
 
 .css-form {
   max-width: 550px;
@@ -140,3 +152,6 @@ textarea {
     border-bottom: 2px solid #43a047;
     transition-duration: .2s;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+
+.mdl-mini-footer {
+  background: none; }
