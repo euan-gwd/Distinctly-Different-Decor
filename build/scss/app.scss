@@ -222,6 +222,24 @@ ul {
 
 }
 
+.thankyou-wrapper {
+  background-color: $gmd-white;
+  height: 45vh;
+  max-width: 100%;
+  padding: 15vh 2.5vw;
+  text-align: center;
+  width: 90vw;
+}
+
+.thankyou-note {
+  background-color: $primary-bg-color;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 2.5vh 0;
+  text-align: center;
+  width: 90%;
+}
+
 .mdl-mini-footer {
   background: none;
 }

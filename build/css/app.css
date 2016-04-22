@@ -177,5 +177,21 @@ ul {
     transition-duration: .2s;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
 
+.thankyou-wrapper {
+  background-color: #fff;
+  height: 45vh;
+  max-width: 100%;
+  padding: 15vh 2.5vw;
+  text-align: center;
+  width: 90vw; }
+
+.thankyou-note {
+  background-color: #faebd7;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 2.5vh 0;
+  text-align: center;
+  width: 90%; }
+
 .mdl-mini-footer {
   background: none; }
