@@ -7,3 +7,23 @@ $gmd-grey: #d3d3d3;
 $gmd-white: #fff;
 $gmd-offwhite: #f8f8ff;
 $gmd-black: #000;
+
+.material-icons.white600 {
+  color: $gmd-white;
+}
+
+.material-icons.brand-color-alt {
+  color: $secondary-color;
+}
+
+.material-icons.brand-color {
+  color: $primary-color;
+}
+
+.material-icons.addCart-color {
+  color: $gmd-green;
+}
+
+.material-icons.removeCart-color {
+  color: $gmd-red;
+}

@@ -1,11 +1,3 @@
-html {
-  background: url("../images/seamless_paper_texture.png"); }
-
-img {
-  height: 3rem;
-  max-width: 100%;
-  width: 3rem; }
-
 .material-icons.white600 {
   color: #fff; }
 
@@ -20,3 +12,11 @@ img {
 
 .material-icons.removeCart-color {
   color: #e53935; }
+
+html {
+  background: url("../images/seamless_paper_texture.png"); }
+
+img {
+  height: 3rem;
+  max-width: 100%;
+  width: 3rem; }
