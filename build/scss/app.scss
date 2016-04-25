@@ -4,8 +4,22 @@ html {
   background: url('../images/seamless_paper_texture.png');
 }
 
+body {
+		font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+}
+
 img {
   height: 3rem;
   max-width: 100%;
   width: 3rem;
+}
+
+.md-white {
+		color: $gmd-white;
+}
+
+.md-title {
+		color: $primary-color;
 }
