@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="DDDApp">
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
@@ -13,8 +13,19 @@
     <link rel="stylesheet" href="fonts/Roboto.css">
 </head>
 
-<body>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+<body ng-app="DDDApp" ng-cloak>
+    <md-toolbar class="md-primary" md-whiteframe="2">
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="Settings">
+                <md-icon>more_vert</md-icon>
+            </md-button>
+            <span flex></span>
+            <h2 class="md-flex md-title">Distinctly Different Decor</h2>
+            <span flex></span>
+            <img ng-src="images/D3Logo.svg" alt="Brand Logo" class="brand">
+        </div>
+    </md-toolbar>
+    <!--     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
                 <div class="mdl-layout__header-row">
@@ -33,8 +44,7 @@
             </nav>
         </div>
         <main class="mdl-layout_content" ui-view></main>
-    </div>
-    <script src="js/mdl/material.min.js"></script>
+    </div> -->
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-aria/angular-aria.js"></script>
     <script src="/bower_components/angular-animate/angular-animate.js"></script>
