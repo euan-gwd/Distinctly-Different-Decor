@@ -1,6 +1,6 @@
 (function() {
   "use strict";
-  var app = angular.module('DDDApp', ['ui.router', 'DDDApp.controllers', 'DDDApp.services']);
+  var app = angular.module('DDDApp', ['ui.router', 'DDDApp.controllers', 'DDDApp.services','ngMaterial']);
 
   app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
@@ -19,7 +19,7 @@
         templateUrl: "js/views/thankyou.html"
       });
     $urlRouterProvider.otherwise('/');
-    $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(false);
   });
 
 }());
