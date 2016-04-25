@@ -25,15 +25,11 @@ h5 {
   text-align: center;  
 }
 
-ul {
+ul,
+p {
   list-style-type: none;
   margin: 0;
   padding: 0;
-}
-
-.content-grid {
-  max-width: 1200px;
-  min-width: 95vw;
 }
 
 .brand {
@@ -70,6 +66,13 @@ ul {
 .mdl-layout__drawer-button {
   background-color: $primary-bg-color;
   color: $primary-color;
+}
+
+.content-grid {
+  height: 100vh;
+  // margin-top: 60px;
+  max-width: 1200px;
+  min-width: 95vw;
 }
 
 .contact-max-width {
@@ -242,4 +245,5 @@ ul {
 
 .mdl-mini-footer {
   background: none;
+  padding: 0;
 }

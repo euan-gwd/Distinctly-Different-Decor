@@ -11,14 +11,11 @@ textarea {
 h5 {
   text-align: center; }
 
-ul {
+ul,
+p {
   list-style-type: none;
   margin: 0;
   padding: 0; }
-
-.content-grid {
-  max-width: 1200px;
-  min-width: 95vw; }
 
 .brand {
   height: 5vh;
@@ -48,6 +45,11 @@ ul {
 .mdl-layout__drawer-button {
   background-color: #faebd7;
   color: #673ab7; }
+
+.content-grid {
+  height: 100vh;
+  max-width: 1200px;
+  min-width: 95vw; }
 
 .contact-max-width {
   margin: auto;
@@ -194,4 +196,5 @@ ul {
   width: 90%; }
 
 .mdl-mini-footer {
-  background: none; }
+  background: none;
+  padding: 0; }

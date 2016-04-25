@@ -2,7 +2,7 @@
   "name": "dddwebstore",
   "version": "1.0.0",
   "description": "web store for DDD with gulp development server and Angular Material",
-  "main": "index.html",
+  "main": "server.js",
   "author": "Euan Greenwood",
   "license": "MIT",
   "private": true,

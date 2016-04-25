@@ -3,13 +3,9 @@
         <div class="mdl-layout__header-row">
             <div class="mdl-layout-spacer"></div>
             <h6 class="cart-subtotal">Total in Cart {{getCartPrice() | currency:"R"}}</h6>
-            <button id="ttcart" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" ng-click="cartCheckOut()">
-                <i class="material-icons">shopping_cart</i>
-                <div class="mdl-tooltip mdl-tooltip" for="ttcart">
-                    Checkout
-                </div>
-            </button>
+            <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" ng-click="cartCheckOut()"><i class="material-icons">shopping_cart</i></button>
             <div class="mdl-badge mdl-badge--overlap" data-badge="{{getCartTotals()}}" ng-if="cart.products.length"></div>
+            <div class="mdl-layout-spacer"></div>
         </div>
     </div>
 </header>
@@ -17,8 +13,8 @@
     <div class="content-grid mdl-grid">
         <div class="mdl-cell mdl-cell--12-col">
             <div class="search-bar">
-                    <i class="material-icons brand-color">search</i>
-                    <input class="mdl-textfield__input" type="search" ng-model="productSearch" id="Search" placeholder="filter items by search">
+                <i class="material-icons brand-color">search</i>
+                <input class="mdl-textfield__input" type="search" ng-model="productSearch" id="Search" placeholder="filter items by search">
             </div>
         </div>
         <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone" ng-repeat="product in products | filter:productSearch">
@@ -30,7 +26,7 @@
                     <h1 class="mdl-card__title-text">{{product.title}}</h1>
                 </div>
                 <div class="mdl-card__supporting-text">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam accusamus, consectetur.</p>
+                    <p>{{product.description}}</p>
                 </div>
                 <div class="mdl-card__actions mdl-card--border">
                     <p class="mdl-card__title-text">{{product.price | currency:"R"}}</p>
