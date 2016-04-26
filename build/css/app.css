@@ -44,6 +44,9 @@ p {
 .md-subhead {
   color: #fb8c00; }
 
+.sub-toolbar {
+  height: 60px; }
+
 md-content.md-myTheme-theme {
   background: none; }
 
@@ -99,8 +102,7 @@ md-input-container.md-myTheme-theme {
   border: 1px solid purple; }
 
 .test-border2 {
-  border: 1px solid red;
-  height: 60px; }
+  border: 1px solid red; }
 
 .test-border3 {
   border: 1px solid green; }

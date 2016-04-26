@@ -1,4 +1,4 @@
-<div layout="row" layout-align="space-around center" class="test-border2">
+<div layout="row" layout-align="space-around center" class="sub-toolbar test-border2">
     <md-input-container class="test-border5">
         <md-icon class="brand-color-alt">search</md-icon>
         <input ng-model="product.search" type="search" aria-label="search" placeholder="Search">
@@ -6,10 +6,10 @@
     <span flex hide show-gt-sm class="test-border5"></span>
     <md-button class="md-raised md-primary test-border5" aria-label="checkout button" ng-click="cartCheckOut()">
         <md-icon>shopping_cart</md-icon>
-        <span class="md-subhead">{{getCartTotals()}}</span>
+        <span class="md-subhead" ng-if="cart.products.length">{{getCartTotals()}}</span>
         <!-- ng-if="cart.products.length" -->
     </md-button>
-    <h6 class="md-subhead md-padding">Total {{getCartPrice() | currency:"R"}}</h6>
+    <h6 class="md-subhead md-padding" ng-if="cart.products.length">Total {{getCartPrice() | currency:"R"}}</h6>
     <!-- ng-if="cart.products.length" -->
 </div>
 <div layout-gt-xs="row" layout-align="space-around center" layout-xs="row" layout-wrap class="test-border3">
