@@ -7,10 +7,8 @@
     <md-button class="md-raised md-primary" aria-label="checkout button" ng-click="cartCheckOut()">
         <md-icon>shopping_cart</md-icon>
         <span class="md-subhead" ng-if="cart.products.length">{{getCartTotals()}}</span>
-        <!-- ng-if="cart.products.length" -->
     </md-button>
     <h6 class="md-subhead md-padding" ng-if="cart.products.length">Total {{getCartPrice() | currency:"R"}}</h6>
-    <!-- ng-if="cart.products.length" -->
 </div>
 <div layout-gt-xs="row" layout-align="space-around center" layout-xs="row" layout-wrap>
     <div ng-repeat="product in products | filter:product.search">
