@@ -13,16 +13,20 @@
     <link rel="stylesheet" href="css/app.css" />
 </head>
 
-<body ng-app="DDDApp" ng-cloak>
-    <md-toolbar md-whiteframe="2">
-        <div class="md-toolbar-tools" layout="row">
-            <span flex></span>
-            <img ng-src="images/D3Logo.svg" alt="Brand Logo" class="brand">
-            <span flex></span>
-            <h2 class="md-title">Distinctly Different Decor</h2>
-        </div>
-    </md-toolbar>
-    <md-content layout-padding ui-view></md-content>
+<body ng-app="DDDApp" ng-cloak layout="column" flex layout-fill class="test-border">
+    <header>
+        <md-toolbar md-whiteframe="2">
+            <div class="md-toolbar-tools" flex layout="row" flex>
+                <span flex></span>
+                <img ng-src="images/D3Logo.svg" alt="Brand Logo" class="brand">
+                <span flex></span>
+                <h2 class="md-title" hide show-gt-sm>Distinctly Different Decor</h2>
+            </div>
+        </md-toolbar>
+    </header>
+    <main flex layout="row" class="test-border1">
+        <md-content flex ui-view></md-content>
+    </main>
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-aria/angular-aria.js"></script>
     <script src="/bower_components/angular-animate/angular-animate.js"></script>
