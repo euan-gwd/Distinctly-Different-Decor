@@ -6,9 +6,9 @@
     <span flex hide show-gt-sm class="test-border5"></span>
     <md-button class="md-raised md-primary test-border5" aria-label="checkout button" ng-click="cartCheckOut()">
         <md-icon>shopping_cart</md-icon>
-        <span class="md-subhead" ng-if="cart.products.length">{{getCartTotals()}}</span>
+        <span class="md-subhead">{{getCartTotals()}}</span> <!-- ng-if="cart.products.length" -->
     </md-button>
-    <h6 class="md-subhead" ng-if="cart.products.length">Total {{getCartPrice() | currency:"R"}}</h6>
+    <h6 class="md-subhead md-padding">Total {{getCartPrice() | currency:"R"}}</h6> <!-- ng-if="cart.products.length" -->
 </md-card>
 <div layout-gt-xs="row" layout-align="space-around center" layout-xs="row" layout-wrap class="test-border3">
     <div ng-repeat="product in products | filter:product.search">
