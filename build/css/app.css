@@ -20,6 +20,22 @@ body {
   font-style: normal;
   font-weight: 400; }
 
+img {
+  max-width: 100%; }
+
+input,
+textarea {
+  outline: 0; }
+
+h5 {
+  text-align: center; }
+
+ul,
+p {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
 .brand {
   height: 3rem;
   max-width: 100%;
@@ -40,3 +56,99 @@ md-toolbar.md-myTheme-theme {
 
 md-content.md-myTheme-theme {
   background: none; }
+
+.content-grid {
+  height: 100vh;
+  max-width: 1200px;
+  min-width: 95vw; }
+
+.contact-max-width {
+  margin: auto;
+  max-width: 900px; }
+
+.search-bar {
+  -webkit-align-content: center;
+      -ms-flex-line-pack: center;
+          align-content: center;
+  background: #faebd7;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row nowrap;
+      -ms-flex-direction: row nowrap;
+          flex-direction: row nowrap;
+  max-width: 100%; }
+
+.cart-item-summary {
+  margin: 0 auto;
+  max-width: 100%;
+  text-align: center;
+  width: 90%; }
+
+.cart-summary {
+  background-color: #fff;
+  padding-top: 2.5vh;
+  text-align: center;
+  width: 100%; }
+
+.cart-list {
+  max-width: 100%;
+  padding-top: 0;
+  width: 100%; }
+
+.cart-subtotal {
+  color: #fb8c00;
+  padding: 0 3vw 0 2vw; }
+
+.cart-header {
+  background-color: #faebd7;
+  padding-bottom: 0; }
+
+.cart-image {
+  max-width: 100%;
+  vertical-align: middle; }
+
+.cart-list-button {
+  display: inline; }
+
+.cart-grand-total {
+  color: #fb8c00;
+  padding-bottom: 1rem;
+  text-align: center; }
+
+.cart-border {
+  border-top: 1px solid rgba(0, 0, 0, 0.1); }
+
+.css-form {
+  margin: auto;
+  max-width: 550px; }
+  .css-form input.ng-pristine.ng-untouched {
+    border-bottom: 1px solid #d3d3d3; }
+  .css-form input.ng-touched:focus {
+    border-bottom: 2px solid #673ab7; }
+  .css-form input.ng-pristine:focus {
+    border-bottom: 2px solid #673ab7; }
+  .css-form input.ng-invalid {
+    border-bottom: 2px solid #e53935;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+  .css-form input.ng-valid {
+    border-bottom: 2px solid #43a047;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+
+.thankyou-wrapper {
+  background-color: #fff;
+  height: 45vh;
+  max-width: 100%;
+  padding: 15vh 2.5vw;
+  text-align: center;
+  width: 90vw; }
+
+.thankyou-note {
+  background-color: #faebd7;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 2.5vh 0;
+  text-align: center;
+  width: 90%; }

@@ -8,6 +8,26 @@ body {
   font-weight: 400;
 }
 
+img {
+  max-width: 100%;
+}
+
+input,
+textarea {
+  outline: 0;
+}
+
+h5 {
+  text-align: center;
+}
+
+ul,
+p {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 .brand {
   height: 3rem;
   max-width: 100%;
@@ -33,4 +53,121 @@ md-toolbar.md-myTheme-theme {
 
 md-content.md-myTheme-theme {
   background: none;
+}
+
+.content-grid {
+  height: 100vh;
+  max-width: 1200px;
+  min-width: 95vw;
+}
+
+.contact-max-width {
+  margin: auto;
+  max-width: 900px;
+}
+
+.search-bar {
+  align-content: center;
+  background: $primary-bg-color;
+  display: flex;
+  flex-direction: row nowrap; 
+  max-width: 100%;  
+}
+
+.cart-item-summary {
+  margin: 0 auto;
+  max-width: 100%;
+  text-align: center;
+  width: 90%;
+}
+
+.cart-summary {
+  background-color: $gmd-white;
+  padding-top: 2.5vh;
+  text-align: center;
+  width: 100%;
+}
+
+.cart-list {
+  max-width: 100%;
+  padding-top: 0;
+  width: 100%;
+}
+
+
+.cart-subtotal {
+  color: $secondary-color;
+  padding: 0 3vw 0 2vw;
+}
+
+.cart-header {
+  background-color: $primary-bg-color;
+  padding-bottom: 0;
+}
+
+.cart-image {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.cart-list-button {
+  display: inline;
+}
+
+.cart-grand-total {
+  color: $secondary-color;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.cart-border {
+  border-top: 1px solid rgba(0,0,0,.1);
+}
+
+.css-form {
+  margin: auto;
+  max-width: 550px;
+
+  input.ng-pristine.ng-untouched {
+    border-bottom: 1px solid $gmd-grey;
+  }
+
+  input.ng-touched:focus {
+    border-bottom: 2px solid $primary-color;
+  }
+
+  input.ng-pristine:focus {
+    border-bottom: 2px solid $primary-color;
+  }
+
+  input.ng-invalid {
+    border-bottom: 2px solid $gmd-red;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  }
+
+  input.ng-valid {
+    border-bottom: 2px solid $gmd-green;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  }
+
+}
+
+.thankyou-wrapper {
+  background-color: $gmd-white;
+  height: 45vh;
+  max-width: 100%;
+  padding: 15vh 2.5vw;
+  text-align: center;
+  width: 90vw;
+}
+
+.thankyou-note {
+  background-color: $primary-bg-color;
+  margin: 0 auto;
+  max-width: 100%;
+  padding: 2.5vh 0;
+  text-align: center;
+  width: 90%;
 }
