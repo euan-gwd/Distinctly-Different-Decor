@@ -8,46 +8,25 @@
     <title>| Distinctly Different Decor |</title>
     <base href="/">
     <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
-    <link rel="stylesheet" href="css/app.css" />
     <link rel="stylesheet" href="fonts/material-icons.css">
     <link rel="stylesheet" href="fonts/Roboto.css">
+    <link rel="stylesheet" href="css/app.css" />
 </head>
 
 <body ng-app="DDDApp" ng-cloak>
-    <md-toolbar class="md-primary" md-whiteframe="2">
-        <div class="md-toolbar-tools">
-            <md-button class="md-icon-button" aria-label="Menu">
-                <md-icon class="brand-color">more_vert</md-icon>
-            </md-button>
-            <span flex></span>
-            <h2 class="md-flex md-title md-accent">Distinctly Different Decor</h2>
+    <md-toolbar>
+        <div class="md-toolbar-tools" layout="row">
             <span flex></span>
             <img ng-src="images/D3Logo.svg" alt="Brand Logo" class="brand">
+            <span flex></span>
+            <h2 class="md-title">Distinctly Different Decor</h2>
         </div>
     </md-toolbar>
-    <!--     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-        <header class="mdl-layout__header">
-            <div class="mdl-layout__header-row">
-                <div class="mdl-layout__header-row">
-                </div>
-                <div class="mdl-layout-spacer"></div>
-                <div>
-                    <img class="brand" src="images/D3Logo.svg" alt="brand logo">
-                </div>
-            </div>
-        </header>
-        <div class="mdl-layout__drawer">
-            <div class="mdl-layout__title">Distinctly Different Decor</div>
-            <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font">
-                <a class="mdl-navigation__link" href="">About</a>
-                <a class="mdl-navigation__link" href="">Contact</a>
-            </nav>
-        </div>
-        <main class="mdl-layout_content" ui-view></main>
-    </div> -->
+    <md-content ui-view></md-content>
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-aria/angular-aria.js"></script>
     <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
     <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="/bower_components/angular-material/angular-material.js"></script>
     <script src="js/services.js"></script>

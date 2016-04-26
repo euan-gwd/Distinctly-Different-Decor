@@ -13,15 +13,14 @@
 .material-icons.removeCart-color {
   color: #e53935; }
 
-html {
-  background: url("../images/seamless_paper_texture.png"); }
-
+html,
 body {
+  background: url("../images/seamless_paper_texture.png");
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400; }
 
-img {
+.brand {
   height: 3rem;
   max-width: 100%;
   width: 3rem; }
@@ -29,5 +28,15 @@ img {
 .md-white {
   color: #fff; }
 
-.md-title {
+.md-title,
+.md-subhead {
   color: #673ab7; }
+
+md-toolbar.md-myTheme-theme {
+  background: none; }
+
+.md-toolbar-tools {
+  background-color: #faebd7; }
+
+md-content.md-myTheme-theme {
+  background: none; }

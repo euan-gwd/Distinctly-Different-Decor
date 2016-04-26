@@ -1,6 +1,6 @@
 (function() {
     "use strict";
-    var app = angular.module('DDDApp', ['ui.router', 'DDDApp.controllers', 'DDDApp.services', 'ngMaterial']);
+    var app = angular.module('DDDApp', ['ui.router', 'DDDApp.controllers', 'DDDApp.services', 'ngMaterial', 'ngMessages']);
 
     app.config(function($stateProvider, $urlRouterProvider, $locationProvider, $mdThemingProvider, $mdIconProvider) {
         $stateProvider
@@ -21,12 +21,15 @@
         $urlRouterProvider.otherwise('/');
         $locationProvider.html5Mode(false);
 
-        $mdThemingProvider.theme('default')
-            .primaryPalette('orange')
-            .accentPalette('deep-purple')
+        $mdThemingProvider.theme('myTheme')
+            .primaryPalette('deep-purple', {
+                'default': '900'
+            })
+            .accentPalette('orange')
             .warnPalette('red');
+        $mdThemingProvider.setDefaultTheme('myTheme');
 
-        $mdIconProvider.defaultFontSet('material-icons');   
+        $mdIconProvider.defaultFontSet('material-icons');
     });
 
 }());
