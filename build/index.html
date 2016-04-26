@@ -14,7 +14,7 @@
 </head>
 
 <body ng-app="DDDApp" ng-cloak>
-    <md-toolbar>
+    <md-toolbar md-whiteframe="2">
         <div class="md-toolbar-tools" layout="row">
             <span flex></span>
             <img ng-src="images/D3Logo.svg" alt="Brand Logo" class="brand">
@@ -22,7 +22,7 @@
             <h2 class="md-title">Distinctly Different Decor</h2>
         </div>
     </md-toolbar>
-    <md-content ui-view></md-content>
+    <md-content layout-padding ui-view></md-content>
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-aria/angular-aria.js"></script>
     <script src="/bower_components/angular-animate/angular-animate.js"></script>

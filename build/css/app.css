@@ -15,10 +15,7 @@
 
 html,
 body {
-  background: url("../images/seamless_paper_texture.png");
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400; }
+  background: url("../images/seamless_paper_texture.png"); }
 
 img {
   max-width: 100%; }
@@ -41,21 +38,21 @@ p {
   max-width: 100%;
   width: 3rem; }
 
-.md-white {
-  color: #fff; }
-
-.md-title,
-.md-subhead {
+.md-title {
   color: #673ab7; }
 
-md-toolbar.md-myTheme-theme {
-  background: none; }
+.md-subhead {
+  color: #fb8c00; }
 
 .md-toolbar-tools {
   background-color: #faebd7; }
 
 md-content.md-myTheme-theme {
   background: none; }
+
+md-card.md-myTheme-theme {
+  background-color: #faebd7;
+  color: #673ab7; }
 
 .content-grid {
   height: 100vh;

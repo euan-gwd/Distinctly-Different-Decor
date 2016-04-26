@@ -1,13 +1,13 @@
-<md-toolbar md-whiteframe="2" >
-    <div class="md-toolbar-tools" layout-align="center center">
-        <h6 class="md-subhead">Total in Cart {{getCartPrice() | currency:"R"}}</h6>
-        <md-button class="md-fab md-mini md-primary" aria-label="checkout button" ng-click="cartCheckOut()">
+<md-card class="card-border" md-whiteframe="2">
+    <div class="md-toolbar-tools" layout-align="end center">
+        <md-button class="md-raised md-primary" aria-label="checkout button" ng-click="cartCheckOut()">
             <md-icon>shopping_cart</md-icon>
+            <span class="md-subhead" ng-if="cart.products.length">{{getCartTotals()}}</span>
         </md-button>
-        <div class="mdl-badge mdl-badge--overlap" data-badge="{{getCartTotals()}}" ng-if="cart.products.length"></div>
+        <h6 class="md-subhead" ng-if="cart.products.length">Total {{getCartPrice() | currency:"R"}}</h6>
     </div>
-</md-toolbar>
-<md-content class="md-padding" layout-xs="column" layout="row">
+</md-card>
+<md-content class="md-padding" layout-xs="column" layout="row" layout-align="space-around center" layout-wrap>
     <!--         <div class="mdl-cell mdl-cell--12-col">
             <div class="search-bar">
                 <i class="material-icons brand-color">search</i>
@@ -28,6 +28,7 @@
             <md-card-content>
                 <p>{{product.description}}</p>
             </md-card-content>
+            <md-divider></md-divider>
             <md-card-actions layout="row" layout-align="center center">
                 <md-button ng-click="addToCart(product)">
                     <md-icon class="brand-color">add_shopping_cart</md-icon>

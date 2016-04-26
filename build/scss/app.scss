@@ -3,9 +3,6 @@
 html,
 body {
   background: url('../images/seamless_paper_texture.png');
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
 }
 
 img {
@@ -34,17 +31,12 @@ p {
   width: 3rem;
 }
 
-.md-white {
-  color: $gmd-white;
-}
-
-.md-title,
-.md-subhead {
+.md-title {
   color: $primary-color;
 }
 
-md-toolbar.md-myTheme-theme {
-  background: none;
+.md-subhead {
+		color: $secondary-color;
 }
 
 .md-toolbar-tools {
@@ -53,6 +45,12 @@ md-toolbar.md-myTheme-theme {
 
 md-content.md-myTheme-theme {
   background: none;
+  // background: url('../images/seamless_paper_texture.png');
+}
+
+md-card.md-myTheme-theme {
+		background-color: $primary-bg-color;
+		color: $primary-color;
 }
 
 .content-grid {
