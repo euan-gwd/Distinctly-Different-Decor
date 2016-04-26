@@ -39,18 +39,18 @@ p {
 		color: $secondary-color;
 }
 
-.md-toolbar-tools {
-  background-color: $primary-bg-color;
-}
-
 md-content.md-myTheme-theme {
   background: none;
-  // background: url('../images/seamless_paper_texture.png');
 }
 
-md-card.md-myTheme-theme {
+md-card.md-myTheme-theme,
+.md-toolbar-tools {
 		background-color: $primary-bg-color;
 		color: $primary-color;
+}
+
+md-input-container.md-myTheme-theme {
+		align-self: flex-start;
 }
 
 .content-grid {

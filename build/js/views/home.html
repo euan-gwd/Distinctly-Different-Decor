@@ -1,5 +1,9 @@
 <md-card class="card-border" md-whiteframe="2">
-    <div class="md-toolbar-tools" layout-align="end center">
+    <div class="md-toolbar-tools" layout-align="space-between center">
+        <md-input-container>
+            <md-icon class="brand-color-alt">search</md-icon>
+            <input ng-model="product.search" type="search" placeholder="Search">
+        </md-input-container>
         <md-button class="md-raised md-primary" aria-label="checkout button" ng-click="cartCheckOut()">
             <md-icon>shopping_cart</md-icon>
             <span class="md-subhead" ng-if="cart.products.length">{{getCartTotals()}}</span>
@@ -8,13 +12,7 @@
     </div>
 </md-card>
 <md-content class="md-padding" layout-xs="column" layout="row" layout-align="space-around center" layout-wrap>
-    <!--         <div class="mdl-cell mdl-cell--12-col">
-            <div class="search-bar">
-                <i class="material-icons brand-color">search</i>
-                <input class="mdl-textfield__input" type="search" ng-model="productSearch" id="Search" placeholder="filter items by search">
-            </div>
-        </div> -->
-    <div ng-repeat="product in products | filter:productSearch">
+    <div ng-repeat="product in products | filter:product.search">
         <md-card>
             <md-card-title>
                 <md-card-title-text>

@@ -44,15 +44,18 @@ p {
 .md-subhead {
   color: #fb8c00; }
 
-.md-toolbar-tools {
-  background-color: #faebd7; }
-
 md-content.md-myTheme-theme {
   background: none; }
 
-md-card.md-myTheme-theme {
+md-card.md-myTheme-theme,
+.md-toolbar-tools {
   background-color: #faebd7;
   color: #673ab7; }
+
+md-input-container.md-myTheme-theme {
+  -webkit-align-self: flex-start;
+      -ms-flex-item-align: start;
+          align-self: flex-start; }
 
 .content-grid {
   height: 100vh;
