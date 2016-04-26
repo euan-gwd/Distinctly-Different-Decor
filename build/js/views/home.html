@@ -1,10 +1,10 @@
-<div layout="row" layout-align="space-around center" class="sub-toolbar test-border2">
-    <md-input-container class="test-border5">
+<div layout="row" layout-align="space-around center" class="sub-toolbar">
+    <md-input-container>
         <md-icon class="brand-color-alt">search</md-icon>
         <input ng-model="product.search" type="search" aria-label="search" placeholder="Search">
     </md-input-container>
-    <span flex hide show-gt-sm class="test-border5"></span>
-    <md-button class="md-raised md-primary test-border5" aria-label="checkout button" ng-click="cartCheckOut()">
+    <span flex hide show-gt-sm></span>
+    <md-button class="md-raised md-primary" aria-label="checkout button" ng-click="cartCheckOut()">
         <md-icon>shopping_cart</md-icon>
         <span class="md-subhead" ng-if="cart.products.length">{{getCartTotals()}}</span>
         <!-- ng-if="cart.products.length" -->
@@ -12,7 +12,7 @@
     <h6 class="md-subhead md-padding" ng-if="cart.products.length">Total {{getCartPrice() | currency:"R"}}</h6>
     <!-- ng-if="cart.products.length" -->
 </div>
-<div layout-gt-xs="row" layout-align="space-around center" layout-xs="row" layout-wrap class="test-border3">
+<div layout-gt-xs="row" layout-align="space-around center" layout-xs="row" layout-wrap>
     <div ng-repeat="product in products | filter:product.search">
         <md-card>
             <md-card-title>
