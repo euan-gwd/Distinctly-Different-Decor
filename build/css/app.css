@@ -99,7 +99,8 @@ md-input-container.md-myTheme-theme {
   border: 1px solid purple; }
 
 .test-border2 {
-  border: 1px solid red; }
+  border: 1px solid red;
+  height: 60px; }
 
 .test-border3 {
   border: 1px solid green; }
