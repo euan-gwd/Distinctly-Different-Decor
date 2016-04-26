@@ -45,7 +45,8 @@ p {
   color: #fb8c00; }
 
 .sub-toolbar {
-  height: 60px; }
+  height: 60px;
+  padding: 0 1rem; }
 
 md-content.md-myTheme-theme {
   background: none; }
