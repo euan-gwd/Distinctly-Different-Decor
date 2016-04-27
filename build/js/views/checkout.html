@@ -1,23 +1,23 @@
 <md-content flex class="md-margin" layout-align="center center">
     <md-card class="">
-        <div class="test-border cart-item-summary" ng-if="cart.products.length">
-            <md-subheader class="md-no-sticky md-primary"><h2>Selected Items</h2></md-subheader>
-            <md-list md-color="background:'blue'" flex>
+        <div class="cart-item-summary md-whiteframe-4dp" ng-if="cart.products.length">
+            <md-subheader class="md-no-sticky md-primary md-whiteframe-1dp"><h2>Selected Items</h2></md-subheader>
+            <md-list>
                 <md-list-item class="md-2-line" ng-repeat="product in cart.products">
                     <img ng-src="{{product.image}}" class="md-avatar">
                     <div class="md-list-item-text">
                         <h3 class="md-title">{{product.title}}</h3>
                         <p class="md-body-1">{{product.price | currency:"R"}}</p>
                     </div>
-                    <div flex class="fixed-width md-secondary" layout="row" layout-wrap>
+                    <div class="md-secondary" layout="row" layout-align="space-around center">
                         <h3 ng-if="product.quantity > 0">x{{product.quantity}}</h3>
-                        <md-icon flex="none" class="md-icon-button addCart-color md-36" ng-click="addToCart(product)">add_shopping_cart</md-icon>
-                        <md-icon flex="none" class="md-icon-button removeCart-color md-36" ng-click="removeFromCart(product,$index)" ng-show="product.quantity > 0">remove_shopping_cart</md-icon>
+                        <md-button class="md-icon-button" ng-click="addToCart(product)"><md-icon class="addCart-color" >add_shopping_cart</md-icon></md-button>
+                        <md-button class="md-icon-button" ng-click="removeFromCart(product,$index)" ng-show="product.quantity > 0"><md-icon class="removeCart-color">remove_shopping_cart</md-icon></md-button>
                     </div>
                 </md-list-item>
             </md-list>
              <md-divider ></md-divider>
-                <p class="">Grand Total for ({{getCartTotals()}}) items = {{getCartPrice() | currency:"R"}}</p>
+                <p class="cart-grand-total">Grand Total for ({{getCartTotals()}}) items = {{getCartPrice() | currency:"R"}}</p>
         </div>
         <div class="mdl-card__supporting-text">
             <form name="customerForm" novalidate class="css-form" ng-submit="submitOrder()">
