@@ -1,58 +1,50 @@
-<main class="mdl-layout_content">
-    <div class="content-grid mdl-grid">
-        <div class="mdl-cell-4-col-desktop mdl-cell--3-offset-desktop mdl-cell--8-col-tablet mdl-cell--12-col-phone">
-            <div class="cart-summary mdl-shadow--2dp">
-                <div class="cart-item-summary mdl-shadow--4dp" ng-if="cart.products.length">
-                    <ul class="cart-list mdl-list">
-                        <li class="mdl-list__item cart-header">
-                            <span class="mdl-list__item-primary-content"><p>Item</p></span>
-                            <span class="mdl-list__item-secondary-content"><p>Description</p></span>
-                            <span class="mdl-list__item-secondary-content"><p>Add</p></span>
-                            <span class="mdl-list__item-secondary-content"><p>Remove</p></span>
-                        </li>
-                        <li class="mdl-list__item mdl-list__item--two-line" ng-repeat="product in cart.products">
-                            <span class="mdl-list__item-primary-content">
-                                <img class="mdl-list__item-avatar cart-image" ng-src="{{product.image}}">
-                                <span class="mdl-badge mdl-badge--overlap" data-badge="x{{product.quantity}}" ng-if="product.quantity > 0">{{product.title}}</span>
-                            <span class="mdl-list__item-sub-title">{{product.price | currency:"R"}}</span>
-                            </span>
-                            <span class="mdl-list__item-secondary-content">
-                                <span class="mdl-list__item-secondary-action">
-                                    <button class="cart-list-button mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--icon" ng-click="addToCart(product)"><i class="material-icons addCart-color">add_shopping_cart</i></button>
-                                </span>
-                            </span>
-                            <span class="mdl-list__item-secondary-content">
-                                <span class="mdl-list__item-secondary-action">
-                                    <button class="cart-list-button mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--icon" ng-click="removeFromCart(product,$index)" ng-show="product.quantity > 0"><i class="material-icons removeCart-color">remove_shopping_cart</i></button>
-                                </span>
-                            </span>
-                        </li>
-                    </ul>
-                    <div class="cart-border">
-                        <h6 class="cart-grand-total">Grand Total for ({{getCartTotals()}}) items = {{getCartPrice() | currency:"R"}}</h6>
+<md-content flex class="md-margin" layout-align="center center">
+    <md-card>
+        <div ng-if="cart.products.length">
+            <md-list class="test-border">
+<!--                 <md-list-item class="test-border1" layout-xs="row" layout-align="space-between center">
+                    <p>Item</p>
+                    <p>Desc</p>
+                    <p>Add</p>
+                    <p>Remove</p>
+                </md-list-item> -->
+                <md-subheader class="md-no-sticky">Selected Items</md-subheader>
+                <md-list-item class="md-2-line test-border2" ng-repeat="product in cart.products">
+                    <img class="md-avatar" ng-src="{{product.image}}">
+                    <div class="md-list-item-text test-border3">
+                        <h3>{{product.title}}</h6>
+                        <p>{{product.price | currency:"R"}}</p>
                     </div>
-                </div>
-                <div class="mdl-card__supporting-text">
-                    <form name="customerForm" novalidate class="css-form" ng-submit="submitOrder()">
-                        <h5>Your Details:</h5>
-                        <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-invalid': customerForm.Email.$touched && customerForm.Email.$invalid }">
-                            <input class="mdl-textfield__input" type="text" id="Name" placeholder="Name..." ng-model="customerName" pattern="[A-Z,a-z, ]*" ng-minlength="3" required>
-                        </div>
-                        <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-valid': customerForm.Name.$touched && customerForm.Name.$valid }">
-                            <input class="mdl-textfield__input" type="tel" id="Phone" placeholder="Phone..." ng-model="customerPhone" ng-minlength="10" ng-maxlength="12">
-                        </div>
-                        <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-invalid': customerForm.Email.$touched && customerForm.Email.$invalid }">
-                            <input class="mdl-textfield__input" type="email" id="Email" placeholder="Email..." ng-model="customerEmail" required="">
-                        </div>
-                        <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-invalid': customerForm.DelAddr.$touched && customerForm.DelAddr.$invalid }">
-                            <textarea class="mdl-textfield__input" type="text" rows="3" id="DelAddr" placeholder="Delivery Address..." ng-model="customerDelAddr" ng-minlength="3" required=""></textarea>
-                        </div>
-                        <div>
-                            <input type="submit" value="Submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-button--accent">
-                        </div>
-                    </form>
-                </div>
+                    <div class="md-secondary test-border4">
+                        <span flex="33" class="test-border5" ng-if="product.quantity > 0">x {{product.quantity}}</span>
+                        <md-icon flex="33" class="addCart-color md-36 test-border6" ng-click="addToCart(product)">add_shopping_cart</md-icon>
+                        <md-icon flex="33" class="removeCart-color md-36 test-border6" ng-click="removeFromCart(product,$index)" ng-show="product.quantity > 0">remove_shopping_cart</md-icon>
+                    </div>
+                </md-list-item>
+            </md-list>
+            <div class="">
+                <h6 class="cart-grand-total">Grand Total for ({{getCartTotals()}}) items = {{getCartPrice() | currency:"R"}}</h6>
             </div>
         </div>
-    </div>
-</main>
+        <div class="mdl-card__supporting-text">
+            <form name="customerForm" novalidate class="css-form" ng-submit="submitOrder()">
+                <h5>Your Details:</h5>
+                <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-invalid': customerForm.Email.$touched && customerForm.Email.$invalid }">
+                    <input class="mdl-textfield__input" type="text" id="Name" placeholder="Name..." ng-model="customerName" pattern="[A-Z,a-z, ]*" ng-minlength="3" required>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-valid': customerForm.Name.$touched && customerForm.Name.$valid }">
+                    <input class="mdl-textfield__input" type="tel" id="Phone" placeholder="Phone..." ng-model="customerPhone" ng-minlength="10" ng-maxlength="12">
+                </div>
+                <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-invalid': customerForm.Email.$touched && customerForm.Email.$invalid }">
+                    <input class="mdl-textfield__input" type="email" id="Email" placeholder="Email..." ng-model="customerEmail" required="">
+                </div>
+                <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-invalid': customerForm.DelAddr.$touched && customerForm.DelAddr.$invalid }">
+                    <textarea class="mdl-textfield__input" type="text" rows="3" id="DelAddr" placeholder="Delivery Address..." ng-model="customerDelAddr" ng-minlength="3" required=""></textarea>
+                </div>
+                <div>
+                    <input type="submit" value="Submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-button--accent">
+                </div>
+            </form>
+        </div>
+    </md-card>
+</md-content>

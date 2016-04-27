@@ -1,4 +1,5 @@
 @import 'colors';
+@import 'wireframe';
 
 html,
 body {
@@ -44,6 +45,10 @@ p {
 		padding: .25rem 1rem;
 }
 
+.item-padding {
+	padding: 0 48px;
+}
+
 md-card.md-myTheme-theme md-card-title md-card-title-text:not(:only-child) .md-subhead {
 	color: $secondary-color;
 }
@@ -62,78 +67,63 @@ md-input-container.md-myTheme-theme {
 	height: 36px;
 }
 
-.cart-item-summary {
-  margin: 0 auto;
-  max-width: 100%;
-  text-align: center;
-  width: 90%;
+md-icon.md-myTheme-theme {
+		height: 36px;
+		min-height: 36px;
+		min-width: 36px;
+		width: 36px;
 }
 
-.cart-summary {
-  background-color: $gmd-white;
-  padding-top: 2.5vh;
-  text-align: center;
-  width: 100%;
+md-list.md-myTheme-theme,
+md-list-item.md-myTheme-theme {
+		margin-top: 0;
+		padding-top: 0;
 }
 
-.cart-list {
-  max-width: 100%;
-  padding-top: 0;
-  width: 100%;
-}
+// .cart-item-summary {
+//   margin: 0 auto;
+//   max-width: 100%;
+//   text-align: center;
+//   width: 90%;
+// }
+
+// .cart-summary {
+//   background-color: $gmd-white;
+//   padding-top: 2.5vh;
+//   text-align: center;
+//   width: 100%;
+// }
+
+// .cart-list {
+//   max-width: 100%;
+//   padding-top: 0;
+//   width: 100%;
+// }
 
 
-.cart-subtotal {
-  color: $secondary-color;
-  padding: 0 3vw 0 2vw;
-}
+// .cart-subtotal {
+//   color: $secondary-color;
+//   padding: 0 3vw 0 2vw;
+// }
 
-.cart-header {
-  background-color: $primary-bg-color;
-  padding-bottom: 0;
-}
+// .cart-header {
+//   background-color: $primary-bg-color;
+//   padding-bottom: 0;
+// }
 
-.cart-image {
-  max-width: 100%;
-  vertical-align: middle;
-}
+// .cart-image {
+//   max-width: 100%;
+//   vertical-align: middle;
+// }
 
-.cart-list-button {
-  display: inline;
-}
+// .cart-list-button {
+//   display: inline;
+// }
 
 .cart-grand-total {
   color: $secondary-color;
   padding-bottom: 1rem;
   text-align: center;
-}
-
-.test-border {
-		border: 1px solid black;
-}
-
-.test-border1 {
-		border: 1px solid purple;
-}
-
-.test-border2 {
-		border: 1px solid red;
-}
-
-.test-border3 {
-		border: 1px solid green;
-}
-
-.test-border4 {
-		border: 1px solid blue;
-}
-
-.test-border5 {
-		border: 1px solid yellow;
-}
-
-.test-border6 {
-		border: 1px solid orange;
 }
 
 .css-form {

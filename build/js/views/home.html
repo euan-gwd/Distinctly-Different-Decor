@@ -5,7 +5,7 @@
     </md-input-container>
     <span flex hide show-gt-sm></span>
     <md-button class="md-raised md-primary" aria-label="checkout button" ng-click="cartCheckOut()">
-        <md-icon>shopping_cart</md-icon>
+        <md-icon class="md-36">shopping_cart</md-icon>
         <span class="md-subhead" ng-if="cart.products.length">{{getCartTotals()}}</span>
     </md-button>
     <h6 class="md-subhead md-padding" ng-if="cart.products.length">Total {{getCartPrice() | currency:"R"}}</h6>
@@ -28,7 +28,7 @@
             <md-divider></md-divider>
             <md-card-actions layout="row" layout-align="center center">
                 <md-button ng-click="addToCart(product)">
-                    <md-icon class="brand-color">add_shopping_cart</md-icon>
+                    <md-icon class="brand-color md-36">add_shopping_cart</md-icon>
                 </md-button>
             </md-card-actions>
         </md-card>
