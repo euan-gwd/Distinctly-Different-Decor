@@ -23,7 +23,7 @@
 
         $mdThemingProvider.theme('myTheme')
             .primaryPalette('deep-purple', {
-                'default': '900'
+                'default': '800'
             })
             .accentPalette('orange')
             .warnPalette('red');

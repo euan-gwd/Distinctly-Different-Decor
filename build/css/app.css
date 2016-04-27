@@ -2,10 +2,10 @@
   color: #fff; }
 
 .material-icons.brand-color-alt {
-  color: #fb8c00; }
+  color: #FFAB40; }
 
 .material-icons.brand-color {
-  color: #673ab7; }
+  color: #4527A0; }
 
 .material-icons.addCart-color {
   color: #43a047; }
@@ -45,9 +45,6 @@ input,
 textarea {
   outline: 0; }
 
-h5 {
-  text-align: center; }
-
 ul,
 p {
   list-style-type: none;
@@ -60,20 +57,17 @@ p {
   width: 3rem; }
 
 .md-title {
-  color: #673ab7; }
+  color: #4527A0; }
 
 .md-subhead {
-  color: #fb8c00; }
+  color: #FFAB40; }
 
 .sub-toolbar {
   height: 60px;
   padding: .25rem 1rem; }
 
-.item-padding {
-  padding: 0 48px; }
-
 md-card.md-myTheme-theme md-card-title md-card-title-text:not(:only-child) .md-subhead {
-  color: #fb8c00; }
+  color: #FFAB40; }
 
 md-content.md-myTheme-theme {
   background: none; }
@@ -81,24 +75,32 @@ md-content.md-myTheme-theme {
 md-card.md-myTheme-theme,
 .md-toolbar-tools {
   background-color: #faebd7;
-  color: #673ab7; }
+  color: #4527A0; }
 
 md-input-container.md-myTheme-theme {
   height: 36px; }
 
-md-icon.md-myTheme-theme {
-  height: 36px;
-  min-height: 36px;
-  min-width: 36px;
-  width: 36px; }
+.fixed-width {
+  width: 120px; }
 
 md-list.md-myTheme-theme,
 md-list-item.md-myTheme-theme {
   margin-top: 0;
-  padding-top: 0; }
+  padding: 0; }
+
+.md-subheader {
+  padding: 0; }
+
+.md-subheader .md-subheader-inner {
+  text-align: center;
+  padding: 0; }
+
+.cart-item-summary {
+  margin: 0 auto;
+  max-width: 100%; }
 
 .cart-grand-total {
-  color: #fb8c00;
+  color: #FFAB40;
   padding-bottom: 1rem;
   text-align: center; }
 
@@ -108,9 +110,9 @@ md-list-item.md-myTheme-theme {
   .css-form input.ng-pristine.ng-untouched {
     border-bottom: 1px solid #d3d3d3; }
   .css-form input.ng-touched:focus {
-    border-bottom: 2px solid #673ab7; }
+    border-bottom: 2px solid #4527A0; }
   .css-form input.ng-pristine:focus {
-    border-bottom: 2px solid #673ab7; }
+    border-bottom: 2px solid #4527A0; }
   .css-form input.ng-invalid {
     border-bottom: 2px solid #e53935;
     transition-duration: .2s;
