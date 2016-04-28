@@ -1,9 +1,10 @@
 <md-content flex class="md-margin" layout-align="center center">
-    <md-card flex class="fixed-card">
+    <md-card flex class="fixed-card md-whiteframe-1dp">
         <div class="cart-summary md-whiteframe-2dp" ng-if="cart.products.length">
             <md-list>
                 <h3 class="md-title">Selected Items</h3>
-                <md-list-item class="md-2-line" ng-repeat="product in cart.products">
+                <md-divider></md-divider>
+                <md-list-item class="md-2-line md-flex" ng-repeat="product in cart.products" >
                     <img ng-src="{{product.image}}" class="md-avatar">
                     <div class="md-list-item-text">
                         <h3>{{product.title}}</h3>
@@ -23,7 +24,7 @@
             <md-divider></md-divider>
             <p class="cart-grand-total">Grand Total for ({{getCartTotals()}}) items = {{getCartPrice() | currency:"R"}}</p>
         </div>
-        <md-card-content>
+        <div>
             <form name="customerForm" novalidate class="css-form" ng-submit="submitOrder()">
                 <h3 class="md-title">Your Details:</h3>
                 <md-input-container class="md-flex">
@@ -31,7 +32,7 @@
                     <md-icon>person</md-icon>
                     <input required name="Name" ng-model="customerName" minlength="3">
                     <div ng-messages="customerForm.Name.$error">
-                        <div ng-message-exp="['required', 'minlength']">This is required.</div>
+                        <div ng-message-exp="['required', 'minlength']">Please enter your name.</div>
                     </div>
                 </md-input-container>
                 <md-input-container class="md-flex">
@@ -60,6 +61,6 @@
                 </md-input-container>
                 <input name="Submit" type="submit" value="Submit" aria-label="submit" class="md-button md-raised md-primary">
             </form>
-        </md-card-content>
+        </div>
     </md-card>
 </md-content>

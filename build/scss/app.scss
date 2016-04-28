@@ -37,14 +37,14 @@ p {
 		padding: .25rem 1rem;
 }
 
+md-content.md-myTheme-theme {
+  background: none;
+}
+
 md-card.md-myTheme-theme md-card-title md-card-title-text:not(:only-child) .md-subhead {
 		color: $secondary-color;
 }
 
-
-md-content.md-myTheme-theme {
-  background: none;
-}
 
 md-card.md-myTheme-theme,
 .md-toolbar-tools {
@@ -55,7 +55,6 @@ md-card.md-myTheme-theme,
 .fixed-card {
   margin: 0 auto;
   max-width: 550px;
-
 }
 
 md-input-container.md-myTheme-theme {
@@ -90,7 +89,6 @@ md-list-item.md-2-line > .md-no-style .md-avatar-icon {
   background-color: $gmd-white;
   margin: 0 auto;
   max-width: 550px;
-  width: 95%;
 }
 
 .cart-grand-total {
@@ -102,8 +100,9 @@ md-list-item.md-2-line > .md-no-style .md-avatar-icon {
 
 .css-form {
   background-color: $gmd-white;
-  margin: 0 auto;
+  margin: 8px auto 0;
   max-width: 550px;
+  padding-bottom: 8px;
 
   .md-block {
     padding-bottom: .5rem;
