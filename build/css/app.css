@@ -118,7 +118,8 @@ md-list-item.md-2-line > .md-no-style .md-avatar-icon {
   margin: 0 auto;
   max-width: 550px; }
   .css-form .md-block {
-    padding-bottom: .5rem; }
+    padding-bottom: .5rem;
+    padding-right: 1.2rem; }
   .css-form input.md-button.md-raised.md-primary {
     width: 95%; }
 
