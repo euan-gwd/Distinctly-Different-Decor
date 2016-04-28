@@ -26,18 +26,49 @@
         <md-card-content>
             <form name="customerForm" novalidate class="css-form" ng-submit="submitOrder()">
                 <h3 class="md-title">Your Details:</h3>
-                <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-invalid': customerForm.Email.$touched && customerForm.Email.$invalid }">
+                <!--                 <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-invalid': customerForm.Email.$touched && customerForm.Email.$invalid }">
                     <input class="mdl-textfield__input" type="text" id="Name" placeholder="Name..." ng-model="customerName" pattern="[A-Z,a-z, ]*" ng-minlength="3" required>
-                </div>
-                <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-valid': customerForm.Name.$touched && customerForm.Name.$valid }">
+                </div> -->
+                <md-input-container class="md-block">
+                    <label>Name</label>
+                    <input required name="Name" ng-model="customerName">
+                    <div ng-messages="customerForm.Name.$error">
+                        <div ng-message="required">This is required.</div>
+                    </div>
+                </md-input-container>
+<!--                 <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-valid': customerForm.Name.$touched && customerForm.Name.$valid }">
                     <input class="mdl-textfield__input" type="tel" id="Phone" placeholder="Phone..." ng-model="customerPhone" ng-minlength="10" ng-maxlength="12">
-                </div>
-                <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-invalid': customerForm.Email.$touched && customerForm.Email.$invalid }">
+                </div> -->
+                <md-input-container class="md-block">
+                    <label>Phone Number</label>
+                    <input name="phone" ng-model="customerPhone" ng-pattern="/^([0-9]{3}) [0-9]{3}-[0-9]{4}$/">
+                    <div ng-messages="customerForm.phone.$error">
+                        <div ng-message="pattern">(###) ###-#### - Please enter a valid phone number.</div>
+                    </div>
+                </md-input-container>
+                <!--                 <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-invalid': customerForm.Email.$touched && customerForm.Email.$invalid }">
                     <input class="mdl-textfield__input" type="email" id="Email" placeholder="Email..." ng-model="customerEmail" required="">
-                </div>
-                <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-invalid': customerForm.DelAddr.$touched && customerForm.DelAddr.$invalid }">
+                </div> -->
+                <md-input-container class="md-block">
+                    <label>Email</label>
+                    <input required type="email" name="Email" ng-model="customerEmail" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+                    <div ng-messages="customerForm.Email.$error" role="alert">
+                        <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                            Your email must be between 10 and 100 characters long and look like an e-mail address.
+                        </div>
+                    </div>
+                </md-input-container>
+                <!--                 <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-invalid': customerForm.DelAddr.$touched && customerForm.DelAddr.$invalid }">
                     <textarea class="mdl-textfield__input" type="text" rows="3" id="DelAddr" placeholder="Delivery Address..." ng-model="customerDelAddr" ng-minlength="3" required=""></textarea>
-                </div>
+                </div> -->
+                <md-input-container class="md-block">
+                    <label>Delivery Address</label>
+                    <input md-minlength="10" required md-no-asterisk name="DelAddr" ng-model="customerDelAddr">
+                    <div ng-messages="customerForm.DelAddr.$error">
+                        <div ng-message="required">This is required.</div>
+                        <div ng-message="md-minlength">The address has to be longer than 10 characters.</div>
+                    </div>
+                </md-input-container>
                 <div>
                     <input type="submit" value="Submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-button--accent">
                 </div>
