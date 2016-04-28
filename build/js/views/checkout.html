@@ -1,58 +1,66 @@
-<main class="mdl-layout_content">
-    <div class="content-grid mdl-grid">
-        <div class="mdl-cell-4-col-desktop mdl-cell--3-offset-desktop mdl-cell--8-col-tablet mdl-cell--12-col-phone">
-            <div class="cart-summary mdl-shadow--2dp">
-                <div class="cart-item-summary mdl-shadow--4dp" ng-if="cart.products.length">
-                    <ul class="cart-list mdl-list">
-                        <li class="mdl-list__item cart-header">
-                            <span class="mdl-list__item-primary-content"><p>Item</p></span>
-                            <span class="mdl-list__item-secondary-content"><p>Description</p></span>
-                            <span class="mdl-list__item-secondary-content"><p>Add</p></span>
-                            <span class="mdl-list__item-secondary-content"><p>Remove</p></span>
-                        </li>
-                        <li class="mdl-list__item mdl-list__item--two-line" ng-repeat="product in cart.products">
-                            <span class="mdl-list__item-primary-content">
-                                <img class="mdl-list__item-avatar cart-image" ng-src="{{product.image}}">
-                                <span class="mdl-badge mdl-badge--overlap" data-badge="x{{product.quantity}}" ng-if="product.quantity > 0">{{product.title}}</span>
-                            <span class="mdl-list__item-sub-title">{{product.price | currency:"R"}}</span>
-                            </span>
-                            <span class="mdl-list__item-secondary-content">
-                                <span class="mdl-list__item-secondary-action">
-                                    <button class="cart-list-button mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--icon" ng-click="addToCart(product)"><i class="material-icons addCart-color">add_shopping_cart</i></button>
-                                </span>
-                            </span>
-                            <span class="mdl-list__item-secondary-content">
-                                <span class="mdl-list__item-secondary-action">
-                                    <button class="cart-list-button mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--icon" ng-click="removeFromCart(product,$index)" ng-show="product.quantity > 0"><i class="material-icons removeCart-color">remove_shopping_cart</i></button>
-                                </span>
-                            </span>
-                        </li>
-                    </ul>
-                    <div class="cart-border">
-                        <h6 class="cart-grand-total">Grand Total for ({{getCartTotals()}}) items = {{getCartPrice() | currency:"R"}}</h6>
+<md-content flex class="md-margin" layout-align="center center">
+    <md-card flex class="fixed-card md-whiteframe-1dp">
+        <div class="cart-summary md-whiteframe-2dp" ng-if="cart.products.length">
+            <md-list>
+                <h3 class="md-title">Selected Items</h3>
+                <md-divider></md-divider>
+                <md-list-item class="md-2-line md-flex" ng-repeat="product in cart.products" >
+                    <img ng-src="{{product.image}}" class="md-avatar">
+                    <div class="md-list-item-text">
+                        <h3>{{product.title}}</h3>
+                        <p>{{product.price | currency:"R"}}</p>
                     </div>
-                </div>
-                <div class="mdl-card__supporting-text">
-                    <form name="customerForm" novalidate class="css-form" ng-submit="submitOrder()">
-                        <h5>Your Details:</h5>
-                        <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-invalid': customerForm.Email.$touched && customerForm.Email.$invalid }">
-                            <input class="mdl-textfield__input" type="text" id="Name" placeholder="Name..." ng-model="customerName" pattern="[A-Z,a-z, ]*" ng-minlength="3" required>
-                        </div>
-                        <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-valid': customerForm.Name.$touched && customerForm.Name.$valid }">
-                            <input class="mdl-textfield__input" type="tel" id="Phone" placeholder="Phone..." ng-model="customerPhone" ng-minlength="10" ng-maxlength="12">
-                        </div>
-                        <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-invalid': customerForm.Email.$touched && customerForm.Email.$invalid }">
-                            <input class="mdl-textfield__input" type="email" id="Email" placeholder="Email..." ng-model="customerEmail" required="">
-                        </div>
-                        <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-invalid': customerForm.DelAddr.$touched && customerForm.DelAddr.$invalid }">
-                            <textarea class="mdl-textfield__input" type="text" rows="3" id="DelAddr" placeholder="Delivery Address..." ng-model="customerDelAddr" ng-minlength="3" required=""></textarea>
-                        </div>
-                        <div>
-                            <input type="submit" value="Submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-button--accent">
-                        </div>
-                    </form>
-                </div>
-            </div>
+                    <div class="md-secondary" layout="row" layout-align="space-around center">
+                        <h4 class="md-subhead" ng-if="product.quantity > 0">x{{product.quantity}}</h4>
+                        <md-button class="md-icon-button md-raised md-primary" ng-click="addToCart(product)">
+                            <md-icon class="addCart-color">add_shopping_cart</md-icon>
+                        </md-button>
+                        <md-button class="md-icon-button md-raised md-accent" ng-click="removeFromCart(product,$index)" ng-show="product.quantity > 0">
+                            <md-icon class="removeCart-color">remove_shopping_cart</md-icon>
+                        </md-button>
+                    </div>
+                </md-list-item>
+            </md-list>
+            <md-divider></md-divider>
+            <p class="cart-grand-total">Grand Total for ({{getCartTotals()}}) items = {{getCartPrice() | currency:"R"}}</p>
         </div>
-    </div>
-</main>
+        <div>
+            <form name="customerForm" novalidate class="css-form" ng-submit="submitOrder()">
+                <h3 class="md-title">Your Details:</h3>
+                <md-input-container class="md-flex">
+                    <label>Name (required)</label>
+                    <md-icon>person</md-icon>
+                    <input required name="Name" ng-model="customerName" minlength="3">
+                    <div ng-messages="customerForm.Name.$error">
+                        <div ng-message-exp="['required', 'minlength']">Please enter your name.</div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-flex">
+                    <label>Phone</label>
+                    <md-icon>phone</md-icon>
+                    <input name="phone" ng-model="customerPhone" ng-pattern="/([0-9]{10})/">
+                    <div ng-messages="customerForm.phone.$error">
+                        <div ng-message="pattern">Please enter a valid phone number.</div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-flex">
+                    <label>Email (required)</label>
+                    <md-icon>email</md-icon>
+                    <input required type="email" name="Email" ng-model="customerEmail" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+                    <div ng-messages="customerForm.Email.$error" role="alert">
+                        <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">Please a valid e-mail address.</div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Delivery Address (required)</label>
+                    <md-icon>flight_land</md-icon>
+                    <input required name="DelAddr" ng-model="customerDelAddr" minlength="10">
+                    <div ng-messages="customerForm.DelAddr.$error">
+                        <div ng-message-exp="['required', 'minlength']">The address has to be longer than 10 characters.</div>
+                    </div>
+                </md-input-container>
+                <input name="Submit" type="submit" value="Submit" aria-label="submit" class="md-button md-raised md-primary">
+            </form>
+        </div>
+    </md-card>
+</md-content>
