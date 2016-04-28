@@ -77,13 +77,12 @@ md-card.md-myTheme-theme,
 md-input-container.md-myTheme-theme {
   height: 36px; }
 
-.md-subheader {
+md-list.md-myTheme-theme {
   padding: 0; }
 
 .md-subheader .md-subheader-inner {
-  background-color: #FFAB40;
-  text-align: center;
-  padding: 0; }
+  background-color: #f8f8ff;
+  text-align: center; }
 
 md-list-item .md-secondary-container,
 md-list-item .md-secondary, md-list-item .md-list-item-inner .md-secondary-container,
@@ -97,13 +96,15 @@ md-list-item.md-2-line > .md-no-style .md-avatar-icon {
   margin-left: 3px;
   margin-bottom: 0; }
 
-.cart-item-summary {
+.cart-summary {
+  background-color: #fff;
   margin: 0 auto;
   max-width: 100%;
   width: 90%; }
 
 .cart-grand-total {
-  color: #4527A0;
+  background-color: #f8f8ff;
+  color: #FFAB40;
   padding: .5rem;
   text-align: right; }
 
