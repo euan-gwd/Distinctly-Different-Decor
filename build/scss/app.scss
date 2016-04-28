@@ -28,7 +28,8 @@ p {
   color: $primary-color;
 }
 
-.md-subhead {
+.md-subhead,
+.md-display-1 {
 		color: $secondary-color;
 }
 
@@ -116,19 +117,8 @@ md-list-item.md-2-line > .md-no-style .md-avatar-icon {
 }
 
 .thankyou-wrapper {
-  background-color: $gmd-white;
-  height: 45vh;
   max-width: 100%;
-  padding: 15vh 2.5vw;
+  padding: 16px 0;
   text-align: center;
   width: 90vw;
-}
-
-.thankyou-note {
-  background-color: $primary-bg-color;
-  margin: 0 auto;
-  max-width: 100%;
-  padding: 2.5vh 0;
-  text-align: center;
-  width: 90%;
 }
