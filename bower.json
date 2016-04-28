@@ -1,7 +1,7 @@
 {
-  "name": "dddwebstore",
-  "description": "web store for DDD with gulp development server and Angular Material",
-  "main": "index.html",
+  "name": "distinctlydifferentdecor",
+  "description": "web site for Distinctly Different Decor with gulp development server and Angular Material",
+  "main": "server.js",
   "authors": [
     "Euan Greenwood"
   ],
