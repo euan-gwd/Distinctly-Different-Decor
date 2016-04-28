@@ -1,9 +1,8 @@
 <md-content flex class="md-margin" layout-align="center center">
-    <md-card class="">
-        <div class="cart-summary md-whiteframe-4dp" ng-if="cart.products.length">
+    <md-card class="fixed-card">
+        <div class="cart-summary md-whiteframe-2dp" ng-if="cart.products.length">
             <md-list>
-                <md-subheader class="md-no-sticky md-primary">
-                    <h2>Selected Items</h2></md-subheader>
+                <h3 class="md-title">Selected Items</h3>
                 <md-list-item class="md-2-line" ng-repeat="product in cart.products">
                     <img ng-src="{{product.image}}" class="md-avatar">
                     <div class="md-list-item-text">
@@ -24,9 +23,9 @@
             <md-divider></md-divider>
             <p class="cart-grand-total">Grand Total for ({{getCartTotals()}}) items = {{getCartPrice() | currency:"R"}}</p>
         </div>
-        <div class="mdl-card__supporting-text">
+        <md-card-content>
             <form name="customerForm" novalidate class="css-form" ng-submit="submitOrder()">
-                <h5>Your Details:</h5>
+                <h3 class="md-title">Your Details:</h3>
                 <div class="mdl-textfield mdl-js-textfield" ng-class="{ 'mdl-textfield__input.ng-invalid': customerForm.Email.$touched && customerForm.Email.$invalid }">
                     <input class="mdl-textfield__input" type="text" id="Name" placeholder="Name..." ng-model="customerName" pattern="[A-Z,a-z, ]*" ng-minlength="3" required>
                 </div>
@@ -43,6 +42,6 @@
                     <input type="submit" value="Submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-button--accent">
                 </div>
             </form>
-        </div>
+        </md-card-content>
     </md-card>
 </md-content>
