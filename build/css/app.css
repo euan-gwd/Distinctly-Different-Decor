@@ -74,6 +74,10 @@ md-card.md-myTheme-theme,
   background-color: #faebd7;
   color: #4527A0; }
 
+.fixed-card {
+  margin: 0 auto;
+  max-width: 550px; }
+
 md-input-container.md-myTheme-theme {
   height: 36px; }
 
@@ -109,10 +113,14 @@ md-list-item.md-2-line > .md-no-style .md-avatar-icon {
   padding: .5rem;
   text-align: right; }
 
-.css-form,
-.fixed-card {
+.css-form {
+  background-color: #fff;
   margin: 0 auto;
   max-width: 550px; }
+  .css-form .md-block {
+    padding-bottom: .5rem; }
+  .css-form input.md-button.md-raised.md-primary {
+    width: 95%; }
 
 .thankyou-wrapper {
   background-color: #fff;

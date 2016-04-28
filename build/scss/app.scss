@@ -52,6 +52,12 @@ md-card.md-myTheme-theme,
 		color: $primary-color;
 }
 
+.fixed-card {
+  margin: 0 auto;
+  max-width: 550px;
+
+}
+
 md-input-container.md-myTheme-theme {
 		height: 36px;
 }
@@ -94,10 +100,19 @@ md-list-item.md-2-line > .md-no-style .md-avatar-icon {
   text-align: right;
 }
 
-.css-form,
-.fixed-card {
+.css-form {
+  background-color: $gmd-white;
   margin: 0 auto;
   max-width: 550px;
+
+  .md-block {
+    padding-bottom: .5rem;
+  }
+
+  input.md-button.md-raised.md-primary {
+    width: 95%;
+  }
+
 }
 
 .thankyou-wrapper {
