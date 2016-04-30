@@ -4,7 +4,7 @@
   var express = require('express');
   var router = express.Router();
   var dotenv = require('dotenv');
-  dotenv.load('../../.env');
+  dotenv.load();
   var sendgrid_api_key = process.env.SENDGRID_APIKEY;
   var sendgrid = require('sendgrid')(sendgrid_api_key);
 

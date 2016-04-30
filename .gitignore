@@ -5,5 +5,4 @@ bower_components
 .sass-cache
 .env
 .sass-lint.yml
-
 .sass-lint-bk.yml
