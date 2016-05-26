@@ -1,44 +1,44 @@
  [
 	{
 		"id": 1,
-		"title": "One",
-		"description": "product information blub",
-		"image": "images/ImagePH-01.svg",
+		"title": "Bunny Top Box",
+		"description": "product information for Bunny Top Box",
+		"image": "images/Bunny-top-box.jpg",
 		"price": 1
 	},
 	{
 		"id": 2,
-		"title": "Two",
-		"description": "product information blub",
-		"image": "images/ImagePH-02.svg",
+		"title": "Clock Card",
+		"description": "product information for Clock Card",
+		"image": "images/Clock-card.jpg",
 		"price": 2
 	},
 	{
 		"id": 3,
-		"title": "Three",
-		"description": "product information blub",
-		"image": "images/ImagePH-03.svg",
+		"title": "Glass Patio Light",
+		"description": "product information Glass Patio Light in Light Blue",
+		"image": "images/Glass-Patio-Light-light-blue.jpg",
 		"price": 3
 	},
 	{
 		"id": 4,
-		"title": "Four",
-		"description": "product information blub",
-		"image": "images/ImagePH-04.svg",
+		"title": "Glass Life Saying",
+		"description": "product information for Glass Purpose of Life Saying",
+		"image": "images/Glass-purpose-of-life-saying.jpg",
 		"price": 4
 	},
 	{
 		"id": 5,
-		"title": "Five",
-		"description": "product information blub",
-		"image": "images/ImagePH-05.svg",
+		"title": "Guest Gift Box",
+		"description": "product information blub for Guest Gift Box - Cut Flower",
+		"image": "images/Guest-gift-box-cut-flower.jpg",
 		"price": 5
 	},
 	{
 		"id": 6,
-		"title": "Six",
-		"description": "product information blub",
-		"image": "images/ImagePH-06.svg",
+		"title": "Horse Party Bag",
+		"description": "product information blub for Horse themed Party favour Bag",
+		"image": "images/Horse-theme-party-favour-bag.jpg",
 		"price": 6
 	}
 ]

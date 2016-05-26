@@ -1,4 +1,4 @@
-<div layout="row" layout-align="space-around center" class="sub-toolbar">
+<div layout="row" layout-align="space-around center">
     <md-input-container>
         <md-icon class="brand-color-alt">search</md-icon>
         <input ng-model="product.search" type="search" aria-label="search" placeholder="Search">
@@ -12,18 +12,18 @@
 </div>
 <div layout-gt-xs="row" layout-align="space-around center" layout-xs="row" layout-wrap>
     <div ng-repeat="product in products | filter:product.search">
-        <md-card>
+        <md-card class="decor-card-square">
+						<md-card-title-media>
+								<div class="md-media-sm card-media"><img ng-src="{{product.image}}"></div>
+						</md-card-title-media>
             <md-card-title>
                 <md-card-title-text>
-                    <span class="md-headline">{{product.title}}</span>
-                    <span class="md-subhead">{{product.price | currency:"R"}}</span>
+                    <p class="md-headline">{{product.title}}</p>
                 </md-card-title-text>
-                <md-card-title-media>
-                    <div class="md-media-sm card-media"><img ng-src="{{product.image}}"></div>
-                </md-card-title-media>
+								<span class="md-subhead">{{product.price | currency:"R"}}</span>
             </md-card-title>
             <md-card-content>
-                <p>{{product.description}}</p>
+                <p class="md-body-1">{{product.description}}</p>
             </md-card-content>
             <md-divider></md-divider>
             <md-card-actions layout="row" layout-align="center center">
