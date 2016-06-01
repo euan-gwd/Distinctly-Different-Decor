@@ -76,8 +76,8 @@ md-card.md-myTheme-theme,
   color: #4527A0; }
 
 md-card.decor-card-square {
-  height: 24.992rem;
-  width: 20.3125rem; }
+  height: 22.5rem;
+  width: 18rem; }
 
 .fixed-card {
   margin: 0 auto;
@@ -88,7 +88,10 @@ md-input-container.md-myTheme-theme {
 
 md-list.md-myTheme-theme {
   padding: 0;
-  min-width: 18rem; }
+  min-width: 25rem; }
+  @media (max-width: 768px) {
+    md-list.md-myTheme-theme {
+      min-width: 18rem; } }
 
 md-card md-card-title + md-card-content {
   padding: 16px; }
