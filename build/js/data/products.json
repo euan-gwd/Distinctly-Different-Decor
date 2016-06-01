@@ -3,13 +3,13 @@
      "id": 1,
      "title": "Bunny Box",
      "description": "This is the product information blub for the bunny paper box, it describes the item in one line",
-     "image": "images/1_bunny_box.jpg",
+     "image": "images/1_bunny_box_optimised.jpg",
      "price": 1
  }, {
      "id": 2,
      "title": "Cat Consertina Card",
      "description": "This is the product information for the cat themed consertina paper card, it describes the item in one line",
-     "image": "images/2_cat_consertina_card.jpg",
+     "image": "images/2_cat_consertina_card_optimised.jpg",
      "price": 2
  }, {
      "id": 3,
@@ -49,129 +49,129 @@
      "price": 8
  }, {
      "id": 9,
-     "title": "Glass Life Plaque",
-     "description": "This is the product information blub for the glass life plaque, it describes the item in one line",
-     "image": "images/9_glass_life_plaque.jpg",
+     "title": "Orchids Bundle",
+     "description": "This is the product information blub for the paper orchids bundle, it describes the item in one line",
+     "image": "images/9_orchids_bundle.jpg",
      "price": 9
  }, {
      "id": 10,
-     "title": "Glass Patio Light Light Blue",
-     "description": "This is the product information blub for the glass patio light in light blue, it describes the item in one line",
-     "image": "images/10_glass_patio_light_light_blue.jpg",
+     "title": "Small Single Red Rose",
+     "description": "This is the product information blub for the small single paper red rose, it describes the item in one line",
+     "image": "images/10_small_single_red_rose.jpg",
      "price": 10
  }, {
      "id": 11,
-     "title": "Glass Patio Light Medium Blue",
-     "description": "This is the product information blub for the glass patio light in medium blue, it describes the item in one line",
-     "image": "images/11_glass_patio_light_med_blue.jpg",
+     "title": "Rolled Center Flower",
+     "description": "This is the product information blub for the rolled center paper flower, it describes the item in one line",
+     "image": "images/11_rolled_centre_flower.jpg",
      "price": 11
  }, {
      "id": 12,
-     "title": "Glass Paw Prints Plaque",
-     "description": "This is the product information blub for the glass pawprints plaque, it describes the item in one line",
-     "image": "images/12_glass_pawprints.jpg",
+     "title": "Rose Hex Box CP",
+     "description": "This is the product information blub for the small hexagonal paper box with cream and pink rose clusters, it describes the item in one line",
+     "image": "images/12_small_hex_box_cream_and_pink_rose_cluster_optimised.jpg",
      "price": 12
  }, {
      "id": 13,
-     "title": "Glass Tree",
-     "description": "This is the product information blub for the glass tree, it describes the item in one line",
-     "image": "images/13_glass_tree.jpg",
+     "title": "Snowflake Hex Box",
+     "description": "This is the product information blub for the small hexagonal paper box with a snowflake, it describes the item in one line",
+     "image": "images/13_small_hex_box_snowflake_optimised.jpg",
      "price": 13
  }, {
      "id": 14,
-     "title": "Glass Tulip Planter",
-     "description": "This is the product information blub for the glass tulip planter, it describes the item in one line",
-     "image": "images/14_glass_tulip_planter.jpg",
+     "title": "Yellow Flower Hex Box",
+     "description": "This is the product information blub for the small hexagonal paper box with a yellow flower, it describes the item in one line",
+     "image": "images/14_small_hex_box_yellow_flower_optimised.jpg",
      "price": 14
  }, {
      "id": 15,
-     "title": "BnB Guest Gift Box",
-     "description": "This is the product information blub for the BnB guest gift box, it describes the item in one line",
-     "image": "images/15_BnB_guest_gift_box.jpg",
+     "title": "Table Menu Holder",
+     "description": "This is the product information blub for the paper table menu holder, it describes the item in one line",
+     "image": "images/15_table_menu_holder.jpg",
      "price": 15
  }, {
      "id": 16,
-     "title": "Horse Party Favour Bag",
-     "description": "This is the product information blub for the paper horse party favour bag, it describes the item in one line",
-     "image": "images/16_horse_party_favour_bag.jpg",
+     "title": "Table Placeholder Names bundle",
+     "description": "This is the product information blub for the paper table placeholder names and gift boxes bundle, it describes the item in one line",
+     "image": "images/16_table_placeholder_names_and_gift_boxes.jpg",
      "price": 16
  }, {
      "id": 17,
-     "title": "illuminated Glass Brick",
-     "description": "This is the product information blub for the illuminated glass brick , it describes the item in one line",
-     "image": "images/17_illuminated_brick.jpg",
+     "title": "Table Full Decor Set",
+     "description": "This is the product information blub for the full paper table party decor set, it describes the item in one line",
+     "image": "images/17_table_party_decor_bundle.jpg",
      "price": 17
  }, {
      "id": 18,
-     "title": "Orchids Bundle",
-     "description": "This is the product information blub for the paper orchids bundle, it describes the item in one line",
-     "image": "images/18_orchids_bundle.jpg",
+     "title": "Various Flowers Bundle",
+     "description": "This is the product information blub for the various assorted paper flowers bundle, it describes the item in one line",
+     "image": "images/18_various_flowers_bundle.jpg",
      "price": 18
  }, {
      "id": 19,
-     "title": "Peacock Plaque",
-     "description": "This is the product information blub for the glass peacock plaque, it describes the item in one line",
-     "image": "images/19_peacock_plaque.jpg",
+     "title": "Vine Boxes",
+     "description": "This is the product information blub for the vine paper boxes with gardenia tops, it describes the item in one line",
+     "image": "images/19_vine_box_gardenia_top_optimised.jpg",
      "price": 19
  }, {
      "id": 20,
-     "title": "Small Single Red Rose",
-     "description": "This is the product information blub for the small single paper red rose, it describes the item in one line",
-     "image": "images/20_small_single_red_rose.jpg",
+     "title": "BnB Guest Gift Box",
+     "description": "This is the product information blub for the BnB guest gift box, it describes the item in one line",
+     "image": "images/20_BnB_guest_gift_box.jpg",
      "price": 20
  }, {
      "id": 21,
-     "title": "Rolled Center Flower",
-     "description": "This is the product information blub for the rolled center paper flower, it describes the item in one line",
-     "image": "images/21_rolled_centre_flower.jpg",
+     "title": "Horse Party Favour Bag",
+     "description": "This is the product information blub for the paper horse party favour bag, it describes the item in one line",
+     "image": "images/21_horse_party_favour_bag.jpg",
      "price": 21
  }, {
      "id": 22,
-     "title": "Rose Hex Box CP",
-     "description": "This is the product information blub for the small hexagonal paper box with cream and pink rose clusters, it describes the item in one line",
-     "image": "images/22_small_hex_box_cream_and_pink_rose_cluster.jpg",
+     "title": "Glass Life Plaque",
+     "description": "This is the product information blub for the glass life plaque, it describes the item in one line",
+     "image": "images/22_glass_life_plaque_optimised.jpg",
      "price": 22
  }, {
      "id": 23,
-     "title": "Snowflake Hex Box",
-     "description": "This is the product information blub for the small hexagonal paper box with a snowflake, it describes the item in one line",
-     "image": "images/23_small_hex_box_snowflake.jpg",
+     "title": "Glass Paw Prints Plaque",
+     "description": "This is the product information blub for the glass pawprints plaque, it describes the item in one line",
+     "image": "images/23_glass_pawprints_optimised.jpg",
      "price": 23
  }, {
      "id": 24,
-     "title": "Yellow Flower Hex Box",
-     "description": "This is the product information blub for the small hexagonal paper box with a yellow flower, it describes the item in one line",
-     "image": "images/24_small_hex_box_yellow_flower.jpg",
+     "title": "Peacock Plaque",
+     "description": "This is the product information blub for the glass peacock plaque, it describes the item in one line",
+     "image": "images/24_peacock_plaque_optimised.jpg",
      "price": 24
  }, {
      "id": 25,
-     "title": "Table Menu Holder",
-     "description": "This is the product information blub for the paper table menu holder, it describes the item in one line",
-     "image": "images/25_table_menu_holder.jpg",
+     "title": "Glass Tree",
+     "description": "This is the product information blub for the glass tree, it describes the item in one line",
+     "image": "images/25_glass_tree.jpg",
      "price": 25
  }, {
      "id": 26,
-     "title": "Table Placeholder Names bundle",
-     "description": "This is the product information blub for the paper table placeholder names and gift boxes bundle, it describes the item in one line",
-     "image": "images/26_table_placeholder_names_and_gift_boxes.jpg",
+     "title": "Glass Tulip Planter",
+     "description": "This is the product information blub for the glass tulip planter, it describes the item in one line",
+     "image": "images/26_glass_tulip_planter.jpg",
      "price": 26
  }, {
      "id": 27,
-     "title": "Table Full Decor Set",
-     "description": "This is the product information blub for the full paper table party decor set, it describes the item in one line",
-     "image": "images/27_table_party_decor_bundle.jpg",
+     "title": "Glass Patio Light Light Blue",
+     "description": "This is the product information blub for the glass patio light in light blue, it describes the item in one line",
+     "image": "images/27_glass_patio_light_light_blue_optimised.jpg",
      "price": 27
  }, {
      "id": 28,
-     "title": "Various Flowers Bundle",
-     "description": "This is the product information blub for the various assorted paper flowers bundle, it describes the item in one line",
-     "image": "images/28_various_flowers_bundle.jpg",
+     "title": "Glass Patio Light Medium Blue",
+     "description": "This is the product information blub for the glass patio light in medium blue, it describes the item in one line",
+     "image": "images/28_glass_patio_light_med_blue_optimised.jpg",
      "price": 28
  }, {
      "id": 29,
-     "title": "Vine Boxes",
-     "description": "This is the product information blub for the vine paper boxes with gardenia tops, it describes the item in one line",
-     "image": "images/29_vine_box_gardenia_top.jpg",
+     "title": "illuminated Glass Brick",
+     "description": "This is the product information blub for the illuminated glass brick , it describes the item in one line",
+     "image": "images/29_illuminated_brick_optimised.jpg",
      "price": 29
  }
 ]
