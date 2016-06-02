@@ -6,14 +6,32 @@
         </md-input-container>
 				<span flex hide show-gt-sm></span>
 				<md-menu-bar>
-				<md-button hide show-gt-sm class="md-primary md-hue-1" aria-label="show all" md-ripple-size="auto" ng-click="sortAll()">Show All</md-button>
-				<md-button hide show-gt-sm class="md-primary md-hue-1" aria-label="show glass items only" md-ripple-size="auto" ng-click="sortGlass()">Show Glass only</md-button>
-				<md-button hide show-gt-sm class="md-primary md-hue-1" aria-label="show paper items only" md-ripple-size="auto" ng-click="sortPaper()">Show Paper only</md-button>
+				<md-button hide show-gt-sm class="md-primary md-hue-1" aria-label="show all" md-ripple-size="auto" ng-click="sortAll()">
+					<md-tooltip>
+    				Display all products
+  				</md-tooltip>
+					Show All
+				</md-button>
+				<md-button hide show-gt-sm class="md-primary md-hue-1" aria-label="show glass items only" md-ripple-size="auto" ng-click="sortGlass()">
+					<md-tooltip>
+    				Display only glass products
+  				</md-tooltip>
+					Show Glass only
+				</md-button>
+				<md-button hide show-gt-sm class="md-primary md-hue-1" aria-label="show paper items only" md-ripple-size="auto" ng-click="sortPaper()">
+					<md-tooltip>
+    				Display only paper products
+  				</md-tooltip>
+					Show Paper only
+				</md-button>
 				</md-menu-bar>
 				<span flex hide show-gt-sm></span>
         <md-button class="md-raised md-primary" aria-label="checkout button" ng-click="cartCheckOut()" md-ripple-size="full">
-            <md-icon>shopping_cart</md-icon>
-            <span class="md-subhead" ng-if="cart.products.length">{{getCartTotals()}}</span>
+					<md-tooltip>
+				    See selected items in Cart
+					</md-tooltip>
+					<md-icon>shopping_cart</md-icon>
+          <span class="md-subhead" ng-if="cart.products.length">{{getCartTotals()}}</span>
         </md-button>
         <h6 class="md-subhead md-padding" ng-if="cart.products.length">Total
             {{getCartPrice() | currency:"R"}}</h6>
