@@ -5,9 +5,11 @@
             <input ng-model="productSearch" type="search" aria-label="search" placeholder="Search">
         </md-input-container>
 				<span flex hide show-gt-sm></span>
+				<md-menu-bar>
 				<md-button hide show-gt-sm class="md-primary md-hue-1" aria-label="show all" md-ripple-size="auto" ng-click="sortAll()">Show All</md-button>
 				<md-button hide show-gt-sm class="md-primary md-hue-1" aria-label="show glass items only" md-ripple-size="auto" ng-click="sortGlass()">Show Glass only</md-button>
 				<md-button hide show-gt-sm class="md-primary md-hue-1" aria-label="show paper items only" md-ripple-size="auto" ng-click="sortPaper()">Show Paper only</md-button>
+				</md-menu-bar>
 				<span flex hide show-gt-sm></span>
         <md-button class="md-raised md-primary" aria-label="checkout button" ng-click="cartCheckOut()" md-ripple-size="full">
             <md-icon>shopping_cart</md-icon>
@@ -23,7 +25,7 @@
             <img ng-src="{{product.image}}" class="md-card-image">
             <md-card-title>
                 <md-card-title-text>
-                    <p class="md-headline">{{product.title}}</p>
+                    <p>{{product.title}}</p>
                 </md-card-title-text>
                 <span class="md-subhead">{{product.price | currency:"R"}}</span>
             </md-card-title>

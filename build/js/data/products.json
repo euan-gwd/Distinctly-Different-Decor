@@ -19,7 +19,7 @@
      "price": 3
  }, {
      "id": 4,
-     "title": "Christmas Reindeer String Light Covers",
+     "title": "Reindeer String Light Covers",
      "description": "This is the product information for the christmas reindeer string light paper covers, it describes the item in one line",
      "image": "images/4_christmas_reindeer_string_light_covers.jpg",
      "price": 4
@@ -91,7 +91,7 @@
      "price": 15
  }, {
      "id": 16,
-     "title": "Table Placeholder Names bundle",
+     "title": "Table Placeholder bundle",
      "description": "This is the product information blub for the paper table placeholder names and gift boxes bundle, it describes the item in one line",
      "image": "images/16_table_placeholder_names_and_gift_boxes.jpg",
      "price": 16
@@ -157,13 +157,13 @@
      "price": 26
  }, {
      "id": 27,
-     "title": "Glass Patio Light Light Blue",
+     "title": "Glass Light Light Blue",
      "description": "This is the product information blub for the glass patio light in light blue, it describes the item in one line",
      "image": "images/27_glass_patio_light_light_blue_optimised.jpg",
      "price": 27
  }, {
      "id": 28,
-     "title": "Glass Patio Light Medium Blue",
+     "title": "Glass Light Medium Blue",
      "description": "This is the product information blub for the glass patio light in medium blue, it describes the item in one line",
      "image": "images/28_glass_patio_light_med_blue_optimised.jpg",
      "price": 28
