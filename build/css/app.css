@@ -60,6 +60,10 @@ p {
 .md-display-1 {
   color: #FFAB40; }
 
+.md-subheader ._md-subheader-inner {
+  background-color: #faebd7;
+  padding: 0; }
+
 .sub-toolbar {
   height: 60px;
   padding: .25rem 1rem; }

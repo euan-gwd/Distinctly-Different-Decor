@@ -33,6 +33,11 @@ p {
 		color: $secondary-color;
 }
 
+.md-subheader ._md-subheader-inner {
+	background-color: $primary-bg-color;
+	padding: 0;
+}
+
 .sub-toolbar {
 		height: 60px;
 		padding: .25rem 1rem;

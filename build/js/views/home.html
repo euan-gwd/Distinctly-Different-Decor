@@ -1,18 +1,22 @@
-<section layout="row" layout-align="space-around center" class="sub-toolbar">
-    <md-input-container>
-        <md-icon class="brand-color-alt">search</md-icon>
-        <input ng-model="product.search" type="search" aria-label="search" placeholder="Search">
-    </md-input-container>
-    <span flex hide show-gt-sm></span>
-    <md-button class="md-raised md-primary" aria-label="checkout button" ng-click="cartCheckOut()">
-        <md-icon>shopping_cart</md-icon>
-        <span class="md-subhead">{{getCartTotals()}}</span>
-    </md-button>
-    <!--ng-if="cart.products.length"-->
-    <h6 class="md-subhead md-padding">Total
-        {{getCartPrice() | currency:"R"}}</h6>
-    <!--ng-if="cart.products.length"-->
-</section>
+<md-subheader class="md-primary" md-whiteframe="2">
+    <section layout="row" layout-align="space-around center" class="sub-toolbar">
+        <md-input-container>
+            <md-icon class="brand-color-alt">search</md-icon>
+            <input ng-model="product.search" type="search" aria-label="search" placeholder="Search">
+        </md-input-container>
+				<span flex hide show-gt-sm></span>
+				<md-button class="md-raised|md-fab|md-mini" href="http://google.com" ng-disabled="true|false" aria-label="description" md-no-ink="true|false" md-ripple-size="full|partial|auto">All</md-button>
+				<md-button class="md-raised|md-fab|md-mini" href="http://google.com" ng-disabled="true|false" aria-label="description" md-no-ink="true|false" md-ripple-size="full|partial|auto">Glass</md-button>
+				<md-button class="md-raised|md-fab|md-mini" href="http://google.com" ng-disabled="true|false" aria-label="description" md-no-ink="true|false" md-ripple-size="full|partial|auto">Paper</md-button>
+				<span flex hide show-gt-sm></span>
+        <md-button class="md-raised md-primary" aria-label="checkout button" ng-click="cartCheckOut()">
+            <md-icon>shopping_cart</md-icon>
+            <span class="md-subhead" ng-if="cart.products.length">{{getCartTotals()}}</span>
+        </md-button>
+        <h6 class="md-subhead md-padding" ng-if="cart.products.length">Total
+            {{getCartPrice() | currency:"R"}}</h6>
+    </section>
+</md-subheader>
 <section layout-gt-xs="row" layout-align="space-around center" layout-xs="row" layout-wrap>
     <div ng-repeat="product in products | filter:product.search">
         <md-card class="decor-card-square">
