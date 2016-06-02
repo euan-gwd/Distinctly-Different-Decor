@@ -1,9 +1,9 @@
 <md-content flex class="md-margin" layout-align="center center">
-    <md-card flex class="fixed-card md-whiteframe-1dp">
+    <md-card flex class="fixed-card">
         <div class="cart-summary md-whiteframe-2dp" ng-if="cart.products.length">
-            <md-list>
-                <h3 class="md-title">Selected Items</h3>
-                <md-divider></md-divider>
+						<div class="cart-list-header"><h3 class="md-title">Selected Items</h3></div>
+            <md-divider></md-divider>
+						<md-list>
                 <md-list-item class="md-2-line md-flex" ng-repeat="product in cart.products" >
                     <img ng-src="{{product.image}}" class="md-avatar">
                     <div class="md-list-item-text">
@@ -12,10 +12,10 @@
                     </div>
                     <div class="md-secondary" layout="row" layout-align="space-around center">
                         <h4 class="md-subhead" ng-if="product.quantity > 0">x{{product.quantity}}</h4>
-                        <md-button class="md-icon-button md-raised md-primary" ng-click="addToCart(product)">
+                        <md-button class="md-fab md-mini md-primary md-hue-1" ng-click="addToCart(product)" md-ripple-size="full">
                             <md-icon class="addCart-color">add_shopping_cart</md-icon>
                         </md-button>
-                        <md-button class="md-icon-button md-raised md-accent" ng-click="removeFromCart(product,$index)" ng-show="product.quantity > 0">
+                        <md-button class="md-fab md-mini md-warn md-hue-1" ng-click="removeFromCart(product,$index)" ng-show="product.quantity > 0" md-ripple-size="full">
                             <md-icon class="removeCart-color">remove_shopping_cart</md-icon>
                         </md-button>
                     </div>
@@ -25,7 +25,7 @@
             <p class="cart-grand-total">Grand Total for ({{getCartTotals()}}) items = {{getCartPrice() | currency:"R"}}</p>
         </div>
         <div>
-            <form name="customerForm" novalidate class="css-form" ng-submit="submitOrder()">
+            <form name="customerForm" novalidate class="css-form" md-whiteframe="1">
                 <h3 class="md-title">Your Details:</h3>
                 <md-input-container class="md-flex">
                     <label>Name (required)</label>
@@ -59,8 +59,12 @@
                         <div ng-message-exp="['required', 'minlength']">The address has to be longer than 10 characters.</div>
                     </div>
                 </md-input-container>
-                <input name="Submit" type="submit" value="Submit" aria-label="submit" class="md-button md-raised md-primary">
-            </form>
+								<section layout="row" layout-align="space-around center">
+									<md-button class="md-raised md-primary" type="submit" value="Submit" aria-label="submit order" md-ripple-size="full" ng-show="customerForm.Name.$dirty && customerForm.Name.$valid &&
+  customerForm.Email.$dirty && customerForm.Email.$valid && customerForm.DelAddr.$dirty && customerForm.DelAddr.$valid" ng-click="submitOrder()">Submit</md-button>
+									<md-button class="md-warn" type="button" aria-label="cancel order" md-ripple-size="full" ui-sref="home">Cancel and Reset</md-button>
+								</section>
+						</form>
         </div>
     </md-card>
 </md-content>

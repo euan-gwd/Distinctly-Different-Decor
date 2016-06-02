@@ -26,16 +26,7 @@
 
     // Add products to basket
     $scope.addToCart = function(product) {
-      var found = false;
-      $scope.cart.products.forEach(function(item) {
-        if (item.id === product.id) {
-          item.quantity++;
-          found = true;
-        }
-      });
-      if (!found) {
         $scope.cart.products.push(angular.extend({ quantity: 1 }, product));
-      }
     };
 
     // Calculate total price for products in Cart
