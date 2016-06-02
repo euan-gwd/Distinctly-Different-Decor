@@ -7,10 +7,10 @@ var gulp = require('gulp'),
 	  nodemon = require('gulp-nodemon');
 
 // -----------------
-// Development Tasks 
+// Development Tasks
 // -----------------
 
-// Compile Sass into CSS 
+// Compile Sass into CSS
 gulp.task('sass', function() {
   return gulp.src('build/scss/**/*.scss') // Gets all files ending with .scss in build/scss
     .pipe(plumber())
@@ -42,7 +42,6 @@ gulp.task('nodemon', function(cb) {
   });
 });
 
-
 // Starts browserSync server
 gulp.task('browserSync', ['nodemon'], function() {
   browserSync.init(null, {
@@ -57,5 +56,5 @@ gulp.task('browserSync', ['nodemon'], function() {
 gulp.task('default', ['sass', 'scripts', 'browserSync'], function() {
   gulp.watch('build/scss/**/*.scss', ['sass']);
   gulp.watch('build/js/**/*.js', ['scripts']);
-  gulp.watch('build/*.html', reload);
+  gulp.watch('build/**/*.html', reload);
 });

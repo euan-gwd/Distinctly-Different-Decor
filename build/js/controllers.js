@@ -11,6 +11,19 @@
       $scope.products = res.data;
     });
 
+		// Sorts Items
+		$scope.sortGlass = function () {
+			$scope.productSearch = "glass";
+		};
+
+		$scope.sortPaper = function () {
+			$scope.productSearch = "paper";
+		};
+
+		$scope.sortAll = function () {
+			$scope.productSearch = "";
+		};
+
     // Add products to basket
     $scope.addToCart = function(product) {
       var found = false;

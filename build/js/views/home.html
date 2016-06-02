@@ -2,14 +2,14 @@
     <section layout="row" layout-align="space-around center" class="sub-toolbar">
         <md-input-container>
             <md-icon class="brand-color-alt">search</md-icon>
-            <input ng-model="product.search" type="search" aria-label="search" placeholder="Search">
+            <input ng-model="productSearch" type="search" aria-label="search" placeholder="Search">
         </md-input-container>
 				<span flex hide show-gt-sm></span>
-				<md-button class="md-raised|md-fab|md-mini" href="http://google.com" ng-disabled="true|false" aria-label="description" md-no-ink="true|false" md-ripple-size="full|partial|auto">All</md-button>
-				<md-button class="md-raised|md-fab|md-mini" href="http://google.com" ng-disabled="true|false" aria-label="description" md-no-ink="true|false" md-ripple-size="full|partial|auto">Glass</md-button>
-				<md-button class="md-raised|md-fab|md-mini" href="http://google.com" ng-disabled="true|false" aria-label="description" md-no-ink="true|false" md-ripple-size="full|partial|auto">Paper</md-button>
+				<md-button hide show-gt-sm class="md-primary md-hue-1" aria-label="show all" md-ripple-size="auto" ng-click="sortAll()">Show All</md-button>
+				<md-button hide show-gt-sm class="md-primary md-hue-1" aria-label="show glass items only" md-ripple-size="auto" ng-click="sortGlass()">Show Glass only</md-button>
+				<md-button hide show-gt-sm class="md-primary md-hue-1" aria-label="show paper items only" md-ripple-size="auto" ng-click="sortPaper()">Show Paper only</md-button>
 				<span flex hide show-gt-sm></span>
-        <md-button class="md-raised md-primary" aria-label="checkout button" ng-click="cartCheckOut()">
+        <md-button class="md-raised md-primary" aria-label="checkout button" ng-click="cartCheckOut()" md-ripple-size="full">
             <md-icon>shopping_cart</md-icon>
             <span class="md-subhead" ng-if="cart.products.length">{{getCartTotals()}}</span>
         </md-button>
@@ -18,7 +18,7 @@
     </section>
 </md-subheader>
 <section layout-gt-xs="row" layout-align="space-around center" layout-xs="row" layout-wrap>
-    <div ng-repeat="product in products | filter:product.search">
+    <div ng-repeat="product in products | filter:productSearch">
         <md-card class="decor-card-square">
             <img ng-src="{{product.image}}" class="md-card-image">
             <md-card-title>
