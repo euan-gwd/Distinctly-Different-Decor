@@ -75,6 +75,12 @@ md-content.md-myTheme-theme {
 md-card.md-myTheme-theme md-card-title md-card-title-text:not(:only-child) .md-subhead {
   color: #FFAB40; }
 
+.fixed-card {
+  margin: 0 auto;
+  max-width: 950px;
+  padding: .75rem 0;
+  background: none; }
+
 md-card.md-myTheme-theme,
 .md-toolbar-tools {
   background-color: #faebd7;
@@ -84,11 +90,6 @@ md-card.decor-card-square {
   height: auto;
   max-width: 18rem;
   min-width: 16rem; }
-
-.fixed-card {
-  margin: 0 auto;
-  max-width: 950px;
-  padding: .75rem 0; }
 
 md-input-container.md-myTheme-theme {
   height: 36px; }
@@ -145,6 +146,16 @@ md-list-item.md-2-line > .md-no-style .md-avatar-icon {
     padding-right: 1.2rem; }
   .css-form input.md-button.md-raised.md-primary {
     width: 95%; }
+  .css-form md-input-container.md-myTheme-theme.md-input-invalid > md-icon {
+    color: #e53935; }
+  .css-form md-input-container.md-myTheme-theme.md-input-has-value:not(.md-input-invalid) > md-icon {
+    color: #43a047; }
+
+.valid-input {
+  color: #43a047; }
+
+.invalid-input {
+  color: #e53935; }
 
 .thankyou-wrapper {
   max-width: 100%;

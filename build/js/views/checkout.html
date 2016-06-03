@@ -1,5 +1,5 @@
 <md-content flex class="md-margin" layout-align="center center">
-    <md-card flex class="fixed-card">
+    <div flex class="fixed-card">
         <div class="cart-summary md-whiteframe-2dp" ng-if="cart.products.length">
 						<div class="cart-list-header"><h3 class="md-title">Selected Items</h3></div>
             <md-divider></md-divider>
@@ -66,11 +66,11 @@
                     </div>
                 </md-input-container>
 								<section layout="row" layout-align="space-around center">
-									<md-button class="md-raised md-primary" type="submit" value="Submit" aria-label="submit order" md-ripple-size="full" ng-show="customerForm.Name.$dirty && customerForm.Name.$valid &&
+									<md-button class="md-raised md-primary" type="submit" value="Submit" aria-label="submit order" md-ripple-size="full" ng-if="customerForm.Name.$dirty && customerForm.Name.$valid &&
   customerForm.Email.$dirty && customerForm.Email.$valid && customerForm.DelAddr.$dirty && customerForm.DelAddr.$valid" ng-click="submitOrder()">Submit</md-button>
 									<md-button class="md-warn" type="button" aria-label="cancel order" md-ripple-size="full" ui-sref="home">Cancel and Reset</md-button>
 								</section>
 						</form>
         </div>
-    </md-card>
+    </div>
 </md-content>
