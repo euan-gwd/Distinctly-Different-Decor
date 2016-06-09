@@ -4,14 +4,14 @@
   var express    = require('express'),
       app        = express(),
       bodyParser = require('body-parser'),
+			main 			 = require(__dirname +'/build/routes/main'),
       port       = 3000;
 
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
 
-  app.use(express.static('./build'));
+  app.use(express.static(__dirname +'/build'));
 
-  var main = require('./routes/main');
   app.use('/', main);
 
   app.listen(port, function() {
