@@ -1,6 +1,6 @@
 {
   "name": "distinctlydifferentdecor",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "web site for Distinctly Different Decor with gulp development server and Angular Material",
   "main": "server.js",
   "author": "Euan Greenwood",
@@ -9,13 +9,11 @@
   "sasslintConfig": ".sass-lint.yml",
   "devDependencies": {
     "browser-sync": "^2.13.0",
-    "del": "^2.2.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-nodemon": "^2.1.0",
     "gulp-plumber": "^1.1.0",
-    "gulp-sass": "^2.3.1",
-    "run-sequence": "^1.2.1"
+    "gulp-sass": "^2.3.1"
   },
   "dependencies": {
     "body-parser": "^1.15.1",
