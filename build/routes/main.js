@@ -7,8 +7,6 @@
   dotenv.load();
   var sendgrid_api_key = process.env.SENDGRID_APIKEY;
   var sendgrid = require('sendgrid')(sendgrid_api_key);
-	var jade = require('jade');
-	var templatePath = __dirname + '/weborder.jade';
 
   // Main Client Route
   router.route('/').get(function(req, res) {
@@ -19,27 +17,29 @@
   router.route('/checkout/sendOrder').post(function(req, res) {
     var data = req.body;
 
-    var email = new sendgrid.Email();
-
-    // Email message content and settings
+    // Customer Order items
     function Message() {
       var orderDetails = '<div>';
-      for (var i = 0; i < req.body.customerOrder.length; i += 1) {
-        orderDetails += '<p> item: ' + req.body.customerOrder[i].title + '</p>';
-        orderDetails += '<p> qty: ' + req.body.customerOrder[i].quantity + '</p>';
-        orderDetails += '<p> price: ' + req.body.customerOrder[i].price + '</p>';
-      }
+      for (var i = 0; i < data.customerOrder.length; i += 1) {
+        // orderDetails += '<p style="color:blue;"> Item Name: </p>' + data.customerOrder[i].title;
+        // orderDetails += '<p style="color:blue;"> quantity ordered: ' + data.customerOrder[i].quantity + '</p>';
+        // orderDetails += '<p style="color:blue;"> Item Price: </p>' + 'R ' + data.customerOrder[i].price;
+				orderDetails += '<p style="color:blue;">'+ data.customerOrder[i].quantity + ' x ' + data.customerOrder[i].title + ' @ R ' + data.customerOrder[i].price + ' Each';
+			}
       orderDetails += '</div>';
       return orderDetails;
     }
-		var customerOrderItems = Message();
+
+		// Email message payload
+		var payload = '<p>A New Order from Website has arrived<p>' + '<h3>Name: ' + data.customerName + '</h3>' + '<h3>Phone: ' + data.customerPhone + '</h3>' + '<h3>Email: ' + data.customerEmail + '</h3>' + '<h4>Delivery Address: ' + data.customerDelAddr + '</h4>' + '<p>Order Details: ' + Message() + '</p>'+'<small>End of Order</small>';
+
+		var email = new sendgrid.Email();
 
     email.to = 'info@amwic.co.za';
     email.from = 'DDDWebAppTest@ddd.co.za';
     email.setFromName = 'DDD Web App';
-    email.subject = 'Test Order from ' + req.body.customerName;
-    // email.html = '<p>Name: ' + data.customerName + '</p>' + '<p>Phone: ' + data.customerPhone + '</p>' + '<p>Email: ' + data.customerEmail + '</p>' + '<p>Delivery Address: ' + data.customerDelAddr + '</p>' + '<p>Order Details: ' + Message() + '</p>';
-		email.html = jade.renderFile(templatePath, req.body, customerOrderItems);
+    email.subject = 'Test Order from ' + data.customerName;
+    email.html = payload;
 
     // SendGrid Mailer
     sendgrid.send(email, function(err, json) {
@@ -48,7 +48,7 @@
       }
       console.log(json);
     });
-    res.json(req.body);
+    res.json(data);
   });
   module.exports = router;
 }());
