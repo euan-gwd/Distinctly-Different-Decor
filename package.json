@@ -1,6 +1,6 @@
 {
   "name": "distinctlydifferentdecor",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "web site for Distinctly Different Decor with gulp development server and Angular Material",
   "main": "server.js",
   "author": "Euan Greenwood",
