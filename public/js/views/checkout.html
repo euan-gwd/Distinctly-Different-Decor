@@ -1,75 +1,76 @@
 <md-content flex class="md-margin" layout-align="center center">
-    <div flex class="fixed-card">
-        <div class="cart-summary md-whiteframe-2dp" ng-if="cart.products.length">
-						<div class="cart-list-header"><h3 class="md-title">Selected Items</h3></div>
-            <md-divider></md-divider>
-						<md-list>
-                <md-list-item class="md-2-line md-flex" ng-repeat="product in cart.products" >
-                    <img ng-src="{{product.image}}" class="md-avatar">
-                    <div class="md-list-item-text">
-                        <h3>{{product.title}}</h3>
-                        <p>{{product.price | currency:"R"}}</p>
-                    </div>
-                    <div class="md-secondary" layout="row" layout-align="space-around center">
-                        <h4 class="md-subhead" ng-if="product.quantity > 0">x{{product.quantity}}</h4>
-                        <md-button class="md-fab md-mini md-primary md-hue-1" ng-click="addToCart(product)" md-ripple-size="full">
-														<md-tooltip>
-									    				Add more
-									  				</md-tooltip>
-														<md-icon class="addCart-color">add_shopping_cart</md-icon>
-                        </md-button>
-                        <md-button class="md-fab md-mini md-warn md-hue-1" ng-click="removeFromCart(product,$index)" ng-show="product.quantity > 0" md-ripple-size="full">
-														<md-tooltip>
-									    				Remove Item
-									  				</md-tooltip>
-														<md-icon class="removeCart-color">remove_shopping_cart</md-icon>
-                        </md-button>
-                    </div>
-                </md-list-item>
-            </md-list>
-            <md-divider></md-divider>
-            <p class="cart-grand-total">Grand Total for ({{getCartTotals()}}) items = {{getCartPrice() | currency:"R"}}</p>
-        </div>
-        <div>
-            <form name="customerForm" novalidate class="css-form" md-whiteframe="1">
-                <h3 class="md-title">Your Details:</h3>
-                <md-input-container class="md-flex">
-                    <label>Name (required)</label>
-                    <md-icon>person</md-icon>
-                    <input required name="Name" ng-model="customerName" minlength="3">
-                    <div ng-messages="customerForm.Name.$error">
-                        <div ng-message-exp="['required', 'minlength']">Please enter your name.</div>
-                    </div>
-                </md-input-container>
-                <md-input-container class="md-flex">
-                    <label>Phone</label>
-                    <md-icon>phone</md-icon>
-                    <input name="phone" ng-model="customerPhone" ng-pattern="/([0-9]{10})/">
-                    <div ng-messages="customerForm.phone.$error">
-                        <div ng-message="pattern">Please enter a valid phone number.</div>
-                    </div>
-                </md-input-container>
-                <md-input-container class="md-flex">
-                    <label>Email (required)</label>
-                    <md-icon>email</md-icon>
-                    <input required type="email" name="Email" ng-model="customerEmail" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
-                    <div ng-messages="customerForm.Email.$error" role="alert">
-                        <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">Please a valid e-mail address.</div>
-                    </div>
-                </md-input-container>
-                <md-input-container class="md-block">
-                    <label>Delivery Address (required)</label>
-                    <md-icon>flight_land</md-icon>
-                    <input required name="DelAddr" ng-model="customerDelAddr" minlength="10">
-                    <div ng-messages="customerForm.DelAddr.$error">
-                        <div ng-message-exp="['required', 'minlength']">The address has to be longer than 10 characters.</div>
-                    </div>
-                </md-input-container>
-								<section layout="row" layout-align="space-around center">
-									<md-button class="md-raised md-primary" type="submit" value="Submit" aria-label="submit order" md-ripple-size="full" ng-disabled="customerForm.$invalid" ng-click="submitOrder()">Submit</md-button>
-									<md-button class="md-warn" type="button" aria-label="cancel order" md-ripple-size="full" ui-sref="home">Cancel and Reset</md-button>
-								</section>
-						</form>
-        </div>
-    </div>
+	<div flex class="fixed-card">
+		<div class="cart-summary md-whiteframe-2dp" ng-if="checkout.cart.products.length">
+			<div class="cart-list-header">
+				<h3 class="md-title">Selected Items</h3></div>
+			<md-divider></md-divider>
+			<md-list>
+				<md-list-item class="md-2-line md-flex" ng-repeat="product in checkout.cart.products">
+					<img ng-src="{{product.image}}" class="md-avatar">
+					<div class="md-list-item-text">
+						<h3>{{product.title}}</h3>
+						<p>{{product.price | currency:"R"}}</p>
+					</div>
+					<div class="md-secondary" layout="row" layout-align="space-around center">
+						<h4 class="md-subhead" ng-if="product.quantity > 0">x{{product.quantity}}</h4>
+						<md-button class="md-fab md-mini md-primary md-hue-1" ng-click="checkout.addToCart(product)" md-ripple-size="full">
+							<md-tooltip>
+								Add more
+							</md-tooltip>
+							<md-icon class="addCart-color">add_shopping_cart</md-icon>
+						</md-button>
+						<md-button class="md-fab md-mini md-warn md-hue-1" ng-click="checkout.removeFromCart(product,$index)" ng-show="product.quantity > 0" md-ripple-size="full">
+							<md-tooltip>
+								Remove Item
+							</md-tooltip>
+							<md-icon class="removeCart-color">remove_shopping_cart</md-icon>
+						</md-button>
+					</div>
+				</md-list-item>
+			</md-list>
+			<md-divider></md-divider>
+			<p class="cart-grand-total">Grand Total for ({{checkout.getCartTotals()}}) items = {{checkout.getCartPrice() | currency:"R"}}</p>
+		</div>
+		<div>
+			<form name="customerForm" novalidate class="css-form" md-whiteframe="1">
+				<h3 class="md-title">Your Details:</h3>
+				<md-input-container class="md-flex">
+					<label>Name (required)</label>
+					<md-icon>person</md-icon>
+					<input required name="Name" ng-model="checkout.customerName" minlength="3">
+					<div ng-messages="checkout.customerForm.Name.$error">
+						<div ng-message-exp="['required', 'minlength']">Please enter your name.</div>
+					</div>
+				</md-input-container>
+				<md-input-container class="md-flex">
+					<label>Phone</label>
+					<md-icon>phone</md-icon>
+					<input name="phone" ng-model="checkout.customerPhone" ng-pattern="/([0-9]{10})/">
+					<div ng-messages="checkout.customerForm.phone.$error">
+						<div ng-message="pattern">Please enter a valid phone number.</div>
+					</div>
+				</md-input-container>
+				<md-input-container class="md-flex">
+					<label>Email (required)</label>
+					<md-icon>email</md-icon>
+					<input required type="email" name="Email" ng-model="checkout.customerEmail" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" />
+					<div ng-messages="checkout.customerForm.Email.$error" role="alert">
+						<div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">Please a valid e-mail address.</div>
+					</div>
+				</md-input-container>
+				<md-input-container class="md-block">
+					<label>Delivery Address (required)</label>
+					<md-icon>flight_land</md-icon>
+					<input required name="DelAddr" ng-model="checkout.customerDelAddr" minlength="10">
+					<div ng-messages="checkout.customerForm.DelAddr.$error">
+						<div ng-message-exp="['required', 'minlength']">The address has to be longer than 10 characters.</div>
+					</div>
+				</md-input-container>
+				<section layout="row" layout-align="space-around center">
+					<md-button class="md-raised md-primary" type="submit" value="Submit" aria-label="submit order" md-ripple-size="full" ng-disabled="customerForm.$invalid" ng-click="checkout.submitOrder()">Submit</md-button>
+					<md-button class="md-warn" type="button" aria-label="cancel order" md-ripple-size="full" ui-sref="home">Cancel and Reset</md-button>
+				</section>
+			</form>
+		</div>
+	</div>
 </md-content>
