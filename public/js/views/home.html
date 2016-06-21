@@ -1,63 +1,60 @@
 <md-subheader class="md-primary" md-whiteframe="2">
-    <section layout="row" layout-align="space-around center" class="sub-toolbar">
-        <md-input-container>
-            <md-icon class="brand-color-alt">search</md-icon>
-            <input ng-model="productSearch" type="search" aria-label="search" placeholder="Search">
-        </md-input-container>
-				<span flex hide show-gt-sm></span>
-				<md-menu-bar>
-				<md-button hide show-gt-sm class="md-primary md-hue-1" aria-label="show all" md-ripple-size="auto" ng-click="sortAll()">
-					<md-tooltip>
-    				Display all products
-  				</md-tooltip>
-					Show All
-				</md-button>
-				<md-button hide show-gt-sm class="md-primary md-hue-1" aria-label="show glass items only" md-ripple-size="auto" ng-click="sortGlass()">
-					<md-tooltip>
-    				Display only glass products
-  				</md-tooltip>
-					Show Glass only
-				</md-button>
-				<md-button hide show-gt-sm class="md-primary md-hue-1" aria-label="show paper items only" md-ripple-size="auto" ng-click="sortPaper()">
-					<md-tooltip>
-    				Display only paper products
-  				</md-tooltip>
-					Show Paper only
-				</md-button>
-				</md-menu-bar>
-				<span flex hide show-gt-sm></span>
-        <md-button class="md-raised md-primary" aria-label="checkout button" ng-click="cartCheckOut()" md-ripple-size="full">
-					<md-tooltip>
-				    See selected items in Cart
-					</md-tooltip>
-					<md-icon>shopping_cart</md-icon>
-          <span class="md-subhead" ng-if="cart.products.length">{{getCartTotals()}}</span>
-        </md-button>
-        <h6 class="md-subhead md-padding" ng-if="cart.products.length">Total
-            {{getCartPrice() | currency:"R"}}</h6>
-    </section>
+	<section layout="row" layout-align="space-around center" class="sub-toolbar">
+		<md-input-container>
+			<md-icon class="brand-color-alt">search</md-icon>
+			<input ng-model="store.productSearch" type="search" aria-label="search" placeholder="Search">
+		</md-input-container>
+		<span flex hide show-gt-sm></span>
+		<md-menu-bar>
+			<md-button hide show-gt-sm class="md-primary md-hue-1" aria-label="show all" md-ripple-size="auto" ng-click="store.sortAll()">
+				<md-tooltip>
+					Display all products
+				</md-tooltip>
+				Show All
+			</md-button>
+			<md-button hide show-gt-sm class="md-primary md-hue-1" aria-label="show glass items only" md-ripple-size="auto" ng-click="store.sortGlass()">
+				<md-tooltip>
+					Display only glass products
+				</md-tooltip>
+				Show Glass only
+			</md-button>
+			<md-button hide show-gt-sm class="md-primary md-hue-1" aria-label="show paper items only" md-ripple-size="auto" ng-click="store.sortPaper()">
+				<md-tooltip>
+					Display only paper products
+				</md-tooltip>
+				Show Paper only
+			</md-button>
+		</md-menu-bar>
+		<span flex hide show-gt-sm></span>
+		<md-button class="md-raised md-primary" aria-label="checkout button" ng-click="store.cartCheckOut()" md-ripple-size="full">
+			<md-tooltip>
+				See selected items in Cart
+			</md-tooltip>
+			<md-icon>shopping_cart</md-icon>
+			<span class="md-subhead" ng-if="store.cart.products.length">{{store.getCartTotals()}}</span>
+		</md-button>
+		<h6 class="md-subhead md-padding" ng-if="store.cart.products.length">Total {{store.getCartPrice() | currency:"R"}}</h6>
+	</section>
 </md-subheader>
 <section layout-gt-xs="row" layout-align="space-around center" layout-xs="row" layout-wrap>
-    <div ng-repeat="product in products | filter:productSearch">
-        <md-card class="decor-card-square">
-						<md-card-title-media class="md-media-lg card-media">
-						<img ng-src="{{product.image}}">
-						</md-card-title-media>
-            <md-card-title>
-                <md-card-title-text>
-                    <p>{{product.title}}</p>
-                </md-card-title-text>
-                <span class="md-subhead">{{product.price | currency:"R"}}</span>
-            </md-card-title>
-            <md-divider></md-divider>
-            <md-card-actions layout="row" layout-align="center center">
-                <md-button ng-click="addToCart(product)">
-										<md-tooltip>
-					    				Add to Cart
-					  				</md-tooltip>
-                    <md-icon class="brand-color">add_shopping_cart</md-icon>
-                </md-button>
-            </md-card-actions>
-        </md-card>
-    </div>
+	<div ng-repeat="product in store.products | filter:store.productSearch">
+		<md-card class="decor-card-square">
+			<img ng-src="{{product.image}}" class="md-card-image">
+			<md-card-title>
+				<md-card-title-text>
+					<p>{{product.title}}</p>
+				</md-card-title-text>
+				<span class="md-subhead">{{product.price | currency:"R"}}</span>
+			</md-card-title>
+			<md-divider></md-divider>
+			<md-card-actions layout="row" layout-align="center center">
+				<md-button ng-click="store.addToCart(product)">
+					<md-tooltip>
+						Add to Cart
+					</md-tooltip>
+					<md-icon class="brand-color">add_shopping_cart</md-icon>
+				</md-button>
+			</md-card-actions>
+		</md-card>
+	</div>
 </section>

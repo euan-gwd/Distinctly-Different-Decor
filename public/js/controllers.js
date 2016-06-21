@@ -1,137 +1,141 @@
 (function() {
-  'use strict';
-  var app = angular.module('DDDApp.controllers', []);
+	'use strict';
+	var app = angular.module('DDDApp.controllers', []);
 
-  app.controller('StoreController', function($scope, $state, dataService) {
-    $scope.cart = {
-      products: []
-    };
-    // Load products from server
-    dataService.getProducts(function(res) {
-      $scope.products = res.data;
-    });
+	app.controller('StoreController', function($state, dataService) {
+		var store = this;
+
+		store.cart = {
+			products: []
+		};
+		// Load products from server
+		dataService.getProducts(function(res) {
+			store.products = res.data;
+		});
 
 		// Sorts Items
-		$scope.sortGlass = function () {
-			$scope.productSearch = "glass";
+		store.sortGlass = function() {
+			store.productSearch = "glass";
 		};
 
-		$scope.sortPaper = function () {
-			$scope.productSearch = "paper";
+		store.sortPaper = function() {
+			store.productSearch = "paper";
 		};
 
-		$scope.sortAll = function () {
-			$scope.productSearch = "";
+		store.sortAll = function() {
+			store.productSearch = "";
 		};
 
-    // Add products to basket
-    $scope.addToCart = function(product) {
-        $scope.cart.products.push(angular.extend({ quantity: 1 }, product));
-    };
+		// Add products to basket
+		store.addToCart = function(product) {
+			store.cart.products.push(angular.extend({ quantity: 1 }, product));
+		};
 
-    // Calculate total price for products in Cart
-    $scope.getCartPrice = function() {
-      var total = 0;
-      $scope.cart.products.forEach(function(product) {
-        total += product.price * product.quantity;
-      });
-      return total;
-    };
+		// Calculate total price for products in Cart
+		store.getCartPrice = function() {
+			var total = 0;
+			store.cart.products.forEach(function(product) {
+				total += product.price * product.quantity;
+			});
+			return total;
+		};
 
-    // Calculate total number of items in Cart
-    $scope.getCartTotals = function() {
-      var totalInCart = 0;
+		// Calculate total number of items in Cart
+		store.getCartTotals = function() {
+			var totalInCart = 0;
 
-      $scope.cart.products.forEach(function(product) {
-        totalInCart = parseInt(totalInCart) + product.quantity;
-      });
-      return totalInCart;
-    };
+			store.cart.products.forEach(function(product) {
+				totalInCart = parseInt(totalInCart) + product.quantity;
+			});
+			return totalInCart;
+		};
 
-    // Cart Checkout
-    $scope.cartCheckOut = function() {
-      var checkout = $scope.cart;
-      window.sessionStorage.checkout = angular.toJson(checkout);
-      $state.go('checkout');
-    };
-  }); // End Store Controller
-
-
-  app.controller('CartController', function($scope, $http, $state) {
-    var cartItems = angular.fromJson(window.sessionStorage.checkout || '[]');
-    $scope.cart = cartItems;
+		// Cart Checkout
+		store.cartCheckOut = function() {
+			var checkout = store.cart;
+			window.sessionStorage.checkout = angular.toJson(checkout);
+			$state.go('checkout');
+		};
+	}); // End Store Controller
 
 
-    // Add products to basket
-    $scope.addToCart = function(product) {
-      var found = false;
-      $scope.cart.products.forEach(function(item) {
-        if (item.id === product.id) {
-          item.quantity++;
-          found = true;
-        }
-      });
-      if (!found) {
-        $scope.cart.products.push(angular.extend({ quantity: 1 }, product));
-      }
-    };
+	app.controller('CheckOutController', function($http, $state) {
+		var cartItems = angular.fromJson(window.sessionStorage.checkout || '[]');
+		var checkout = this;
 
-    //Remove product from basket
-    $scope.removeFromCart = function(product, index) {
-      var found = false;
-      $scope.cart.products.forEach(function(item) {
-        if (item.id === product.id) {
-          item.quantity--;
-          found = true;
-          if (item.quantity === 0) {
-            $scope.cart.products.splice(index, 1);
-          }
-        }
-      });
-      if (!found) {
-        $scope.cart.products.splice(angular.extend({ quantity: -1 }, product));
-      }
-    };
+		checkout.cart = cartItems;
 
-    // Calculate total price for products in Cart
-    $scope.getCartPrice = function() {
-      var total = 0;
-      $scope.cart.products.forEach(function(product) {
-        total += product.price * product.quantity;
-      });
-      return total;
-    };
 
-    // Calculate total number of items in Cart
-    $scope.getCartTotals = function() {
-      var totalInCart = 0;
+		// Add products to basket
+		checkout.addToCart = function(product) {
+			var found = false;
+			checkout.cart.products.forEach(function(item) {
+				if (item.id === product.id) {
+					item.quantity++;
+					found = true;
+				}
+			});
+			if (!found) {
+				checkout.cart.products.push(angular.extend({ quantity: 1 }, product));
+			}
+		};
 
-      $scope.cart.products.forEach(function(product) {
-        totalInCart = parseInt(totalInCart) + product.quantity;
-      });
-      return totalInCart;
-    };
+		//Remove product from basket
+		checkout.removeFromCart = function(product, index) {
+			var found = false;
+			checkout.cart.products.forEach(function(item) {
+				if (item.id === product.id) {
+					item.quantity--;
+					found = true;
+					if (item.quantity === 0) {
+						checkout.cart.products.splice(index, 1);
+					}
+				}
+			});
+			if (!found) {
+				checkout.cart.products.splice(angular.extend({ quantity: -1 }, product));
+			}
+		};
 
-    // Sends order via email
-    $scope.submitOrder = function() {
-      var checkoutCart = $scope.cart.products;
+		// Calculate total price for products in Cart
+		checkout.getCartPrice = function() {
+			var total = 0;
+			checkout.cart.products.forEach(function(product) {
+				total += product.price * product.quantity;
+			});
+			return total;
+		};
 
-      var data = ({
-        customerName: this.customerName,
-        customerPhone: this.customerPhone,
-        customerEmail: this.customerEmail,
-        customerDelAddr: this.customerDelAddr,
-        customerOrder: checkoutCart
-      });
+		// Calculate total number of items in Cart
+		checkout.getCartTotals = function() {
+			var totalInCart = 0;
 
-      $http.post('/checkout/sendOrder', data).success(function(data, status) {
-        $scope.jsondata = data;
-        console.log("status:" + status);
-        $state.go('thankyou');
-      }).error(function(data, status) {
-        console.error('Error occurred:', data, status);
-      });
-    };
-  }); // End Cart Controller
+			checkout.cart.products.forEach(function(product) {
+				totalInCart = parseInt(totalInCart) + product.quantity;
+			});
+			return totalInCart;
+		};
+
+		// Sends order via email
+		checkout.submitOrder = function() {
+			var checkOutCart = checkout.cart.products;
+
+			var data = ({
+				customerName: this.customerName,
+				customerPhone: this.customerPhone,
+				customerEmail: this.customerEmail,
+				customerDelAddr: this.customerDelAddr,
+				customerOrder: checkOutCart
+			});
+
+			$http.post('/checkout/sendOrder', data).success(function(data, status) {
+				checkout.jsondata = data;
+				console.log("status:" + status);
+				$state.go('thankyou');
+			}).error(function(data, status) {
+				console.error('Error occurred:', data, status);
+			});
+		};
+	}); // End Cart Controller
 
 }());
