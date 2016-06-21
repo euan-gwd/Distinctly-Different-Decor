@@ -39,9 +39,7 @@
 <section layout-gt-xs="row" layout-align="space-around center" layout-xs="row" layout-wrap>
 	<div ng-repeat="product in store.products | filter:store.productSearch">
 		<md-card class="decor-card-square">
-			<md-card-title-media class="md-media-lg card-media">
-				<img ng-src="{{product.image}}">
-			</md-card-title-media>
+			<img ng-src="{{product.image}}" class="md-card-image">
 			<md-card-title>
 				<md-card-title-text>
 					<p>{{product.title}}</p>

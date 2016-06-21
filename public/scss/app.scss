@@ -3,30 +3,30 @@
 
 html,
 body {
-  background: url('../images/seamless_paper_texture.png');
+	background: url('../images/seamless_paper_texture.png');
 }
 
 input,
 textarea {
-  outline: 0;
+	outline: 0;
 }
 
 ul,
 p {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
 }
 
 .brand {
-  height: 4.5rem;
-  max-width: 100%;
-  width: 4.5rem;
+	height: 4.5rem;
+	max-width: 100%;
+	width: 4.5rem;
 	padding-right: 1rem;
 }
 
 .md-title {
-  color: $primary-color;
+	color: $primary-color;
 }
 
 .md-subhead,
@@ -45,7 +45,7 @@ p {
 }
 
 md-content.md-myTheme-theme {
-  background: none;
+	background: none;
 }
 
 md-card.md-myTheme-theme md-card-title md-card-title-text:not(:only-child) .md-subhead {
@@ -53,8 +53,8 @@ md-card.md-myTheme-theme md-card-title md-card-title-text:not(:only-child) .md-s
 }
 
 .fixed-card {
-  margin: 0 auto;
-  max-width: 950px;
+	margin: 0 auto;
+	max-width: 950px;
 	padding: .75rem 0;
 	background: none;
 }
@@ -97,50 +97,50 @@ md-card md-card-title + md-card-content {
 }
 
 .md-title {
-  margin: 0;
-  text-align: center;
+	margin: 0;
+	text-align: center;
 }
 
 md-list-item .md-secondary-container,
 md-list-item .md-secondary, md-list-item .md-list-item-inner .md-secondary-container,
 md-list-item .md-list-item-inner .md-secondary {
-  right: 0;
+	right: 0;
 }
 
 md-list-item.md-2-line > .md-avatar, md-list-item.md-2-line .md-avatar-icon,
 md-list-item.md-2-line > .md-no-style > .md-avatar,
 md-list-item.md-2-line > .md-no-style .md-avatar-icon {
-  margin-bottom: 0;
-  margin-left: 3px;
-  margin-top: 12px;
+	margin-bottom: 0;
+	margin-left: 3px;
+	margin-top: 12px;
 }
 
 .cart-summary {
-  background-color: $gmd-white;
-  margin: 0 auto;
-  max-width: 95%;
+	background-color: $gmd-white;
+	margin: 0 auto;
+	max-width: 95%;
 }
 
 .cart-grand-total {
-  background-color: $gmd-offwhite;
-  color: $secondary-color;
-  padding: .5rem;
-  text-align: right;
+	background-color: $gmd-offwhite;
+	color: $secondary-color;
+	padding: .5rem;
+	text-align: right;
 }
 
 .css-form {
-  background-color: $gmd-white;
-  margin: 8px auto 0;
-  max-width: 95%;
+	background-color: $gmd-white;
+	margin: 8px auto 0;
+	max-width: 95%;
 
-  .md-block {
-    padding-bottom: .5rem;
-    padding-right: 1.2rem;
-  }
+	.md-block {
+		padding-bottom: .5rem;
+		padding-right: 1.2rem;
+	}
 
-  input.md-button.md-raised.md-primary {
-    width: 95%;
-  }
+	input.md-button.md-raised.md-primary {
+		width: 95%;
+	}
 
 	md-input-container.md-myTheme-theme.md-input-invalid > md-icon  {
 		color: $gmd-red;
@@ -161,8 +161,8 @@ md-list-item.md-2-line > .md-no-style .md-avatar-icon {
 }
 
 .thankyou-wrapper {
-  max-width: 100%;
-  padding: 16px 0;
-  text-align: center;
-  width: 90vw;
+	max-width: 100%;
+	padding: 16px 0;
+	text-align: center;
+	width: 90vw;
 }
