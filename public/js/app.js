@@ -7,7 +7,7 @@
             .state("home", {
                 url: "/",
                 templateUrl: "js/views/home.html",
-                controller: "StoreController"
+                controller: "StoreController as store"
             })
             .state("checkout", {
                 url: "/checkout",
